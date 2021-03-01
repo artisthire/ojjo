@@ -1,0 +1,9 @@
+// импорт общих файлов
+@import "./utils/vars";
+@import "./utils/mixins";
+@import "./utils/fonts";
+@import "./utils/libs";
+@import "./utils/scaffolding";
+@import "./utils/visually-hidden";
+// импорт модулей (блоков)
+@import "./modules/container";

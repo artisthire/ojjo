@@ -1,0 +1,4 @@
+// Подключение шрифтов
+// использует миксину "font-face", которая автоматически добавляет необходимые директивы
+// @include font-face("OpenSans", "../../assets/fonts/OpenSans/opensansItalic", 400, italic);
+@include font-face("Montserrat", "../../assets/fonts/montserrat-v15-latin-700", 700);

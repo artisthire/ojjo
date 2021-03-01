@@ -1,0 +1,35 @@
+// Файл с миксинами
+
+// Преобразование px в rem
+@function rem($pixels, $context: $main-font-size) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
+}
+
+
+// Преобразование значения letter-spacing из представления в Photoshop в нужное значение для CSS
+@function lts($phts-lts) {
+  @return $phts-lts / 1000 * 1em;
+}
+
+// Миксина подключения шрифтов
+// Требует и использует только файлы в формате: .woff, .woffs
+//  @include font-face("OpenSans", "../fonts/OpenSans/opensansItalic", 400, italic);
+@mixin font-face($font-family, $file-path, $weight: 400, $style: normal) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+
+    src: local($font-family),
+      url("#{$file-path}.woff2") format("woff2");
+  }
+}
