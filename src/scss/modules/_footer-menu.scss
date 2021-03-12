@@ -1,0 +1,33 @@
+.footer-menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 1.4rem;
+  line-height: (21/14);
+
+  & > li {
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.footer-menu__link {
+  color: $grey;
+  text-decoration: none;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+.footer__text {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  line-height: (21/14);
+}

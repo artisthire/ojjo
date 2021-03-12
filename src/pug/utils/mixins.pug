@@ -1,10 +1,10 @@
 //- For put image in WEBP and JPG formats
-mixin webpImg(name, alt= '', width, height, sourcePatch= '../../assets/img/')
+mixin webpImg(name, alt= "", width, height, sourcePatch= "../../assets/img/")
   picture
-    source(srcset= `${sourcePatch}${name}.webp`, type= 'image/webp')
+    source(srcset= `${sourcePatch}${name}.webp`, type= "image/webp")
     img(class!= attributes.class, src= `${sourcePatch}${name}.jpg`, alt= alt, width = width, height = height)
 
 //- Put external SVG-sprite
-mixin extSvgSprite(symbolId, width, height, fileName= 'svg-sprite', sourcePatch= '../../assets/img/')
-  svg(class!= attributes.class, width = width, height = height, aria-hidden= 'true')
+mixin extSvgSprite(symbolId, width, height, fileName= "svg-sprite", sourcePatch= "../../assets/img/")
+  svg(style!= attributes.style, class!= attributes.class, width = width, height = height, aria-hidden= "true")
     use(xlink:href=`${sourcePatch}${fileName}.svg#${symbolId}`)

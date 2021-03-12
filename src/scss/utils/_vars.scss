@@ -1,27 +1,19 @@
 // Файл с переменными
 
 // Шрифты для проекта
-$main-font: "NunitoSans", sans-serif;
-$second-font: "Montserrat", sans-serif;
-
-// Основные единицы измерения и цвета шрифтов
-$main-font-size: 16px;
-$main-font-size--md: 14px;
-$main-font-size--sm: 12px;
-$main-line-height: (24/16);
-$main-text-color: #787878;
-$title-color: #1d1d1d;
-
-// Значения ширин экранов для адаптивности
-$screen-lg: 1170px;
-$screen-md: 992px;
-$screen-sm: 768px;
-$screen-xsm: 650px;
-$screen-xxsm: 480px;
+$main-font: "Gilroy", sans-serif;
+$main-font-size: 62.5%;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 600;
 
 // Основные цвета проекта
 $white: hsl(0, 0%, 100%);
 $black: hsl(0, 0%, 0%);
-$btn-bgn-color: #10c9c3;
-$btn-bgn-color--hover: darken($btn-bgn-color, 20%);
-$btn-color: $white;
+$grey: #333333;
+$light-grey: #e5e5e5;
+
+// Значения ширин экранов для адаптивности
+$screen-lg: 1110px;
+$screen-md: 992px;
+$screen-sm: 375px;

@@ -1,0 +1,36 @@
+.footer-contact {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  & > li {
+    margin-bottom: 15px;
+  }
+}
+
+.footer-contact__link {
+  font-size: 1.4rem;
+  line-height: (21/14);
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+
+    & > svg {
+      transform: scale(1.1);
+    }
+  }
+
+  & > svg {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 2rem;
+    vertical-align: top;
+    fill: $grey;
+    transition: transform 0.2s linear;
+  }
+}

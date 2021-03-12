@@ -1,0 +1,62 @@
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile__list {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  & > li {
+    margin-right: 3rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &--account > li {
+    margin-right: 1.5rem;
+  }
+}
+
+.profile__btn {
+  display: inline-block;
+  margin: 0;
+  padding: 1rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: transform 0.2s linear;
+
+  & > svg,
+  & > img {
+    display: inline-block;
+    max-width: 2.4rem;
+    max-height: 2.4rem;
+    vertical-align: middle;
+  }
+
+  & > svg + span,
+  & > img + span {
+    margin-left: 1rem;
+  }
+
+  &:hover,
+  &:focus {
+    & > svg,
+    & > img {
+      transform: scale(1.1);
+    }
+  }
+
+  &--nowrap {
+    max-width: 15rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}

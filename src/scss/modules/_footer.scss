@@ -1,0 +1,29 @@
+.footer {
+  padding: 80px 0 20px;
+}
+
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  margin-left: -5px;
+}
+
+.footer__item {
+  width: 255px;
+  margin-bottom: 20px;
+  margin-left: 5px;
+}
+
+.footer__title {
+  margin: 0;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $grey;
+  font-size: 1.8rem;
+  font-weight: $font-weight-normal;
+  line-height: 1.4;
+  text-transform: uppercase;
+}

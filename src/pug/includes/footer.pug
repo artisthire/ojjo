@@ -1,3 +1,76 @@
 footer.footer
   .container
+    .footer__content
+      .footer__item
+        h3.footer__title Полезные ссылки
+        ul.footer-menu
+          -
+            var menuData = [
+              {link: "delivery", text: "Доставка"},
+              {link: "payment", text: "Оплата"},
+              {link: "stock", text: "Контрагентам"},
+              {link: "confidentiality", text: "Политика конфиденциальности"}
+            ]
+          for data in menuData
+            li
+              a.footer-menu__link(href=`#${data.link}`)= `${data.text}`
+
+      .footer__item
+        h3.footer__title оплата
+        p.footer__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ullamcorper justo, nec, pellentesque.
+        ul.pay-card
+          for name, i in ["Visa", "MasterCard"]
+            li
+              img.pay-card__logo(src=`../../assets/img/card-logo-${i + 1}.png`, alt=`${name}`, width="45", height="30")
+
+      .footer__item
+        h3.footer__title контакты
+        ul.footer-contact
+          li
+            a.footer-contact__link(href="tel:+388122345655")
+              +extSvgSprite("phone", 20, 20)
+              | 8 (812) 234-56-55
+          li
+            a.footer-contact__link(href="tel:+3881223456-55")
+              +extSvgSprite("phone", 20, 20)
+              | 8 (812) 234-56-55
+          li
+            a.footer-contact__link(href="mailto:ojjo@ojjo.ru")
+              +extSvgSprite("mail", 20, 20)
+              | ojjo@ojjo.ru
+
+      .footer__item
+        h3.footer__title социальные сети
+        p.footer__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ullamcorper justo, nec, pellentesque.
+        ul.social
+          -
+            var socialData = [
+              {name: "youtube", size: 26},
+              {name: "vk", size: 24},
+              {name: "facebook", size: 26},
+              {name: "telegram", size: 24},
+              {name: "etsy", size: 16}
+            ]
+          for data in socialData
+            li
+              a.social__link(href=`#${data.name}`, target="_blank", rel="noopener noreferrer")
+                +extSvgSprite(`${data.name}`, `${data.size}`, `${data.size}`)
+                span.visually-hidden #{data.name}
+
+    ul.copyright
+      -
+        var copyrightData = [
+          {link: "jewelry", text: "(c) 2020 OJJO jewelry"},
+          {link: "public", text: "Договор публичной офферты"},
+          {link: "agent", text: "Контрагентам"},
+          {link: "figma", text: "Сделано Figma.info"}
+        ]
+        var underline = "figma"
+      for data in copyrightData
+        li
+          if (data.link === underline)
+            a.copyright__link.copyright__link--underline(href=`#${data.link}`)= `${data.text}`
+          else
+            a.copyright__link(href=`#${data.link}`)= `${data.text}`
+
 

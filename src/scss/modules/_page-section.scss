@@ -1,0 +1,37 @@
+.page-section {
+  color: $grey;
+
+  &--light {
+    color: $white;
+  }
+
+  &--bgn-twirl {
+    background-image: url("../../assets/img/bgn-slice.jpg");
+    background-size: 28px 28px;
+    background-color: $grey;
+    background-repeat: repeat;
+  }
+}
+
+.page-section__container {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.page-section__subtitle {
+  margin: 0;
+  margin-bottom: 15px;
+  font-size: 2.1rem;
+  font-weight: $font-weight-normal;
+  line-height: 1.38;
+  text-align: center;
+}
+
+.page-section__title {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: $font-weight-bold;
+  line-height: 1.38;
+  text-align: center;
+  color: inherit;
+}

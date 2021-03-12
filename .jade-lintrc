@@ -27,13 +27,13 @@
   "requireSpaceAfterCodeOperator": true,
   "requireSpacesInsideAttributeBrackets": null,
   "requireSpecificAttributes": [
-    { "img": ["alt", "width", "height"] },
+    { "img": ["alt"] },
     { "button": "type" },
     { "input": "type" },
     { "input[type=submit]": "value" }
   ],
  "requireStrictEqualityOperators": true,
- "validateAttributeQuoteMarks": "'",
+ "validateAttributeQuoteMarks": "\"",
  "validateAttributeSeparator": {
     "separator": ", ",
     "multiLineSeparator": ",\n  "

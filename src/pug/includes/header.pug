@@ -1,15 +1,49 @@
-header.header#js-header
-  .container
-    .header__inner
-      span.header__logo
-        img(src= '../../assets/img/logo.png', alt= 'Site logo', width= '31', height= '25')
-      nav.header__menu.js-nav-menu
-        button.menu-toggle-btn.not-active.js-menu-toggle-btn(type= 'button', aria-expanded= 'false', aria-label= 'Toggle navigation', aria-controls= 'mainNavbar')
-          span
-          span
-          span
-        ul.nav-menu#mainNavbar
-          - var currentUrl= 'home'
-          for link in ['home', 'about', 'work', 'process', 'services', 'testimonials', 'contact']
-            li.nav-menu__item(class= {active: link === currentUrl})
-              a.nav-menu__link.js-menu-link(href= `#${link}`)= link
+header.header(style="background-image:url('../../assets/img/header-background.jpg')")
+  .header__head
+    .container
+      .header__inner
+        .header__menu
+          nav.main-menu
+            ul.main-menu__list
+              for text, link in {agent: "Контрагентам", design: "Дизайнерам", job: "Вакансии"}
+                li
+                  a.header__link.main-menu__link(href= `#${link}`)= text
+
+          .header__logo
+            a.header__link.logotype(href="/")
+              img(src= "../../assets/img/logo.svg", alt= "Логотип", width="216", height="52")
+
+          .profile
+            ul.profile__list
+              li
+                button.header__link.profile__btn(type="button")
+                  +extSvgSprite("search", 24, 24)
+                  span Поиск
+              li
+                // после login-а клиета показать иконку svg и вместо "Вход/Регистрация" имя клиента
+                a.header__link.profile__btn.profile__btn--nowrap(href="#account")
+                  // <svg width="24" height="24" aria-hidden="true"> <use xlink:href="/assets/img/svg-sprite.svg#account"></use></svg>
+                  span Вход/Регистрация
+            ul.profile__list.profile__list--account
+              li
+                a.header__link.profile__btn(href="#basket")
+                  +extSvgSprite("basket", 24, 24)
+                  span.visually-hidden Профиль
+              li
+                a.header__link.profile__btn(href="#like")
+                  +extSvgSprite("like", 24, 24)
+                  span.visually-hidden Избранное
+
+        .header__main
+          h1.header__slogan Дорого, дорого, богато!
+          a.button(href="#catalog") Каталог изделий
+
+  .brands
+    .container
+      ul.brands__list
+        - for (var x = 0; x < 6; x++)
+          li
+            a.brands__link(href="#brand", target="_blank", rel="noopener noreferrer")
+              img(src="../../assets/img/brand-logo.png", alt="Логотип бренда", width="160", height="60")
+
+

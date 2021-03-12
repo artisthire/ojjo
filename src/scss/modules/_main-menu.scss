@@ -1,0 +1,14 @@
+.main-menu__list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-menu__link {
+  display: inline-block;
+  margin: 0 0.5rem;
+  padding: 1rem;
+}

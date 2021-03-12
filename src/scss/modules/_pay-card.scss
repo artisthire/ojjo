@@ -1,0 +1,18 @@
+.pay-card {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-left: -20px;
+
+  & > li {
+    margin-left: 20px;
+  }
+}
+
+.pay-card__logo {
+  width: 4.5rem;
+  height: 3rem;
+  object-fit: cover;
+}

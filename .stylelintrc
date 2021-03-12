@@ -2,8 +2,6 @@
   "rules": {
     "declaration-no-important": true,
     "indentation": [2, {"ignore": ["inside-parens"]}],
-    "color-hex-case": "lower",
-    "color-hex-length": "long",
     "color-no-invalid-hex": true,
 
     "font-family-name-quotes": "always-unless-keyword",

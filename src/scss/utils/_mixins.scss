@@ -20,7 +20,7 @@
 }
 
 // Миксина подключения шрифтов
-// Требует и использует только файлы в формате: .woff, .woffs
+// Требует и использует только файлы в формате: .woff, .woff2
 //  @include font-face("OpenSans", "../fonts/OpenSans/opensansItalic", 400, italic);
 @mixin font-face($font-family, $file-path, $weight: 400, $style: normal) {
   @font-face {

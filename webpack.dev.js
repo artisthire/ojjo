@@ -1,3 +1,4 @@
+const chokidar = require('chokidar');
 const webpack = require('webpack');
 const {merge} = require('webpack-merge');
 const baseWebpackConfig = require('./webpack.common.js');
@@ -12,9 +13,16 @@ module.exports = (env, argv) => {
     devtool: 'inline-source-map',
 
     devServer: {
+      before(app, server) {
+        chokidar.watch([
+          `${config.externals.paths.src}/pug/**/*.pug`
+        ]).on('all', function () {
+          server.sockWrite(server.sockets, 'content-changed');
+        });
+      },
       port: 3000,
-      hot: true,
       contentBase: config.externals.paths.dist,
+      hot: true
     },
 
     plugins: [

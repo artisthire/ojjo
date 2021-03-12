@@ -8,10 +8,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // для копирования отдельных файлов, которые не обрабатываются loader-ами
 const CopyPlugin = require('copy-webpack-plugin');
-// для минимизации картинок
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const imageminMozjpeg = require('imagemin-mozjpeg');
-const imageminWebp = require('imagemin-webp');
 
 // содержит все пути нашей сборки
 const PATHS = {
@@ -80,12 +76,7 @@ module.exports = (_, argv) => (
                       tag: 'link', // не обрабатывать ресурсы в фавиконках и шрифтах
                       attribute: 'href',
                       type: 'src',
-                      filter: (__, ___, attributes) => {
-                        if (!/stylesheet/i.test(attributes.rel)) {
-                          return false;
-                        }
-                        return true;
-                      },
+                      filter: () => false,
                     },
                     {
                       tag: 'meta', // не обрабатывать ресурсы в метатегах
@@ -169,7 +160,43 @@ module.exports = (_, argv) => (
           type: 'asset/resource',
           generator: {
             filename: `${PATHS.assets}img/[name][ext]`
-          }
+          },
+          use: [
+            {
+              loader: 'image-webpack-loader',
+              options: {
+                disable: argv.mode === 'development',
+                mozjpeg: {
+                  progressive: true,
+                },
+                // optipng.enabled: false will disable optipng
+                optipng: {
+                  enabled: false,
+                },
+                pngquant: {
+                  quality: [0.65, 0.90],
+                  speed: 4
+                },
+                gifsicle: {
+                  optimizationLevel: 2,
+                  interlaced: true,
+                },
+                svgo: {
+                  plugins: [
+                    {removeUselessDefs: false}, // не удаляет symbol-теги в svg-спрайтах
+                    {removeHiddenElems: {displayNone: false}}, // не удаляет весь код с display: none в svg-спрайтах
+                    {cleanupIDs: {remove: false}}, // не удаляет symbol-теги в svg-спрайтах с неиспользуемым ID
+                    {removeViewBox: false}, // не удалят viewbox
+                    {removeDimensions: true} // заменяет width/height на viewBox
+                  ]
+                },
+                // the webp option will enable WEBP
+                webp: {
+                  quality: 75
+                }
+              }
+            },
+          ],
         },
 
         {
@@ -193,34 +220,6 @@ module.exports = (_, argv) => (
       new CopyPlugin({
         patterns: [
           {from: `${PATHS.src}/assets/favicons`, to: `${PATHS.assets}/favicons`},
-        ]
-      }),
-      // минимизация картинок
-      new ImageminPlugin({
-        test: /\.(gif|png|jpe?g|webp|svg)$/i,
-        disable: argv.mode === 'development',
-        gifsicle: {
-          optimizationLevel: 2,
-          interlaced: true
-        },
-        optipng: null, // отключаем, вместо него будет использоваться pngquant
-        pngquant: {
-          quality: '65-80',
-          speed: 4
-        },
-        jpegtran: null, // отключаем, вместо него будет использоваться Mozjpeg
-        svgo: {
-          plugins: [
-            {removeUselessDefs: false}, // не удаляет symbol-теги в svg-спрайтах
-            {removeHiddenElems: {displayNone: false}}, // не удаляет весь код с display: none в svg-спрайтах
-            {cleanupIDs: {remove: false}}, // не удаляет symbol-теги в svg-спрайтах с неиспользуемым ID
-            {removeViewBox: false}, // не удалят viewbox
-            {removeDimensions: true} // заменяет width/height на viewBox
-          ]
-        },
-        plugins: [
-          imageminWebp({quality: 75}), // дополнительная оптимизация Webp
-          imageminMozjpeg({progressive: true})
         ]
       }),
       // берет файл из шаблона template и инжектит в него зависимости JS и CSS

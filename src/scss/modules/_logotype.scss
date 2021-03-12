@@ -1,0 +1,11 @@
+.logotype {
+  display: block;
+  padding: 1rem;
+  overflow: hidden;
+
+  & > img {
+    display: block;
+    width: 21.6rem;
+    height: 5.2rem;
+  }
+}

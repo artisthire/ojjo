@@ -1,0 +1,32 @@
+.copyright {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  padding-top: 20px;
+  border-top: 1px solid $grey;
+  list-style: none;
+  color: $grey;
+}
+
+.copyright__link {
+  font-size: 1.4rem;
+  line-height: (21/14);
+  color: inherit;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+
+  &--underline {
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}

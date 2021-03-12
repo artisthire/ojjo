@@ -1,0 +1,36 @@
+.button {
+  display: inline-block;
+  margin: 0;
+  padding: 1.5rem 3.5rem;
+  border: 1px solid $white;
+  font-family: inherit;
+  font-size: 1.8rem;
+  line-height: (21/18);
+  color: $white;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: $grey;
+  cursor: pointer;
+  outline: none;
+  transition: box-shadow 0.2s linear, opacity 0.2s linear;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 2px 7px 0 $white;
+    opacity: 0.9;
+  }
+
+  &--invert {
+    color: $grey;
+    background-color: $white;
+  }
+
+  &--dark-shadow {
+    border-color: $grey;
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 2px 7px 0 $grey;
+    }
+  }
+}
