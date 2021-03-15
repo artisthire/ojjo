@@ -1,7 +1,15 @@
 .product-category {
-  padding: 100px 0 120px;
+  padding: 60px 0 70px;
+
+  @media (min-width: $screen-xlg - 1) {
+    padding: 100px 0 120px;
+  }
 }
 
 .product-category__head {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
+
+  @media (min-width: $screen-xlg - 1) {
+    margin-bottom: 60px;
+  }
 }

@@ -1,12 +1,20 @@
 .subscribe {
-  padding: 100px 0 135px;
+  padding: 60px 0 70px;
+
+  @media (min-width: $screen-xlg - 1) {
+    padding: 100px 0 135px;
+  }
 }
 
 .subscribe__content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 60px;
+  margin-top: 40px;
+
+  @media (min-width: $screen-xlg - 1) {
+    margin-top: 60px;
+  }
 }
 
 .subscribe__advantage {

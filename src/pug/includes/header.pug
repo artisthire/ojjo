@@ -1,9 +1,9 @@
 header.header(style="background-image:url('../../assets/img/header-background.jpg')")
-  .header__head
+  .header__wrapper
     .container
       .header__inner
-        .header__menu
-          nav.main-menu
+        .header__head
+          nav.header__menu.main-menu
             ul.main-menu__list
               for text, link in {agent: "Контрагентам", design: "Дизайнерам", job: "Вакансии"}
                 li
@@ -13,7 +13,7 @@ header.header(style="background-image:url('../../assets/img/header-background.jp
             a.header__link.logotype(href="/")
               img(src= "../../assets/img/logo.svg", alt= "Логотип", width="216", height="52")
 
-          .profile
+          .header__profile.profile
             ul.profile__list
               li
                 button.header__link.profile__btn(type="button")

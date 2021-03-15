@@ -1,5 +1,9 @@
 .footer {
-  padding: 80px 0 20px;
+  padding: 40px 0 20px;
+
+  @media (min-width: $screen-xlg - 1) {
+    padding-top: 80px;
+  }
 }
 
 .footer__content {
@@ -7,8 +11,12 @@
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   margin-left: -5px;
+
+  @media (min-width: $screen-xlg - 1) {
+    margin-bottom: 40px;
+  }
 }
 
 .footer__item {

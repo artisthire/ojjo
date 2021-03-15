@@ -1,10 +1,18 @@
 .salon {
-  padding: 100px 0;
+  padding: 60px 0;
   text-align: center;
+
+  @media (min-width: $screen-xlg - 1) {
+    padding: 100px 0;
+  }
 }
 
 .salon__description {
-  margin: 45px 0 60px;
+  margin: 25px 0 40px;
   font-size: 1.8rem;
   line-height: 1.4;
+
+  @media (min-width: $screen-xlg - 1) {
+    margin: 45px 0 60px;
+  }
 }

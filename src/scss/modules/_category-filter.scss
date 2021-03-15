@@ -3,17 +3,21 @@
   align-items: center;
   flex-wrap: wrap;
   margin: 0;
-  margin-bottom: 37px;
-  margin-left: -23px;
+  margin-bottom: 20px;
+  margin-left: -18px;
   padding: 0;
   list-style: none;
+
+  @media (min-width: $screen-xlg - 1) {
+    margin-bottom: 37px;
+  }
 }
 
 .category-filter__item {
   position: relative;
   margin: 0;
   margin-bottom: 18px;
-  margin-left: 23px;
+  margin-left: 18px;
 
   & .category-filter__btn.active {
     color: $white;
