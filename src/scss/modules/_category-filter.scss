@@ -1,18 +1,21 @@
-.products-form {
+.category-filter {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  margin: 0;
+  margin-bottom: 37px;
   margin-left: -23px;
+  padding: 0;
+  list-style: none;
 }
 
-.products-form__item {
+.category-filter__item {
   position: relative;
   margin: 0;
   margin-bottom: 18px;
   margin-left: 23px;
 
-  & input:checked + .products-form__btn,
-  & .products-form__btn.active {
+  & .category-filter__btn.active {
     color: $white;
     background-color: $grey;
     cursor: default;
@@ -23,7 +26,7 @@
   }
 }
 
-.products-form__btn {
+.category-filter__btn {
   display: block;
   width: 16.5rem;
   height: 5.5rem;

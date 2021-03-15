@@ -7,12 +7,12 @@ block content
   main
     section.page-section
       .container
-        .products
-          .products__head
+        .product-category
+          .product-category__head
             .page-section__subtitle К мероприятиям
             h2.page-section__title Настоящая красота здесь!
 
-          form.products__form.products-form(action="/", method="GET")
+          ul.category-filter
             -
               var categoryData = [
                 {id: "prod-wedding", text: "Свадьба"},
@@ -24,15 +24,14 @@ block content
               ]
               var active = "prod-wedding"
             for data in categoryData
-              p.products-form__item
+              li.category-filter__item
                 if (data.id === active)
-                  input.visually-hidden(id=`${data.id}`, type="radio", name="product-collection", checked)
+                  // для активной кнопки категории добавить класс "active", опционально добавить tabindex = -1
+                  button.category-filter__btn.active(type="button", tabindex="-1")= `${data.text}`
                 else
-                  input.visually-hidden(id=`${data.id}`, type="radio", name="product-collection")
-                label.products-form__btn(for=`${data.id}`)= `${data.text}`
-            button.visually-hidden(type="submit", tabindex=-1) Найти
+                  button.category-filter__btn(type="button")= `${data.text}`
 
-          ul.products-result
+          ul.category-result
             - var productNames = ["кольца", "серьги", "подвески", "запонки", "браслеты", "часы"]
             for name, index in productNames
               li
