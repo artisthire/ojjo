@@ -3,6 +3,7 @@
 // Шрифты для проекта
 $main-font: "Gilroy", sans-serif;
 $main-font-size: 62.5%;
+$main-font-size--sm: 56.25%;
 $font-weight-normal: 400;
 $font-weight-medium: 500;
 $font-weight-bold: 600;
@@ -14,8 +15,8 @@ $grey: #333333;
 $light-grey: #e5e5e5;
 
 // Значения ширин экранов для адаптивности
-$screen-xlg: 1100px;
-$screen-lg: 992px;
-$screen-md: 768px;
-$screen-sm: 480px;
-$screen-xsm: 320px;
+$screen-lg: 1100px;
+$screen-md: 800px;
+$screen-sm: 485px;
+
+$z-index-menu--mobile: 100;

@@ -1,0 +1,54 @@
+.burger {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  padding: 10px 8px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  & > span {
+    width: 21px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: $white;
+    transition: width 0.3s linear, opacity 0.2s linear 0.1s;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 34px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: $white;
+    transform-origin: left center;
+    transition: transform 0.3s linear, width 0.2s linear 0.1s;
+  }
+
+  &::before {
+    top: 10px;
+  }
+
+  &::after {
+    bottom: 10px;
+  }
+
+  .show-menu & > span {
+    width: 0;
+    opacity: 0;
+  }
+
+  .show-menu &::before {
+    width: 42px;
+    transform: rotate(40deg);
+  }
+
+  .show-menu &::after {
+    width: 42px;
+    transform: rotate(-40deg);
+  }
+}

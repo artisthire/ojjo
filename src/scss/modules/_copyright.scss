@@ -1,13 +1,35 @@
 .copyright {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: block;
   margin: 0;
   padding: 0;
   padding-top: 20px;
   border-top: 1px solid $grey;
   list-style: none;
   color: $grey;
+
+  & > li {
+    margin-bottom: 5px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (min-width: $screen-sm - 1) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    & > li {
+      margin-bottom: 0;
+      margin-right: 5px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
 }
 
 .copyright__link {

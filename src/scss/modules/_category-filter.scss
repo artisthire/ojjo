@@ -1,6 +1,7 @@
 .category-filter {
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   margin: 0;
   margin-bottom: 20px;
@@ -8,7 +9,11 @@
   padding: 0;
   list-style: none;
 
-  @media (min-width: $screen-xlg - 1) {
+  @media (min-width: $screen-md - 1) {
+    justify-content: flex-start;
+  }
+
+  @media (min-width: $screen-lg - 1) {
     margin-bottom: 37px;
   }
 }

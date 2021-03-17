@@ -1,22 +1,40 @@
 .brands {
+  display: none;
   padding: 30px 0;
+
+  @media (min-width: $screen-sm - 1) {
+    display: block;
+  }
 }
 
 .brands__list {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   margin: 0;
-  margin-left: -30px;
   padding: 0;
   list-style: none;
 
-  & li {
-    position: relative;
-    margin-left: 30px;
+  @media (min-width: $screen-md - 1) {
+    flex-wrap: nowrap;
+  }
+}
+
+.brands__item {
+  position: relative;
+  margin-bottom: 15px;
+  margin-left: 30px;
+
+  @media (min-width: $screen-md - 1) {
+    margin-bottom: 0;
+
+    &:first-child::before {
+      display: none;
+    }
   }
 
-  & li + li::before {
+  &::before {
     content: "";
     position: absolute;
     top: 0;
@@ -24,18 +42,6 @@
     width: 1px;
     height: 100%;
     background-color: $white;
-  }
-}
-
-.brands__link {
-  display: block;
-  outline: none;
-  transition: box-shadow 0.2s linear, opacity 0.2s linear;
-
-  &:hover,
-  &:focus {
-    box-shadow: 0 0 3px 0 $white;
-    opacity: 0.7;
   }
 
   & > img {

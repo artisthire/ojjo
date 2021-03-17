@@ -1,14 +1,30 @@
 .main-menu__list {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  display: block;
   margin: 0;
   padding: 0;
   list-style: none;
+
+  @media (min-width: $screen-sm - 1) {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: $screen-md - 1) {
+    justify-content: flex-end;
+  }
+
+  @media (min-width: $screen-lg - 1) {
+    justify-content: flex-start;
+  }
 }
 
 .main-menu__link {
   display: inline-block;
-  margin: 0 0.5rem;
+  margin-bottom: 5px;
   padding: 1rem;
+
+  @media (min-width: $screen-sm - 1) {
+    margin: 0 0.5rem;
+  }
 }

@@ -1,18 +1,37 @@
 .profile {
-  display: flex;
+  @media (min-width: $screen-sm - 1) {
+    display: flex;
+  }
 }
 
 .profile__list {
-  display: flex;
+  display: block;
   margin: 0;
   padding: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $white;
   list-style: none;
+
+  @media (min-width: $screen-sm - 1) {
+    display: flex;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
 
   & > li {
     margin-right: 3rem;
 
     &:last-child {
       margin-right: 0;
+    }
+  }
+
+  &--account {
+    display: flex;
+    padding-top: 10px;
+
+    @media (min-width: $screen-sm - 1) {
+      padding-top: 0;
     }
   }
 
@@ -28,14 +47,36 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
-  transition: transform 0.2s linear;
+
+  @media (min-width: $screen-sm - 1) {
+    max-width: 15rem;
+    margin: 0 5px;
+    padding: 0.5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &--search {
+    display: none;
+
+    @media (min-width: $screen-sm - 1) {
+      display: inline-block;
+    }
+  }
 
   & > svg,
   & > img {
     display: inline-block;
-    max-width: 2.4rem;
-    max-height: 2.4rem;
+    width: 2.8rem;
+    height: 2.8rem;
     vertical-align: middle;
+    transition: transform 0.2s linear;
+
+    @media (min-width: $screen-sm - 1) {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
   }
 
   & > svg + span,
@@ -49,12 +90,5 @@
     & > img {
       transform: scale(1.1);
     }
-  }
-
-  &--nowrap {
-    max-width: 15rem;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
   }
 }

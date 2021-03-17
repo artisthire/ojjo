@@ -9,6 +9,24 @@
   & > li {
     margin-left: 10px;
   }
+
+  & svg {
+    fill: $grey;
+    transition: transform 0.2s linear;
+  }
+
+  &--header {
+    margin-left: -10px;
+  }
+
+  &--header svg {
+    fill: $white;
+  }
+
+  &--header .social__link {
+    width: 4.4rem;
+    height: 4.4rem;
+  }
 }
 
 .social__link {
@@ -25,10 +43,5 @@
     & > svg {
       transform: scale(1.1);
     }
-  }
-
-  & > svg {
-    fill: $grey;
-    transition: transform 0.2s linear;
   }
 }

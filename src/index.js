@@ -1,8 +1,9 @@
 // SCSS
 import './scss/main.scss';
 // JS
-import './js/app';
+import './js/mobile-menu';
+import './js/category-filter';
 
 document.addEventListener('DOMContentLoaded', function () {
-  console.log('app2');
+  console.log('app');
 });

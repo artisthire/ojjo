@@ -46,14 +46,14 @@ footer.footer
           -
             var socialData = [
               {name: "youtube", size: 26},
-              {name: "vk", size: 24},
+              {name: "vkontakte", size: 24},
               {name: "facebook", size: 26},
               {name: "telegram", size: 24},
               {name: "etsy", size: 16}
             ]
           for data in socialData
             li
-              a.social__link(href=`#${data.name}`, target="_blank", rel="noopener noreferrer")
+              a.social__link(href=`#${data.name}`, target="_blank", title=`${data.name}`, rel="noopener noreferrer")
                 +extSvgSprite(`${data.name}`, `${data.size}`, `${data.size}`)
                 span.visually-hidden #{data.name}
 
