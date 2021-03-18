@@ -1,7 +1,7 @@
 .product-category {
   padding: 60px 0 70px;
 
-  @media (min-width: $screen-lg - 1) {
+  @media (min-width: $screen-lg) {
     padding: 100px 0 120px;
   }
 }
@@ -9,7 +9,7 @@
 .product-category__head {
   margin-bottom: 40px;
 
-  @media (min-width: $screen-lg - 1) {
+  @media (min-width: $screen-lg) {
     margin-bottom: 60px;
   }
 }

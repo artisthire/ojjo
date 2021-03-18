@@ -14,14 +14,14 @@
     margin-right: 20px;
   }
 
-  @media (min-width: $screen-sm - 1) {
+  @media (min-width: $screen-sm) {
     & > li {
       width: 50%;
       height: 270px;
     }
   }
 
-  @media (min-width: $screen-md - 1) {
+  @media (min-width: $screen-md) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 240px;
@@ -34,7 +34,7 @@
     }
   }
 
-  @media (min-width: $screen-lg - 1) {
+  @media (min-width: $screen-lg) {
     display: grid;
     grid-auto-rows: 280px;
     grid-gap: 30px;

@@ -9,11 +9,11 @@
   padding: 0;
   list-style: none;
 
-  @media (min-width: $screen-md - 1) {
+  @media (min-width: $screen-md) {
     justify-content: flex-start;
   }
 
-  @media (min-width: $screen-lg - 1) {
+  @media (min-width: $screen-lg) {
     margin-bottom: 37px;
   }
 }

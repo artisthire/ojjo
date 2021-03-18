@@ -4,17 +4,17 @@
   padding: 0;
   list-style: none;
 
-  @media (min-width: $screen-sm - 1) {
+  @media (min-width: $screen-sm) {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
   }
 
-  @media (min-width: $screen-md - 1) {
+  @media (min-width: $screen-md) {
     justify-content: flex-end;
   }
 
-  @media (min-width: $screen-lg - 1) {
+  @media (min-width: $screen-lg) {
     justify-content: flex-start;
   }
 }
@@ -24,7 +24,7 @@
   margin-bottom: 5px;
   padding: 1rem;
 
-  @media (min-width: $screen-sm - 1) {
+  @media (min-width: $screen-sm) {
     margin: 0 0.5rem;
   }
 }

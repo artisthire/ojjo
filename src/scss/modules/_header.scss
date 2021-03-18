@@ -32,7 +32,7 @@
     background-color: $grey;
     transition: transform 0.4s linear;
 
-    @media (min-width: $screen-sm - 1) {
+    @media (min-width: $screen-sm) {
       display: none;
     }
   }
@@ -45,7 +45,7 @@
 .header__wrapper {
   overflow: hidden;
 
-  @media (min-width: $screen-sm - 1) {
+  @media (min-width: $screen-sm) {
     border-bottom: 1px solid $white;
   }
 }
@@ -54,14 +54,14 @@
   display: block;
   padding-bottom: 110px;
 
-  @media (min-width: $screen-sm - 1) {
+  @media (min-width: $screen-sm) {
     display: flex;
     flex-direction: column;
     min-height: 650px;
     padding-bottom: 50px;
   }
 
-  @media (min-width: $screen-lg - 1) {
+  @media (min-width: $screen-lg) {
     min-height: 830px;
     padding-bottom: 80px;
   }
@@ -96,7 +96,7 @@
     transform: translateX(0);
   }
 
-  @media (min-width: $screen-sm - 1) {
+  @media (min-width: $screen-sm) {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -119,30 +119,30 @@
     }
   }
 
-  @media (min-width: $screen-md - 1) {
+  @media (min-width: $screen-md) {
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
   }
 
-  @media (min-width: $screen-lg - 1) {
+  @media (min-width: $screen-lg) {
     flex-wrap: nowrap;
   }
 }
 
 .header__menu {
-  @media (min-width: $screen-sm - 1) {
+  @media (min-width: $screen-sm) {
     order: 2;
     width: 100%;
     margin-top: 10px;
   }
 
-  @media (min-width: $screen-md - 1) {
+  @media (min-width: $screen-md) {
     order: 3;
     margin-top: 0;
   }
 
-  @media (min-width: $screen-lg - 1) {
+  @media (min-width: $screen-lg) {
     order: initial;
     width: auto;
   }
@@ -154,12 +154,12 @@
 }
 
 .header__profile {
-  @media (min-width: $screen-sm - 1) {
+  @media (min-width: $screen-sm) {
     order: 3;
     margin-top: 10px;
   }
 
-  @media (min-width: $screen-md - 1) {
+  @media (min-width: $screen-md) {
     order: initial;
     margin-top: 0;
   }
@@ -168,7 +168,7 @@
 .header__social {
   padding-top: 10px;
 
-  @media (min-width: $screen-sm - 1) {
+  @media (min-width: $screen-sm) {
     display: none;
   }
 }
@@ -193,7 +193,7 @@
   align-items: center;
   margin-top: 250px;
 
-  @media (min-width: $screen-sm - 1) {
+  @media (min-width: $screen-sm) {
     margin-top: auto;
   }
 }

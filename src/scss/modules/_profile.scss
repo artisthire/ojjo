@@ -1,5 +1,5 @@
 .profile {
-  @media (min-width: $screen-sm - 1) {
+  @media (min-width: $screen-sm) {
     display: flex;
   }
 }
@@ -12,7 +12,7 @@
   border-bottom: 1px solid $white;
   list-style: none;
 
-  @media (min-width: $screen-sm - 1) {
+  @media (min-width: $screen-sm) {
     display: flex;
     padding-bottom: 0;
     border-bottom: none;
@@ -30,7 +30,7 @@
     display: flex;
     padding-top: 10px;
 
-    @media (min-width: $screen-sm - 1) {
+    @media (min-width: $screen-sm) {
       padding-top: 0;
     }
   }
@@ -48,7 +48,7 @@
   background-color: transparent;
   cursor: pointer;
 
-  @media (min-width: $screen-sm - 1) {
+  @media (min-width: $screen-sm) {
     max-width: 15rem;
     margin: 0 5px;
     padding: 0.5rem;
@@ -60,7 +60,7 @@
   &--search {
     display: none;
 
-    @media (min-width: $screen-sm - 1) {
+    @media (min-width: $screen-sm) {
       display: inline-block;
     }
   }
@@ -73,7 +73,7 @@
     vertical-align: middle;
     transition: transform 0.2s linear;
 
-    @media (min-width: $screen-sm - 1) {
+    @media (min-width: $screen-sm) {
       width: 2.4rem;
       height: 2.4rem;
     }

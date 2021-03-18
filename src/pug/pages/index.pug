@@ -27,9 +27,10 @@ block content
               p.category-filter__item
                 if (data.id === active)
                   // для активной кнопки категории добавить класс "active", опционально добавить tabindex = -1
-                  button.category-filter__btn.active.js-category-filter-btn(type="button", tabindex="-1")= `${data.text}`
+                  button.category-filter__btn.active.js-category-filter-btn(type="button", data-product-id=`${data.id}`, tabindex="-1")= `${data.text}`
                 else
-                  button.category-filter__btn.js-category-filter-btn(type="button")= `${data.text}`
+                  button.category-filter__btn.js-category-filter-btn(type="button", data-product-id=`${data.id}`)= `${data.text}`
+            input.js-category-filter-input(type="hidden", name="product-category", value=`${active}`)
             button.visually-hidden(type="submit", tabindex="-1") Фильтровать
 
           ul.category-result
