@@ -1,0 +1,13 @@
+extends ../layout/modal.pug
+
+block vars
+  - var modalId = 'modal-search'
+  - var modalTitle = 'Поиск по сайту'
+
+block content
+  form(action="/", method="get", name="form-search")
+    p.modal__input-wrap
+      label.modal__label(for="search-phrase") Текст запроса
+      input.modal__input#search-phrase(type="search", name="search-phrase", required)
+
+    button.button.modal__submit(type="submit") Найти

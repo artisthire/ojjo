@@ -1,8 +1,8 @@
-header.header
+header.header.js-header-container
   .header__wrapper
     .container
       .header__inner
-        .header__head.header__head--mobile.js-header-head
+        .header__head.header__head--mobile.js-header-content
           // клон логотипа для мобильной версии сайта
           .header__logo
             a.header__link.logotype(href="/")
@@ -11,7 +11,7 @@ header.header
           button.header__link.burger#burger-btn(type="button", aria-label="Открыть меню", title="Открыть меню")
             span
 
-        .header__head.header__head--desctop.js-header-head
+        .header__head.header__head--desctop.js-header-content
           nav.header__menu.main-menu
             ul.main-menu__list
               for text, link in {agent: "Контрагентам", design: "Дизайнерам", job: "Вакансии"}
@@ -25,12 +25,12 @@ header.header
           .header__profile.profile
             ul.profile__list
               li
-                button.header__link.profile__btn.profile__btn--search(type="button")
+                button.header__link.profile__btn.profile__btn--search(type="button", data-modal-id="modal-search")
                   +extSvgSprite("search", 24, 24)
                   span Поиск
               li
                 // после login-а клиета показать иконку svg и вместо "Вход/Регистрация" имя клиента
-                a.header__link.profile__btn(href="#account")
+                a.header__link.profile__btn(href="#account", data-modal-id="modal-singin")
                   // <svg width="24" height="24" aria-hidden="true"> <use xlink:href="/assets/img/svg-sprite.svg#account"></use></svg>
                   span Вход/Регистрация
             ul.profile__list.profile__list--account

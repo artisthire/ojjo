@@ -1,0 +1,11 @@
+block vars
+
+// для показа модали убрать "display:none"
+.modal(id=`${modalId}`, style="display:none")
+  .modal__content.js-modal-content
+    .modal__title= `${modalTitle}`
+
+    block content
+
+    button.modal__close-btn.js-modal-close-btn(type="button")
+      span.visually-hidden Закрыть окно

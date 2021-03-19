@@ -1,0 +1,13 @@
+extends ../layout/modal.pug
+
+block vars
+  - var modalId = 'modal-remember'
+  - var modalTitle = 'Получить временный пароль'
+
+block content
+  form(action="/", method="post", name="form-remember-password")
+    p.modal__input-wrap
+      label.modal__label(for="remember-login") Логин
+      input.modal__input#remember-login(type="text", name="remember-login", required)
+
+    button.button.modal__submit(type="submit") Отправить

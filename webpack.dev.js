@@ -13,7 +13,7 @@ module.exports = (env, argv) => {
     devtool: 'inline-source-map',
 
     devServer: {
-      before(app, server) {
+      before(_, server) {
         chokidar.watch([
           `${config.externals.paths.src}/pug/**/*.pug`
         ]).on('all', function () {

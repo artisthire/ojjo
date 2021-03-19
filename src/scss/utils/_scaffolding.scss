@@ -22,12 +22,8 @@ body {
   color: $grey;
   background-color: $light-grey;
 
-  &.show-menu {
+  &.hide-scroll {
     overflow: hidden;
-
-    @media (min-width: $screen-sm) {
-      overflow: auto;
-    }
   }
 }
 
