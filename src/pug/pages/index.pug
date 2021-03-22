@@ -5,6 +5,18 @@ block title
 
 block content
   main
+    section.promo
+      img.promo__img(src="../../assets/img/header-background.jpg", alt="Промо изображение", width="1920", height="950")
+      .promo__head
+        .container
+          h1.promo__slogan Дорого, дорого, богато!
+          a.button(href="#catalog") Каталог изделий
+      .brands
+        .container
+          ul.brands__list
+            - for (var x = 0; x < 6; x++)
+              li.brands__item
+                img(src="../../assets/img/brand-logo.png", alt="OJJO", width="160", height="60")
     section.page-section
       .container
         .product-category
