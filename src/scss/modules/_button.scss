@@ -24,12 +24,31 @@
     background-color: rgba($grey, 0.5);
   }
 
-  &.pending::after {
-    display: block;
+  &--invert {
+    color: $grey;
+    background-color: $white;
+
+    &:disabled {
+      background-color: rgba($white, 0.5);
+    }
   }
 
+  &--small {
+    padding: 1rem 2rem;
+  }
+
+  &--dark-shadow {
+    border-color: $grey;
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 2px 7px 0 $grey;
+    }
+  }
+}
+
+.pending {
   &::after {
-    display: none;
     content: "";
     position: absolute;
     top: 0;
@@ -50,28 +69,6 @@
       to {
         transform: translateX(-50%) rotate(360deg);
       }
-    }
-  }
-
-  &--invert {
-    color: $grey;
-    background-color: $white;
-
-    &:disabled {
-      background-color: rgba($white, 0.5);
-    }
-  }
-
-  &--small {
-    padding: 1rem 2rem;
-  }
-
-  &--dark-shadow {
-    border-color: $grey;
-
-    &:hover,
-    &:focus {
-      box-shadow: 0 2px 7px 0 $grey;
     }
   }
 }

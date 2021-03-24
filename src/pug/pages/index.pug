@@ -46,7 +46,7 @@ block content
                 else
                   button.category-filter__btn.js-category-filter-btn(type="button", data-product-id=`${data.id}`)= `${data.text}`
             input.js-category-filter-input(type="hidden", name="product-category", value=`${active}`)
-            button.visually-hidden(type="submit", tabindex="-1") Фильтровать
+            button.visually-hidden.js-category-submit-btn(type="submit", tabindex="-1") Фильтровать
 
           ul.category-result
             - var productNames = ["кольца", "серьги", "подвески", "запонки", "браслеты", "часы"]

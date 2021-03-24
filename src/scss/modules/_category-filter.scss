@@ -5,7 +5,7 @@
   flex-wrap: wrap;
   margin: 0;
   margin-bottom: 20px;
-  margin-left: -18px;
+  margin-left: -20px;
   padding: 0;
   list-style: none;
 
@@ -21,18 +21,8 @@
 .category-filter__item {
   position: relative;
   margin: 0;
-  margin-bottom: 18px;
-  margin-left: 18px;
-
-  & .category-filter__btn.active {
-    color: $white;
-    background-color: $grey;
-    cursor: default;
-
-    &::after {
-      display: none;
-    }
-  }
+  margin-bottom: 20px;
+  margin-left: 20px;
 }
 
 .category-filter__btn {
@@ -58,7 +48,7 @@
     background-color: darken(#f9f9f9, 5%);
   }
 
-  &::after {
+  &::before {
     content: "";
     position: absolute;
     top: 6px;
@@ -68,5 +58,15 @@
     height: 100%;
     border: 1px solid #D6D6D6;
     background-color: inherit;
+  }
+
+  &.active {
+    color: $white;
+    background-color: $grey;
+    cursor: default;
+
+    &::before {
+      display: none;
+    }
   }
 }

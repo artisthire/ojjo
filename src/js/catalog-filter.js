@@ -1,3 +1,5 @@
+import {swapPendingStatusBtn} from './utils';
+
 const catalogFilterForm = document.querySelector('.js-catalog-filter-form');
 const currentPageInput = document.querySelector('.js-catalog-current-page');
 const nexPageBtn = document.querySelector('.js-catalog-more-btn');
@@ -21,12 +23,11 @@ if (catalogFilterForm && nexPageBtn && currentPageInput) {
     evt.preventDefault();
 
     currentPageInput.value = parseInt(currentPageInput.value, 10) + 1;
-    nexPageBtn.classList.add('pending');
-    nexPageBtn.setAttribute('disabled', 'true');
+    swapPendingStatusBtn(nexPageBtn, {isPending: true});
+
     getData(catalogFilterForm)
       .then(() => {
-        nexPageBtn.classList.remove('pending');
-        nexPageBtn.removeAttribute('disabled');
+        swapPendingStatusBtn(nexPageBtn, {isPending: false});
       });
   });
 }
