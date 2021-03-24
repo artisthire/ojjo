@@ -1,0 +1,142 @@
+.advantage {
+  margin-bottom: 70px;
+  font-size: 1.6rem;
+  line-height: (24/16);
+
+  @media (min-width: $screen-md) {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 950px;
+  }
+
+  @media (min-width: $screen-lg) {
+    margin: 0 auto 150px;
+  }
+}
+
+.advantage__text {
+  position: relative;
+  height: 240px;
+  margin-bottom: 20px;
+  padding-bottom: 35px;
+  overflow: hidden;
+  transition: height 0.3s linear;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    background: linear-gradient(180deg, rgba(249, 249, 249, 0) 0%, #F9F9F9 82.29%);
+    transition: opacity 0.1s linear;
+  }
+
+  &.show {
+    height: auto;
+
+    &::after {
+      opacity: 0;
+      transition: opacity 0.1s linear 0.2s;
+    }
+  }
+
+  @media (min-width: $screen-md) {
+    max-width: 540px;
+    margin-bottom: 0;
+    margin-right: 15px;
+  }
+}
+
+.advantage__descr {
+  margin: 0;
+}
+
+.advantage__btn-more {
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  z-index: 2;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: 1.8rem;
+  font-weight: $font-weight-normal;
+  line-height: (22/18);
+  color: inherit;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 2.2rem;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px dashed $grey;
+  }
+
+  &:hover,
+  &:focus {
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.advantage__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @media (min-width: $screen-sm) {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-left: -5px;
+  }
+
+  @media (min-width: $screen-md) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3rem;
+    flex-shrink: 0;
+    width: 275px;
+    margin-left: 0;
+  }
+}
+
+.advantage__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  text-align: center;
+
+  & > svg,
+  & > img {
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (min-width: $screen-sm) {
+    margin-left: 5px;
+  }
+
+  @media (min-width: $screen-md) {
+    margin-left: 0;
+  }
+}
+
+.advantage__item-text {
+  width: min-content;
+}

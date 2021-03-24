@@ -5,3 +5,5 @@ import './js/mobile-menu';
 import './js/category-filter';
 import './js/modal';
 import './js/app';
+import './js/advantage-swap';
+import './js/catalog-filter';

@@ -6,5 +6,5 @@ mixin webpImg(name, alt= "", width, height, sourcePatch= "../../assets/img/")
 
 //- Put external SVG-sprite
 mixin extSvgSprite(symbolId, width, height, fileName= "svg-sprite", sourcePatch= "../../assets/img/")
-  svg(style!= attributes.style, class!= attributes.class, width = width, height = height, aria-hidden= "true")
+  svg(style!= attributes.style, class!= attributes.class, width= width, height= height, aria-hidden= "true")
     use(xlink:href=`${sourcePatch}${fileName}.svg#${symbolId}`)

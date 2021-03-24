@@ -1,5 +1,8 @@
 extends ../layout/default.pug
 
+block vars
+  - var headerClass = ''
+
 block title
   title Главная
 
@@ -10,7 +13,7 @@ block content
       .promo__head
         .container
           h1.promo__slogan Дорого, дорого, богато!
-          a.button(href="#catalog") Каталог изделий
+          a.button(href="catalog.html") Каталог изделий
       .brands
         .container
           ul.brands__list
@@ -98,16 +101,4 @@ block content
                 a.gallery__link(href=`#blog-link-${i + 1}`, target="_blank", rel="noopener noreferrer")
                   img.gallery__preview(src=`../../assets/img/gallery-video-${i + 1}.jpg`, alt="Превью ссылки", width="277", height="300")
 
-    section.page-section.page-section--light.page-section--bgn-twirl.subscribe
-      .container
-        .page-section__container
-          .page-section__subtitle Полезные советы и персональный предложения
-          h2.page-section__title Эксклюзивная рассылка
-          .subscribe__content
-            ul.subscribe__advantage
-              - var advantageText = ["Личный менеджер", "Доставка и оформление", "Индивидуальный дизайн"]
-              for text in advantageText
-                li #{text}
-            form.subscribe__form(action="/", method="POST", name="form-subscribe")
-              input.subscribe__form-input(type="email", name="subscribe-email", placeholder="Ваш e-mail", required)
-              button.button.button--dark-shadow.subscribe__form-btn(type="submit") Отправить
+    include ../includes/subscribe.pug

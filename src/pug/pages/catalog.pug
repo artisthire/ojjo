@@ -1,0 +1,74 @@
+extends ../layout/default.pug
+
+block vars
+  - var headerClass = 'header--inner-page'
+
+block title
+  title Каталог
+
+block content
+
+  main
+    .container
+      section.catalog-filter
+        form.catalog-filter__form.js-catalog-filter-form(action="/", method="POST", name="catalog-filter")
+          -
+            var catalogFilterData = [
+              {name: "brand", title: "Бренд", options: ["Calvin Klein", "Dolce & Gabanna", "Giorgio Armani"]},
+              {name: "price", title: "Цена", options: ["Дешевые в начале", "Дорогие в начале"]},
+              {name: "whom", title: "Для кого", options: ["Мужчины", "Женщины", "Дети"]},
+              {name: "collection", title: "Колекция", options: ["Бестселлеры", "Шоу-писы"]},
+              {name: "season", title: "Сезон", options: ["Весна", "Лето", "Зима", "Осень"]},
+              {name: "event", title: "Событие", options: ["День рожения", "Корпоратив", "Свадьба"]},
+            ]
+          for data in catalogFilterData
+            p.catalog-filter__item
+              select.catalog-filter__select(size="1", name=`${data.name}[]`)
+                option(value=`${data.name}-0`, selected)= `${data.title}`
+                for optionItem, index in data.options
+                  option(value=`${data.name}-${index + 1}`)= `${optionItem}`
+
+          input.js-catalog-current-page(type="hidden", name="catalog-page", value="0")
+
+          button.visually-hidden(type="submit", tabindex="-1") Фильтровать
+
+      section.catalog-result
+        ul.catalog-result__list
+          for _, i in Array(6)
+            li.catalog-result__item
+              a.catalog-result__link(href=`#produc-detail-${i + 1}`, title="Подробнее")
+                img.catalog-result__picture(src="../../assets/img/product.jpg", alt="Изображение продукта", width="280", height="220")
+              .catalog-result__title Подвеска
+              .catalog-result__brand Dolce & Gabanna
+              button.button.button--small(type="button", title="Купить") 175 000 ₽
+
+        button.button.js-catalog-more-btn(type="button") Покажите еще
+
+      section.advantage
+        .advantage__text.js-advantage-text
+          p.advantage__descr
+            | Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum libero hic eius vitae eveniet placeat nam cum aliquam, ab in rem ea officia quam?
+            | Delectus dignissimos eligendi placeat dicta quae! Iure magnam itaque quo accusamus? Ex, animi. Odit et tempora accusamus, dolor dolores ea nisi!
+            | Reprehenderit, amet placeat quisquam dolores dolore recusandae eum ipsam quo porro, expedita tempora eius harum provident commodi, maiores impedit ex.
+            | Velit quisquam dolores ipsam repudiandae asperiores animi dicta deleniti sit, delectus laboriosam cupiditate libero assumenda doloribus voluptate alias deserunt et, vero corporis.
+            | Non deserunt rerum repudiandae eos possimus corporis perspiciatis totam quibusdam repellat quaerat quia, iste, reprehenderit adipisci aliquam illo dolorem perferendis expedita autem accusamus reiciendis eum in eveniet optio error?
+            | Qui voluptas reprehenderit nam! Cupiditate, suscipit doloribus. Sit dolore, necessitatibus temporibus porro quos unde facere, doloremque qui, et perferendis alias corrupti doloribus.
+          button.advantage__btn-more(type="button", data-swap-block="js-advantage-text", aria-hidden="true") читать полностью
+
+        ul.advantage__list
+          -
+            var advantageData = [
+              {icon: "delivery", text: "Бесплатная доставка"},
+              {icon: "list", text: "Индивидуальный дизайн"},
+              {icon: "ribbon", text: "Бесплатная примерка"},
+              {icon: "jewelry", text: "Личный подход"},
+            ]
+          for data in advantageData
+            li.advantage__item
+              +extSvgSprite(`advantage-${data.icon}`, 70, 70)
+              span.advantage__item-text= `${data.text}`
+
+
+
+    include ../includes/subscribe.pug
+

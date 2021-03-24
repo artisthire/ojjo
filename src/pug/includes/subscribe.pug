@@ -1,0 +1,13 @@
+section.page-section.page-section--light.page-section--bgn-twirl.subscribe
+  .container
+    .page-section__container
+      .page-section__subtitle Полезные советы и персональный предложения
+      h2.page-section__title Эксклюзивная рассылка
+      .subscribe__content
+        ul.subscribe__advantage
+          - var advantageText = ["Личный менеджер", "Доставка и оформление", "Индивидуальный дизайн"]
+          for text in advantageText
+            li #{text}
+        form.subscribe__form(action="/", method="POST", name="form-subscribe")
+          input.subscribe__form-input(type="email", name="subscribe-email", placeholder="Ваш e-mail", required)
+          button.button.button--dark-shadow.subscribe__form-btn(type="submit") Отправить
