@@ -7,3 +7,4 @@ import './js/modal';
 import './js/app';
 import './js/advantage-swap';
 import './js/catalog-filter';
+import './js/subscribe-form';

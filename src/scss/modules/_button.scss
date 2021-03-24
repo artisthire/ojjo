@@ -25,6 +25,11 @@
   }
 
   &.pending::after {
+    display: block;
+  }
+
+  &::after {
+    display: none;
     content: "";
     position: absolute;
     top: 0;
@@ -35,7 +40,6 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-
     animation: 2s linear infinite rotate;
 
     @keyframes rotate {

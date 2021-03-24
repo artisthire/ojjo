@@ -43,6 +43,7 @@
   align-items: flex-start;
   margin: 55px 15px 0;
   padding: 20px 22px;
+  color: $grey;
   outline: 1px solid $white;
   outline-offset: 15px;
   background-color: $white;
@@ -50,9 +51,11 @@
   @media (min-width: $screen-sm) {
     flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   @media (min-width: $screen-md) {
+    max-width: 410px;
     margin-top: 0;
   }
 }
@@ -98,4 +101,11 @@
   @media (min-width: $screen-md) {
     margin-left: 0;
   }
+}
+
+.subscribe__send-message {
+  display: none;
+  width: 100%;
+  margin-top: 15px;
+  font-size: 1.4rem;
 }
