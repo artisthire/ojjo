@@ -2,10 +2,10 @@
 
 html {
   box-sizing: border-box;
-  font-size: $main-font-size--sm;
+  font-size: 56.25%;
 
-  @media (min-width: $screen-sm) {
-    font-size: $main-font-size;
+  @media (min-width: $screen-md) {
+    font-size: 62.5%;
   }
 }
 
@@ -19,6 +19,7 @@ body {
   position: relative;
   line-height: 1.4;
   font-family: $main-font;
+  font-size: 1.4rem;
   color: $grey;
   background-color: $light-grey;
 

@@ -68,9 +68,6 @@ footer.footer
         var underline = "figma"
       for data in copyrightData
         li
-          if (data.link === underline)
-            a.copyright__link.copyright__link--underline(href=`#${data.link}`)= `${data.text}`
-          else
-            a.copyright__link(href=`#${data.link}`)= `${data.text}`
+          a.copyright__link(class={'copyright__link--underline': data.link === underline}, href=`#${data.link}`)= `${data.text}`
 
 

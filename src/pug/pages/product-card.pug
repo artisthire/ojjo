@@ -1,0 +1,68 @@
+extends ../layout/default.pug
+
+block vars
+  - var headerClass = 'header--inner-page'
+  - var isShowAdvantageTitle = true
+  - var productInCatalogCount = 3
+
+block title
+  title Карточка товара
+
+block content
+  main.container
+    .page-section__breadcrumbs
+      ul.breadcrumbs
+        li.breadcrumbs__item
+          a(href="/") Главная
+        li.breadcrumbs__item
+          a(href="catalog.html") Каталог
+        li.breadcrumbs__item
+          a(href="#") Категория
+        li.breadcrumbs__item Подвеска Dolce & Gabarra
+
+    section.product-detail
+      .tumbnail-slider
+        img.tumbnail-slider__picture(src="../../assets/img/product.jpg", alt="Картинка продукта", width="540", height="430")
+        ul.tumbnail-slider__list
+          for _ in Array(3)
+            li
+              a.tumbnail-slider__link(href="#")
+                img(src="../../assets/img/product.jpg", alt="Миниатюра продукта", width="160", height="120")
+
+      .product-description
+        h2.product-description__title Подвеска Dolce & Gabbara
+
+        table.product-description__detail(summary="Характеристики товара")
+          tbody.product-description__table
+            tr.product-description__row
+              th.product-description__cell(scope="row") Категория:
+              td.product-description__cell Подвески
+            tr.product-description__row
+              th.product-description__cell(scope="row") Бренд:
+              td.product-description__cell Dolce & Gabbara
+
+        p.product-description__text.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate.
+          Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus.
+          Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis.
+          Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus.
+          Et nulla sit convallis orci est, fames sit luctus lacus.
+
+        .product-description__price 200 000 ₽
+
+        .product-description__control-btns
+          button.button.button--small.button--dark-shadow.product-description__btn(type="button") Купить
+          button.button.button--invert.button--small.button--dark-shadow.product-description__btn(type="button") добавить в корзину
+
+    include ../includes/advantage.pug
+
+    section.product-additional
+      .product-additional__slogan Мы подготовили для вас кое-что еще
+      h2.product-additional__title Товары, которые могут Вам понравиться
+
+      include ../includes/product-list.pug
+
+    include ../includes/subscribe.pug
+
+
+

@@ -1,0 +1,31 @@
+.breadcrumbs {
+  display: inline-block;
+  margin: 0;
+  margin-left: -1.5rem;
+  padding: 0;
+  list-style: none;
+  font-size: 1.4rem;
+  line-height: (21/14);
+}
+
+.breadcrumbs__item {
+  display: inline;
+  margin-left: 1.5rem;
+  white-space: nowrap;
+
+  & + &::before {
+    content: "/";
+    display: inline;
+    margin-right: 1.5rem;
+  }
+
+  & > a {
+    color: inherit;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}

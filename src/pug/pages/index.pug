@@ -61,11 +61,11 @@ block content
         .page-section__container
           .page-section__subtitle Не знаете, что выбрать?
           h2.page-section__title Посетите наши салоны в Москве
-          p.salon__description
-            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut duis tortor vitae pellentesque egestas quam pulvinar.
-            | Pellentesque porttitor velit sit pellentesque. Suspendisse donec pretium id dignissim.
-            | Dignissim ultrices eget orci viverra. Egestas quis et ut ultrices imperdiet lectus nulla tempus.
-            | Pharetra lorem sem purus nisi libero viverra ipsum.
+          p.salon__description.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut duis tortor vitae pellentesque egestas quam pulvinar.
+            Pellentesque porttitor velit sit pellentesque. Suspendisse donec pretium id dignissim.
+            Dignissim ultrices eget orci viverra. Egestas quis et ut ultrices imperdiet lectus nulla tempus.
+            Pharetra lorem sem purus nisi libero viverra ipsum.
           a.button.button--invert(href="#salons") наши салоны
 
     section.page-section.blog
@@ -92,13 +92,8 @@ block content
         h2.page-section__title Мы в социальных сетях
         ul.gallery__list
           for _, i in Array(6)
-            if (i === 0 || i === 5)
-              li.gallery__item.gallery__item--video
-                a.gallery__link(href=`#blog-link-${i + 1}`, target="_blank", rel="noopener noreferrer")
-                  img.gallery__preview(src=`../../assets/img/gallery-video-${i + 1}.jpg`, alt="Превью ссылки", width="555", height="300")
-            else
-              li.gallery__item
-                a.gallery__link(href=`#blog-link-${i + 1}`, target="_blank", rel="noopener noreferrer")
-                  img.gallery__preview(src=`../../assets/img/gallery-video-${i + 1}.jpg`, alt="Превью ссылки", width="277", height="300")
+            li.gallery__item(class={'gallery__item--video': (i === 0 || i === 5)})
+              a.gallery__link(href=`#blog-link-${i + 1}`, target="_blank", rel="noopener noreferrer")
+                img.gallery__preview(src=`../../assets/img/gallery-video-${i + 1}.jpg`, alt="Превью ссылки", width="555", height="300")
 
     include ../includes/subscribe.pug

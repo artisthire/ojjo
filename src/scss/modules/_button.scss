@@ -25,6 +25,7 @@
   }
 
   &--invert {
+    border: 1px solid $grey;
     color: $grey;
     background-color: $white;
 
@@ -47,6 +48,7 @@
   }
 }
 
+// вспомогательный класс для установки анимированного состояния загрузки на кнопке
 .pending {
   &::after {
     content: "";

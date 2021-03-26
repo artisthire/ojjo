@@ -1,0 +1,9 @@
+.product-detail {
+  display: block;
+
+  @media (min-width: $screen-md) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+  }
+}

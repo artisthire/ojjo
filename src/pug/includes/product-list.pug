@@ -1,0 +1,12 @@
+.product-catalog
+  ul.product-catalog__list
+    - for (var x = 0; x < productInCatalogCount; x++)
+      li.product-catalog__item
+        a.product-catalog__link(href="product-card.html", title="Подробнее")
+          img.product-catalog__picture(src="../../assets/img/product.jpg", alt="Изображение продукта", width="280", height="220")
+          .product-catalog__title Подвеска
+          .product-catalog__brand Dolce & Gabanna
+          .product-catalog__price 175 000 ₽
+
+  if (isShowMoreProductBtn)
+    button.button.product-catalog__more-btn.js-catalog-more-btn(type="button") Покажите еще

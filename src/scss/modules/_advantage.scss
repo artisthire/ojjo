@@ -1,5 +1,5 @@
 .advantage {
-  margin-bottom: 70px;
+  margin: 60px auto;
   font-size: 1.6rem;
   line-height: (24/16);
 
@@ -11,8 +11,16 @@
   }
 
   @media (min-width: $screen-lg) {
-    margin: 0 auto 150px;
+    margin: 120px auto;
   }
+}
+
+.advantage__title {
+  margin: 0;
+  margin-bottom: 30px;
+  font-size: 3rem;
+  font-weight: $font-weight-bold;
+  line-height: (42/30);
 }
 
 .advantage__text {
@@ -125,6 +133,8 @@
   & > svg,
   & > img {
     display: block;
+    width: 7rem;
+    height: 7rem;
     margin-bottom: 1.5rem;
   }
 
