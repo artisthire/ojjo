@@ -1,9 +1,15 @@
+// обработка отрытия/закрытия модальных окон
+
 // кнопки открытия модальных окон
 const modalBtnList = document.querySelectorAll('[data-modal-id]');
 
 const hideScrollClass = 'hide-scroll';
 const showModalClass = 'show-modal';
 const showMobileMenuClass = 'show-menu';
+const closeModalBtnClass = 'js-modal-close-btn';
+// клас блока окружающего все активные кнопки внутри меню
+// используется для идентификации клика вне меню
+const fieldModalClass = 'js-modal-content';
 // общие переменные, которые используются для идентификации текущего открытого модального окна и кнопки закрытия в нем
 let currentActiveModal;
 let currentCloseBtn;
@@ -16,18 +22,22 @@ modalBtnList.forEach((btn) => {
     const targetModal = document.querySelector(`#${btn.dataset.modalId}`);
 
     if (targetModal) {
+      // если показывается другое модально окно, скрыть его
+      // используется для возможности открытия модальных окон из других модальных окон
       if (currentActiveModal) {
         hideModal();
       }
 
+      // обновить ссылку на текущее активное модальное окно
       currentActiveModal = targetModal;
+      // показать текущее активное модальное окно
       showModal();
     }
   });
 });
 
 function showModal() {
-  currentCloseBtn = currentActiveModal.querySelector('.js-modal-close-btn');
+  currentCloseBtn = currentActiveModal.querySelector(`.${closeModalBtnClass}`);
   // показываем модальное окно
   currentActiveModal.style.display = '';
   document.body.classList.add(hideScrollClass);
@@ -57,7 +67,7 @@ function hideModal() {
 
 function closeModal(evt) {
   // срабатывает только при клике вне контента модального окна
-  if (!evt.target.closest('.js-modal-content')) {
+  if (!evt.target.closest(`.${fieldModalClass}`)) {
     hideModal();
   }
 }

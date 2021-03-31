@@ -1,0 +1,229 @@
+.select-field {
+  position: relative;
+  margin: 0;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  padding: 0;
+  border: none;
+  font-size: 1.4rem;
+  font-weight: $font-weight-normal;
+  line-height: (21/14);
+}
+
+.select-field__title {
+  position: relative;
+  display: block;
+  width: 16rem;
+  padding-bottom: 0.9rem;
+  padding-right: 15px;
+  border: none;
+  border-bottom: 1px solid #D6D6D6;
+  font-size: 1.6rem;
+  line-height: (24/16);
+  text-decoration: none;
+  text-align: left;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    &::after {
+      animation: slide 0.6s linear infinite;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 25%;
+    right: 2px;
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-left-width: 0.7rem;
+    border-right-width: 0.7rem;
+    border-top: 0.7rem solid $grey;
+  }
+
+  @keyframes slide {
+    from {
+      transform: translateY(0);
+    }
+
+    to {
+      transform: translateY(5px);
+    }
+  }
+}
+
+.select-field__inner {
+  --left-shift: 30px;
+
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  width: 255px;
+  margin-top: 20px;
+  padding-top: 40px;
+  border: 1px solid #D6D6D6;
+  background-color: $light-grey;
+
+  &.collapsed {
+    display: none;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: var(--left-shift, 30px);
+    width: 20px;
+    height: 20px;
+    border-width: 0;
+    border-top-width: 1px;
+    border-left-width: 1px;
+    border-style: solid;
+    border-color: inherit;
+    background-color: inherit;
+    transform: rotate(45deg);
+  }
+}
+
+.select-field__item {
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 0 30px;
+
+  & > input[type="checkbox"]:checked + .select-field__checkbox {
+    &::before {
+      background-color: $grey;
+    }
+
+    &::after {
+      display: block;
+    }
+  }
+
+  & > input[type="checkbox"]:hover + .select-field__checkbox::before,
+  & > input[type="checkbox"]:focus + .select-field__checkbox::before {
+    outline: 2px solid darken($grey, 10%);
+  }
+}
+
+.select-field__checkbox {
+  position: relative;
+  display: inline-block;
+  padding-left: 35px;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2rem;
+    height: 2rem;
+    background-color: #D6D6D6;
+  }
+
+  &::after {
+    display: none;
+    content: "";
+    position: absolute;
+    top: 0.4rem;
+    left: 0.4rem;
+    width: 1.4rem;
+    height: 0.7rem;
+    border-bottom: 2px solid $white;
+    border-left: 2px solid $white;
+    transform: rotate(-45deg);
+  }
+}
+
+.select-field__label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.select-field__text {
+  display: inline-block;
+  width: 11rem;
+  margin-right: 12px;
+  padding: 0 1rem;
+  border: 1px solid #D6D6D6;
+  font-size: 1.2rem;
+  line-height: (18/12);
+  background-color: transparent;
+
+  &::placeholder {
+    font-size: inherit;
+    font-family: inherit;
+  }
+}
+
+.select-field__unit {
+  font-size: 1.4rem;
+  line-height: (16/14);
+  text-transform: uppercase;
+}
+
+.select-field__btn-group {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 25px;
+  border-top: 1px solid #D6D6D6;
+  font-size: 1.2rem;
+  line-height: (12/14);
+}
+
+.select-field__btn-reset,
+.select-field__btn-submit {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  font-family: inherit;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.select-field__btn-reset {
+  padding-left: 0;
+  color: $grey;
+  background-color: transparent;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 2.2rem;
+    left: 0;
+    width: calc(100% - 1.2rem);
+    height: 1px;
+    border-bottom: 1px dashed $grey;
+  }
+
+  &:hover,
+  &:focus {
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.select-field__btn-submit {
+  color: $white;
+  text-decoration: none;
+  background-color: $grey;
+  transition: box-shadow 0.2s linear, opacity 0.2s linear;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 2px 7px 0 $grey;
+    opacity: 0.9;
+  }
+}

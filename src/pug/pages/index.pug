@@ -46,7 +46,7 @@ block content
                 else
                   button.category-filter__btn.js-category-filter-btn(type="button", data-product-id=`${data.id}`)= `${data.text}`
             input.js-category-filter-input(type="hidden", name="product-category", value=`${active}`)
-            button.visually-hidden.js-category-submit-btn(type="submit", tabindex="-1") Фильтровать
+            button.visually-hidden(type="submit", tabindex="-1") Фильтровать
 
           ul.category-result
             - var productNames = ["кольца", "серьги", "подвески", "запонки", "браслеты", "часы"]
@@ -66,7 +66,7 @@ block content
             Pellentesque porttitor velit sit pellentesque. Suspendisse donec pretium id dignissim.
             Dignissim ultrices eget orci viverra. Egestas quis et ut ultrices imperdiet lectus nulla tempus.
             Pharetra lorem sem purus nisi libero viverra ipsum.
-          a.button.button--invert(href="#salons") наши салоны
+          a.button.button--invert(href="contacts.html") наши салоны
 
     section.page-section.blog
       .container
@@ -97,3 +97,5 @@ block content
                 img.gallery__preview(src=`../../assets/img/gallery-video-${i + 1}.jpg`, alt="Превью ссылки", width="555", height="300")
 
     include ../includes/subscribe.pug
+
+

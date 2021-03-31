@@ -22,6 +22,7 @@
 
   &:disabled {
     background-color: rgba($grey, 0.5);
+    cursor: default;
   }
 
   &--invert {

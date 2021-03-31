@@ -120,7 +120,7 @@ rules:
       "ignoreUrls": true
     }]
   max-lines: ["error", 300]
-  max-nested-callbacks: ["error", 3]
+  max-nested-callbacks: ["error", 5]
   max-statements-per-line: ["error", {"max": 1}]
   new-cap: ["error", {"properties": false}]
   new-parens: ["error"]

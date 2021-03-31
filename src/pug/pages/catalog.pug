@@ -16,23 +16,37 @@ block content
         form.catalog-filter__form.js-catalog-filter-form(action="/", method="POST", name="catalog-filter")
           -
             var catalogFilterData = [
-              {name: "brand", title: "Бренд", options: ["Calvin Klein", "Dolce & Gabanna", "Giorgio Armani"]},
-              {name: "price", title: "Цена", options: ["Дешевые в начале", "Дорогие в начале"]},
+              {name: "brand", title: "Бренд", options: ["Versacci", "Trebbo", "Jewelry for you family", "VIP ghoret", "Dolce & Gabanna"]},
+              {name: "price", title: "Цена"},
               {name: "whom", title: "Для кого", options: ["Мужчины", "Женщины", "Дети"]},
               {name: "collection", title: "Колекция", options: ["Бестселлеры", "Шоу-писы"]},
               {name: "season", title: "Сезон", options: ["Весна", "Лето", "Зима", "Осень"]},
               {name: "event", title: "Событие", options: ["День рожения", "Корпоратив", "Свадьба"]},
             ]
+
           for data in catalogFilterData
-            p.catalog-filter__item
-              select.catalog-filter__select(size="1", name=`${data.name}[]`)
-                option(value=`${data.name}-0`, selected)= `${data.title}`
-                for optionItem, index in data.options
-                  option(value=`${data.name}-${index + 1}`)= `${optionItem}`
+            fieldset.select-field.js-field-container
+              button.select-field__title.js-field-show-btn(type="button", aria-expanded="false", aria-controls=`filter-${data.name}`)= `${data.title}`
+              .select-field__inner.collapsed.js-field-swap-block(id=`filter-${data.name}`)
+                if (data.name === 'price')
+                  p.select-field__item
+                    label.select-field__label(for="price-low") От
+                    input.select-field__text(id="price-low", name="price-low", type="number", min="0", step="1", placeholder="10")
+                    span.select-field__unit тыс. руб.
+                  p.select-field__item
+                    label.select-field__label(for="price-up") До
+                    input.select-field__text(id="price-up", name="price-up", type="number", min="0", step="1", placeholder="1000")
+                    span.select-field__unit тыс. руб.
+                else
+                  for text, index in data.options
+                    p.select-field__item
+                      input.visually-hidden(id=`${data.name}-${index + 1}`, name=`${data.name}-${index + 1}`, type="checkbox")
+                      label.select-field__checkbox(for=`${data.name}-${index + 1}`)= `${text}`
+                .select-field__btn-group
+                  button.select-field__btn-reset.js-field-btn-reset(type="reset") Очистить
+                  button.select-field__btn-submit.js-field-btn-submit(type="submit") Показать
 
           input.js-catalog-current-page(type="hidden", name="catalog-page", value="0")
-
-          button.visually-hidden(type="submit", tabindex="-1") Фильтровать
 
       section
         include ../includes/product-list.pug

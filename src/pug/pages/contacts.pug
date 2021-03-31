@@ -1,0 +1,47 @@
+extends ../layout/default.pug
+
+block vars
+  - var headerClass = 'header--inner-page'
+
+block title
+  title Контакты
+
+block content
+  main.container
+    .page-section__breadcrumbs
+      ul.breadcrumbs
+        li.breadcrumbs__item
+          a(href="/") Главная
+        li.breadcrumbs__item Контакты
+
+    section.contacts
+      h2.contacts__header Контакты
+
+      -
+        var contactsData = [
+          {title: 'Главный офис', items: ['Невский 140, офис 1-5', 'Невский 140, офис 1-5'], icon: 'location'},
+          {title: 'Телефоны', items: ['8 (812) 458-56-45', '8-911-878-00-00'], values: ['+388124585645', '+389118780000'], type: 'tel', icon: 'mobile-phone'},
+          {title: 'E-mail', items: ['office@ojjo.com', 'sales@ojjo.com'], values: ['office@ojjo.com', 'sales@ojjo.com'], type: 'mailto', icon: 'mail'},
+          {title: 'Доп. адреса', items: ['Невский 142, офис 1-5', 'Загородный 145, офис 11-15'], icon: 'location'},
+        ]
+
+      ul.contacts__title-list
+        for data in contactsData
+          li= `${data.title}`
+            ul.contacts__value-list
+              for item, index in data.items
+                li
+                  if (data.type)
+                    a.contacts__link(href=`${data.type}:${data.values[index]}`)
+                      if (index === 0)
+                        +extSvgSprite(`${data.icon}`, 20, 20).contacts__icon
+                      | #{item}
+                  else
+                    a.contacts__link(href="#")
+                      if (index === 0)
+                        +extSvgSprite(`${data.icon}`, 20, 20).contacts__icon
+                      | #{item}
+
+      .contacts__map
+        img(src="../../assets/img/contact__map.jpg", alt="Карта", width="1110", height="750")
+
