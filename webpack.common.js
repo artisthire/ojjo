@@ -39,11 +39,12 @@ module.exports = (_, argv) => (
 
     // [name] - файл будет называться как точки входа в enrty {}
     // [contenthash] - при каждой пересборке проекта добавляется хэш для защиты от кеширования браузерами
-    // publickPath - для webpack-dev-server корневая директория, откуда сервер получает доступ к файлам
+    // publickPath - по умолчанию после сборки ресурсы ищутся по следующему пути ${publicPath}/${prefix}/${assetName}
+    // добавление publicPath: './' позволяет сформировать в html файла относительный путь к ресурсам после сборки
     output: {
       filename: `${PATHS.assets}js/[name].js`,
       path: PATHS.dist,
-      publicPath: '/'
+      publicPath: './'
     },
 
     module: {
@@ -100,12 +101,15 @@ module.exports = (_, argv) => (
         {
           // CSS
           // postcss-loader - плагины и конфигурация для этого загрузчика берется из файла postcss.config.js
+          // publicPath: '../../' - добавляется в начало пути к assets в файлах CSS.
+          // такой publicPath учитывает итоговое размещение assets относительно css в папке dist
           test: /\.css$/i,
           use: [
             'style-loader',
             {
               loader: MiniCssExtractPlugin.loader,
               options: {
+                publicPath: '../../',
                 esModule: false
               }
             },
@@ -125,12 +129,15 @@ module.exports = (_, argv) => (
           // resolve-url-loader - используется для исправления путей в папке dist,
           // благодаря ему в исходниках адреса к картинкам можно писать как есть в папке src,
           // далее лоадер поправит как должно быть в dist
+          // publicPath: '../../' - добавляется в начало пути к assets в файлах CSS.
+          // такой publicPath учитывает итоговое размещение assets относительно css в папке dist
           test: /\.scss$/i,
           use: [
             argv.mode === 'development' ? 'style-loader' :
               {
                 loader: MiniCssExtractPlugin.loader,
                 options: {
+                  publicPath: '../../',
                   esModule: false
                 }
               },
