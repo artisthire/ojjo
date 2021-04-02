@@ -25,7 +25,7 @@ burgerBtn.addEventListener('click', (evt) => {
   body.classList.contains(showMenuClass) ? hideMenu() : showMenu();
 });
 
-const mediaQueryList = window.matchMedia(`min-width: ${mobileMediaResolution}px)`);
+const mediaQueryList = window.matchMedia(`(min-width: ${mobileMediaResolution}px)`);
 // убираем класс показа меню с BODY на экранах где показывается полная (не мобильная) версия меню
 mediaQueryList.addEventListener('change', (evt) => {
   if (evt.matches && body.classList.contains(showMenuClass)) {
