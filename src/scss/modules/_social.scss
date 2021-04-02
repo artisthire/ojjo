@@ -11,8 +11,8 @@
   }
 
   & svg {
-    fill: $grey;
     transition: transform 0.2s linear;
+    fill: $grey;
   }
 
   &--header {

@@ -1,3 +1,11 @@
+.tumbnail-slider {
+  margin-bottom: 20px;
+
+  @media (min-width: $screen-md) {
+    margin-bottom: 0;
+  }
+}
+
 .tumbnail-slider__picture {
   display: block;
   width: 100%;
@@ -32,8 +40,8 @@
 .tumbnail-slider__link {
   display: block;
   width: 100%;
-  transition: box-shadow 0.2s linear;
   cursor: pointer;
+  transition: box-shadow 0.2s linear;
 
   &:hover,
   &:focus {

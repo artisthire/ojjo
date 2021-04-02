@@ -1,9 +1,9 @@
 .footer-menu {
   margin: 0;
   padding: 0;
-  list-style: none;
   font-size: 1.4rem;
   line-height: (21/14);
+  list-style: none;
 
   & > li {
     margin-bottom: 15px;
@@ -15,9 +15,9 @@
 }
 
 .footer-menu__link {
-  color: $grey;
-  text-decoration: none;
   outline: none;
+  text-decoration: none;
+  color: $grey;
 
   &:hover,
   &:focus {

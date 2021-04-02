@@ -19,10 +19,10 @@ block content
 
       -
         var contactsData = [
-          {title: 'Главный офис', items: ['Невский 140, офис 1-5', 'Невский 140, офис 1-5'], icon: 'location'},
+          {title: 'Главный офис', items: ['Невский 140, офис 1-5', 'Невский 140, офис 1-5'], icon: 'location', mapMarkers: ['marker1', 'marker1']},
           {title: 'Телефоны', items: ['8 (812) 458-56-45', '8-911-878-00-00'], values: ['+388124585645', '+389118780000'], type: 'tel', icon: 'mobile-phone'},
           {title: 'E-mail', items: ['office@ojjo.com', 'sales@ojjo.com'], values: ['office@ojjo.com', 'sales@ojjo.com'], type: 'mailto', icon: 'mail'},
-          {title: 'Доп. адреса', items: ['Невский 142, офис 1-5', 'Загородный 145, офис 11-15'], icon: 'location'},
+          {title: 'Доп. адреса', items: ['Невский 142, офис 1-5', 'Загородный 145, офис 11-15'], icon: 'location', mapMarkers: ['marker2', 'marker3']},
         ]
 
       ul.contacts__title-list
@@ -37,11 +37,12 @@ block content
                         +extSvgSprite(`${data.icon}`, 20, 20).contacts__icon
                       | #{item}
                   else
-                    a.contacts__link(href="#")
+                    a.contacts__link(href="#", data-map-marker-id=`${data.mapMarkers[index]}`)
                       if (index === 0)
                         +extSvgSprite(`${data.icon}`, 20, 20).contacts__icon
                       | #{item}
 
-      .contacts__map
-        img(src="../../assets/img/contact__map.jpg", alt="Карта", width="1110", height="750")
+      .contacts__map-wrapper.js-contact-map-container
+        img.js-contact-map-fallback-img(src="../../assets/img/contact__map.jpg", alt="Карта", width="1110", height="750")
 
+        .contacts__map.js-contact-map

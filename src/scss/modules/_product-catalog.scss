@@ -9,8 +9,8 @@
 
 .product-catalog__list {
   display: flex;
-  align-items: flex-start;
   justify-content: space-evenly;
+  align-items: flex-start;
   flex-wrap: wrap;
   margin: 0;
   margin-left: -10px;
@@ -87,8 +87,8 @@
   font-family: inherit;
   font-size: 1.8rem;
   line-height: (21/18);
-  color: $white;
   text-transform: uppercase;
+  color: $white;
   background-color: $grey;
 }
 

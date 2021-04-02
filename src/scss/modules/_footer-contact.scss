@@ -9,11 +9,11 @@
 }
 
 .footer-contact__link {
+  outline: none;
   font-size: 1.4rem;
   line-height: (21/14);
   text-decoration: none;
   color: inherit;
-  outline: none;
 
   &:hover,
   &:focus {
@@ -30,7 +30,7 @@
     height: 2rem;
     margin-right: 2rem;
     vertical-align: top;
-    fill: $grey;
     transition: transform 0.2s linear;
+    fill: $grey;
   }
 }

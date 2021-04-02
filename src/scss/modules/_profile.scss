@@ -12,12 +12,6 @@
   border-bottom: 1px solid $white;
   list-style: none;
 
-  @media (min-width: $screen-sm) {
-    display: flex;
-    padding-bottom: 0;
-    border-bottom: none;
-  }
-
   & > li {
     margin-right: 3rem;
 
@@ -38,6 +32,12 @@
   &--account > li {
     margin-right: 1.5rem;
   }
+
+  @media (min-width: $screen-sm) {
+    display: flex;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
 }
 
 .profile__btn {
@@ -47,15 +47,6 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
-
-  @media (min-width: $screen-sm) {
-    max-width: 15rem;
-    margin: 0 5px;
-    padding: 0.5rem;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
 
   &--search {
     display: none;
@@ -90,5 +81,14 @@
     & > img {
       transform: scale(1.1);
     }
+  }
+
+  @media (min-width: $screen-sm) {
+    max-width: 15rem;
+    margin: 0 5px;
+    padding: 0.5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 }

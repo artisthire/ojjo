@@ -1,8 +1,8 @@
 .select-field {
   position: relative;
   margin: 0;
-  margin-left: 30px;
   margin-bottom: 30px;
+  margin-left: 30px;
   padding: 0;
   border: none;
   font-size: 1.4rem;
@@ -14,8 +14,8 @@
   position: relative;
   display: block;
   width: 16rem;
-  padding-bottom: 0.9rem;
   padding-right: 15px;
+  padding-bottom: 0.9rem;
   border: none;
   border-bottom: 1px solid #D6D6D6;
   font-size: 1.6rem;
@@ -41,9 +41,9 @@
     width: 0;
     height: 0;
     border: 0 solid transparent;
+    border-top: 0.7rem solid $grey;
     border-left-width: 0.7rem;
     border-right-width: 0.7rem;
-    border-top: 0.7rem solid $grey;
   }
 
   @keyframes slide {
@@ -59,12 +59,12 @@
 
 .select-field__inner {
   --left-shift: 30px;
-
-  display: block;
   position: absolute;
   top: 100%;
   left: 0;
   z-index: 10;
+
+  display: block;
   width: 255px;
   margin-top: 20px;
   padding-top: 40px;
@@ -83,12 +83,12 @@
     width: 20px;
     height: 20px;
     border-width: 0;
-    border-top-width: 1px;
-    border-left-width: 1px;
     border-style: solid;
     border-color: inherit;
-    background-color: inherit;
+    border-top-width: 1px;
+    border-left-width: 1px;
     transform: rotate(45deg);
+    background-color: inherit;
   }
 }
 
@@ -130,11 +130,11 @@
   }
 
   &::after {
-    display: none;
     content: "";
     position: absolute;
     top: 0.4rem;
     left: 0.4rem;
+    display: none;
     width: 1.4rem;
     height: 0.7rem;
     border-bottom: 2px solid $white;
@@ -159,8 +159,8 @@
   background-color: transparent;
 
   &::placeholder {
-    font-size: inherit;
     font-family: inherit;
+    font-size: inherit;
   }
 }
 
@@ -216,8 +216,8 @@
 }
 
 .select-field__btn-submit {
-  color: $white;
   text-decoration: none;
+  color: $white;
   background-color: $grey;
   transition: box-shadow 0.2s linear, opacity 0.2s linear;
 

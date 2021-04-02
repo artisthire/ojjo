@@ -5,8 +5,8 @@
 
   @media (min-width: $screen-md) {
     display: flex;
-    align-items: flex-start;
     justify-content: space-between;
+    align-items: flex-start;
     max-width: 950px;
   }
 
@@ -39,8 +39,8 @@
     z-index: 1;
     width: 100%;
     height: 100%;
-    opacity: 1;
     background: linear-gradient(180deg, rgba(249, 249, 249, 0) 0%, #F9F9F9 82.29%);
+    opacity: 1;
     transition: opacity 0.1s linear;
   }
 
@@ -55,8 +55,8 @@
 
   @media (min-width: $screen-md) {
     max-width: 540px;
-    margin-bottom: 0;
     margin-right: 15px;
+    margin-bottom: 0;
   }
 }
 
@@ -71,14 +71,14 @@
   z-index: 2;
   padding: 0;
   border: none;
-  background-color: transparent;
   font-family: inherit;
   font-size: 1.8rem;
   font-weight: $font-weight-normal;
   line-height: (22/18);
-  color: inherit;
   text-transform: uppercase;
   text-decoration: none;
+  color: inherit;
+  background-color: transparent;
   cursor: pointer;
 
   &::after {
@@ -115,9 +115,9 @@
 
   @media (min-width: $screen-md) {
     display: grid;
+    flex-shrink: 0;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 3rem;
-    flex-shrink: 0;
     width: 275px;
     margin-left: 0;
   }
@@ -125,8 +125,8 @@
 
 .advantage__item {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   flex-shrink: 0;
   text-align: center;
 

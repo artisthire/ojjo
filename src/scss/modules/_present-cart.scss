@@ -2,9 +2,9 @@
   position: relative;
   display: block;
   height: 100%;
-  background-color: $grey;
   outline: none;
   overflow: hidden;
+  background-color: $grey;
   transition: box-shadow 0.2s linear;
 
   &:hover,
@@ -49,9 +49,9 @@
   font-size: 2.4rem;
   font-weight: $font-weight-medium;
   line-height: (28/24);
-  color: $white;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
+  color: $white;
   transition: transform 0.2s linear;
 }

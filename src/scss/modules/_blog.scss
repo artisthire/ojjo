@@ -21,8 +21,8 @@
   }
 
   @media (min-width: $screen-sm) {
-    margin-left: -20px;
     justify-content: space-evenly;
+    margin-left: -20px;
 
     & > li {
       width: calc(50% - 20px);
@@ -36,8 +36,8 @@
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 300px;
     grid-gap: 15px;
-    margin-left: 0;
     margin-bottom: 40px;
+    margin-left: 0;
 
     & > li {
       width: 100%;

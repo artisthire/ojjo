@@ -20,3 +20,7 @@ for font in ["Gilroy-Regular", "Gilroy-Medium", "Gilroy-SemiBold"]
 
 //- External library from CDN
 link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css")
+
+//- Скрипт 2GIS карты на сайт, lazy=true - ленивая загрузка, без вызова функции в коде не загружается
+//- чтобы скрипт загружался только для той страницы, на которой есть карта
+script(src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full&lazy=true")

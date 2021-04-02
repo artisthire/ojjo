@@ -24,8 +24,8 @@
     width: 34px;
     height: 4px;
     border-radius: 2px;
-    background-color: $white;
     transform-origin: left center;
+    background-color: $white;
     transition: transform 0.3s linear, width 0.2s linear 0.1s;
   }
 
