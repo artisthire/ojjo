@@ -8,7 +8,7 @@ section.page-section.page-section--light.page-section--bgn-twirl.subscribe
           - var advantageText = ["Личный менеджер", "Доставка и оформление", "Индивидуальный дизайн"]
           for text in advantageText
             li #{text}
-        form.subscribe__form.js-subscribe-form(action="/", method="POST", name="form-subscribe")
+        form.subscribe__form.js-subscribe-form(action="./", method="POST", name="form-subscribe")
           input.subscribe__form-input(type="email", name="subscribe-email", placeholder="Ваш e-mail", required)
           button.button.button--dark-shadow.subscribe__form-btn(type="submit") Отправить
           .subscribe__send-message.js-subscribe-form-message Вы не подписаны!

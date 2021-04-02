@@ -5,7 +5,7 @@ block vars
   - var modalTitle = 'Вход на сайт'
 
 block content
-  form(action="/", method="post", name="form-singin")
+  form(action="./", method="post", name="form-singin")
     p.modal__input-wrap
       label.modal__label(for="user-login") Логин
       input.modal__input#user-login(type="text", name="user-login", required)

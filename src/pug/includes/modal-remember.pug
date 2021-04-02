@@ -5,7 +5,7 @@ block vars
   - var modalTitle = 'Получить временный пароль'
 
 block content
-  form(action="/", method="post", name="form-remember-password")
+  form(action="./", method="post", name="form-remember-password")
     p.modal__input-wrap
       label.modal__label(for="remember-login") Логин
       input.modal__input#remember-login(type="text", name="remember-login", required)

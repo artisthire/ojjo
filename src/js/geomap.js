@@ -36,7 +36,7 @@ if (mapWrapper) {
 
     // кастомные иконки на карту
     const myIcon = DG.icon({
-      iconUrl: '../assets/img/map-icon.png',
+      iconUrl: './assets/img/map-icon.png',
       iconSize: [30, 30]
     });
 

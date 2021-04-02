@@ -5,7 +5,7 @@ block vars
   - var modalTitle = 'Поиск по сайту'
 
 block content
-  form(action="/", method="get", name="form-search")
+  form(action="./", method="get", name="form-search")
     p.modal__input-wrap
       label.modal__label(for="search-phrase") Текст запроса
       input.modal__input#search-phrase(type="search", name="search-phrase", required)

@@ -3,7 +3,7 @@ header(class=`header ${headerClass} js-header-container`)
     .header__head.header__head--mobile.js-header-content
       // клон логотипа для мобильной версии сайта
       .header__logo
-        a.header__link.logotype(href="/")
+        a.header__link.logotype(href="./")
           img(src= "../../assets/img/logo.svg", alt= "Логотип", width="216", height="52")
 
       button.header__link.burger#burger-btn(type="button", aria-label="Открыть меню", title="Открыть меню")
@@ -17,7 +17,7 @@ header(class=`header ${headerClass} js-header-container`)
               a.header__link.main-menu__link(href= `#${link}`)= text
 
       .header__logo
-        a.header__link.logotype(href="/")
+        a.header__link.logotype(href="./")
           img(src= "../../assets/img/logo.svg", alt= "Логотип", width="216", height="52")
 
       .header__profile.profile
