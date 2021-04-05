@@ -21,13 +21,16 @@ block content
         li.breadcrumbs__item Подвеска Dolce & Gabarra
 
     section.product-detail
-      .tumbnail-slider
-        img.tumbnail-slider__picture(src="../../assets/img/product.jpg", alt="Картинка продукта", width="540", height="430")
-        ul.tumbnail-slider__list
-          for _ in Array(3)
+      .thumbs-gallery.js-thumbs-gallery
+        .thumbs-gallery__img-wrap.js-thumbs-img-container
+          // клас "show" используется для анимированной смены картинок
+          img.thumbs-gallery__img.show(src="../../assets/img/product-1.jpg", alt="Изображение продукта", width="540", height="430")
+        // значение аттрибута src для большого изображения берется из атрибута href ссылки
+        ul.thumbs-gallery__list
+          for _, index in Array(3)
             li
-              a.tumbnail-slider__link(href="#")
-                img(src="../../assets/img/product.jpg", alt="Миниатюра продукта", width="160", height="120")
+              a.thumbs-gallery__link.js-thumbs-img-link(href=`./assets/img/product-${index + 1}.jpg`, target="_blank")
+                img(src=`../../assets/img/product-${index + 1}.jpg`, alt="Миниатюра продукта", width="160", height="120")
 
       .product-description
         h2.product-description__title Подвеска Dolce & Gabbara

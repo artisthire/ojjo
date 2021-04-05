@@ -21,6 +21,7 @@ module.exports = (env, argv) => {
         });
       },
       port: 3000,
+      publicPath: '/',
       contentBase: config.externals.paths.dist,
       hot: true
     },

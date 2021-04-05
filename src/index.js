@@ -8,4 +8,5 @@ import './js/app';
 import './js/advantage-swap';
 import './js/catalog-filter';
 import './js/subscribe-form';
-import './js/geomap';
+import './js/contact-map';
+import './js/thumbs-gallery';
