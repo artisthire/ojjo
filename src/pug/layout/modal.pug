@@ -1,6 +1,6 @@
 block vars
 
-.modal(id=`${modalId}`, style="display:none")
+.modal(id=`${modalId}`, class={'modal--inner-page': isFallbackModalView === true})
   .modal__content.js-modal-content
     .modal__title= `${modalTitle}`
 

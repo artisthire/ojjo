@@ -1,0 +1,15 @@
+extends ../layout/default.pug
+
+block vars
+  - var isInnerPage = true
+  - var isFallbackModalView = true
+
+block title
+  title Вход на сайт
+
+block content
+  .container
+    // Будет показано только при отключенном JS, если не откроется аналогичное модальное окно
+    include ../includes/modal-singin.pug
+
+block modals

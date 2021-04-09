@@ -1,7 +1,8 @@
 // обработка отрытия/закрытия модальных окон
 
 // кнопки открытия модальных окон
-const modalBtnList = document.querySelectorAll('[data-modal-id]');
+const openModalBtns = document.querySelectorAll('[data-modal-id]');
+const modalList = document.querySelectorAll('[id^="modal"]');
 
 const hideScrollClass = 'hide-scroll';
 const showModalClass = 'show-modal';
@@ -13,8 +14,10 @@ const fieldModalClass = 'js-modal-content';
 // общие переменные, которые используются для идентификации текущего открытого модального окна и кнопки закрытия в нем
 let currentActiveModal;
 let currentCloseBtn;
+// предварительно скрываем все модальные окна
+modalList.forEach((modal) => (modal.style.display = 'none'));
 
-modalBtnList.forEach((btn) => {
+openModalBtns.forEach((btn) => {
   btn.addEventListener('click', (evt) => {
     evt.preventDefault();
 
@@ -39,33 +42,34 @@ modalBtnList.forEach((btn) => {
 function showModal() {
   currentCloseBtn = currentActiveModal.querySelector(`.${closeModalBtnClass}`);
   // показываем модальное окно
-  currentActiveModal.style.display = '';
   document.body.classList.add(hideScrollClass);
   document.body.classList.add(showModalClass);
+  currentActiveModal.style.display = 'block';
   // добавляем обработчики закрытия модального окна
   // при клике на кнопке закрытия
   currentCloseBtn.addEventListener('click', hideModal);
   // при клике вне контента модального окна по подложке
-  currentActiveModal.addEventListener('click', closeModal);
+  currentActiveModal.addEventListener('click', onBodyClick);
 }
 
 function hideModal() {
   // скрываем модальное окно
-  currentActiveModal.style.display = 'none';
+  document.body.classList.remove(showModalClass);
+  // скрываем все модальные окна
+  modalList.forEach((modal) => (modal.style.display = 'none'));
   // убрать класс сокрытия скролла только если не показано мобильное меню сайта
   if (!document.body.classList.contains(showMobileMenuClass)) {
     document.body.classList.remove(hideScrollClass);
   }
 
-  document.body.classList.remove(showModalClass);
   // удаляем обработчики закрытия
   currentCloseBtn.removeEventListener('click', hideModal);
-  currentActiveModal.removeEventListener('click', closeModal);
+  currentActiveModal.removeEventListener('click', onBodyClick);
 
   currentActiveModal = null;
 }
 
-function closeModal(evt) {
+function onBodyClick(evt) {
   // срабатывает только при клике вне контента модального окна
   if (!evt.target.closest(`.${fieldModalClass}`)) {
     hideModal();

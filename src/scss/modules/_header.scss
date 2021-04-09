@@ -33,6 +33,14 @@
   .show-menu &::after {
     transform: translateX(0);
   }
+
+  @media (max-width: $screen-sm) {
+    .no-js & {
+      position: static;
+      padding-bottom: 20px;
+      background-color: $grey;
+    }
+  }
 }
 
 .header__head {
@@ -62,6 +70,14 @@
 
   .show-menu &--desctop {
     transform: translateX(0);
+  }
+
+  @media (max-width: $screen-sm) {
+    .no-js &--desctop {
+      position: static;
+      transform: none;
+      transition: none;
+    }
   }
 
   @media (min-width: $screen-sm) {

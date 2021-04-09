@@ -8,16 +8,18 @@ block content
   form(action="./", method="post", name="form-singin")
     p.modal__input-wrap
       label.modal__label(for="user-login") Логин
+        sup *
       input.modal__input#user-login(type="text", name="user-login", required)
     p.modal__input-wrap
       label.modal__label(for="user-password") Пароль
+        sup *
       input.modal__input#user-password(type="password", name="user-password", required)
     p.modal__input-wrap
       input.visually-hidden.modal__checkbox#user-remember(type="checkbox", name="user-remember")
       label.modal__checkbox-label(for="user-remember") Запомнить меня
     p.modal__input-wrap
-      button.modal__link(type="button", data-modal-id="modal-remember") Напомнить пароль
+      a.modal__link(href="restore-password.html", data-modal-id="modal-restore-pas") Напомнить пароль
     p.modal__input-wrap
-      a.modal__link(href="#registration", target="_blank") Я новый пользователь
+      a.modal__link(href="registration.html", target="_blank") Я новый пользователь
 
     button.button.modal__submit(type="submit") Вход

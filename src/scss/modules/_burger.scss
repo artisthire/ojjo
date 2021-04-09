@@ -51,4 +51,10 @@
     width: 42px;
     transform: rotate(-40deg);
   }
+
+  @media (max-width: $screen-sm) {
+    .no-js & {
+      display: none;
+    }
+  }
 }

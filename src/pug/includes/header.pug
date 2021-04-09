@@ -1,4 +1,4 @@
-header(class=`header ${headerClass} js-header-container`)
+header.header.js-header-container(class={'header--inner-page': isInnerPage === true})
   .container
     .header__head.header__head--mobile.js-header-content
       // клон логотипа для мобильной версии сайта
@@ -23,19 +23,17 @@ header(class=`header ${headerClass} js-header-container`)
       .header__profile.profile
         ul.profile__list
           li
-            button.header__link.profile__btn.profile__btn--search(type="button", data-modal-id="modal-search")
+            a.header__link.profile__btn.profile__btn--search(href="search.html", data-modal-id="modal-search")
               +extSvgSprite("search", 24, 24)
               span Поиск
           li
-            // после login-а клиента показать иконку svg и вместо "Вход/Регистрация" имя клиента
-            a.header__link.profile__btn(href="#account", data-modal-id="modal-singin")
-              // <svg width="24" height="24" aria-hidden="true"> <use xlink:href="/assets/img/svg-sprite.svg#account"></use></svg>
+            a.header__link.profile__btn(href="singin.html", data-modal-id="modal-singin")
               span Вход/Регистрация
         ul.profile__list.profile__list--account
           li
-            a.header__link.profile__btn(href="#basket", title="Корзина")
-              +extSvgSprite("basket", 24, 24)
-              span.visually-hidden Корзина
+            a.header__link.profile__btn(href="#account", title="Профиль")
+              +extSvgSprite("account", 24, 24)
+              span.visually-hidden Профиль
           li
             a.header__link.profile__btn(href="#like", title="Избранное")
               +extSvgSprite("like", 24, 24)

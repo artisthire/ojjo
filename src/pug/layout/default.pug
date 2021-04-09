@@ -8,12 +8,14 @@ html(lang="ru")
     block title
     include ../includes/head.pug
 
-  body
+  body.no-js
     include ../includes/header.pug
 
     block content
 
     include ../includes/footer.pug
-    include ../includes/modal-search.pug
-    include ../includes/modal-singin.pug
-    include ../includes/modal-remember.pug
+
+    block modals
+      include ../includes/modal-search.pug
+      include ../includes/modal-singin.pug
+      include ../includes/modal-restore-pas.pug
