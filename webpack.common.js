@@ -33,7 +33,7 @@ module.exports = (_, argv) => (
 
     // точки входа
     entry: {
-      app: `${PATHS.src}/index.js`
+      app: `${PATHS.src}/index.js`,
       // module: `${PATHS.src}/your-module.js`,
     },
 
@@ -52,7 +52,7 @@ module.exports = (_, argv) => (
         {
           // JS
           // exclude - папки, которые не проходят через loader-ы, т.е в нашем случае не транспилируются Babel
-          test: /\.(js)$/i,
+          test: /\.js$/i,
           exclude: /(node_modules|bower_components)/,
           use: [
             'babel-loader'
@@ -60,11 +60,22 @@ module.exports = (_, argv) => (
         },
 
         {
+          // JS
+          // файлы, которые нужны отдельно от общего JS файла добавляются в папку /js/statis/
+          // их нужно вручную добавлять в тег head файла pug, чтобы они попали в выходную сборку
+          test: /(\/|\\)js(\/|\\)static(\/|\\)(\w+)\.js$/i,
+          type: 'asset/resource',
+          generator: {
+            filename: `${PATHS.assets}js/[name][ext]`
+          },
+        },
+
+        {
           // PUG
           // используется pug-html-loader вместо pug-loader
           // для того, чтобы webpack брал в сборку картинки из PUG-файла
           // без необходимости писать их в формате require()
-          test: /\.(pug)$/i,
+          test: /\.pug$/i,
           use: [
             {
               loader: 'html-loader',
@@ -167,43 +178,7 @@ module.exports = (_, argv) => (
           type: 'asset/resource',
           generator: {
             filename: `${PATHS.assets}img/[name][ext]`
-          },
-          use: [
-            {
-              loader: 'image-webpack-loader',
-              options: {
-                disable: argv.mode === 'development',
-                mozjpeg: {
-                  progressive: true,
-                },
-                // optipng.enabled: false will disable optipng
-                optipng: {
-                  enabled: false,
-                },
-                pngquant: {
-                  quality: [0.65, 0.90],
-                  speed: 4
-                },
-                gifsicle: {
-                  optimizationLevel: 2,
-                  interlaced: true,
-                },
-                svgo: {
-                  plugins: [
-                    {removeUselessDefs: false}, // не удаляет symbol-теги в svg-спрайтах
-                    {removeHiddenElems: {displayNone: false}}, // не удаляет весь код с display: none в svg-спрайтах
-                    {cleanupIDs: {remove: false}}, // не удаляет symbol-теги в svg-спрайтах с неиспользуемым ID
-                    {removeViewBox: false}, // не удалят viewbox
-                    {removeDimensions: true} // заменяет width/height на viewBox
-                  ]
-                },
-                // the webp option will enable WEBP
-                webp: {
-                  quality: 75
-                }
-              }
-            },
-          ],
+          }
         },
 
         {
@@ -278,4 +253,43 @@ module.exports = (_, argv) => (
 
 // горячая загрузка CSS без перезагрузки всей страницы
     new webpack.HotModuleReplacementPlugin()
+*/
+
+/*
+use: [
+            {
+              loader: 'image-webpack-loader',
+              options: {
+                disable: argv.mode === 'development',
+                mozjpeg: {
+                  progressive: true,
+                },
+                // optipng.enabled: false will disable optipng
+                optipng: {
+                  enabled: false,
+                },
+                pngquant: {
+                  quality: [0.65, 0.90],
+                  speed: 4
+                },
+                gifsicle: {
+                  optimizationLevel: 2,
+                  interlaced: true,
+                },
+                svgo: {
+                  plugins: [
+                    {removeUselessDefs: false}, // не удаляет symbol-теги в svg-спрайтах
+                    {removeHiddenElems: {displayNone: false}}, // не удаляет весь код с display: none в svg-спрайтах
+                    {cleanupIDs: {remove: false}}, // не удаляет symbol-теги в svg-спрайтах с неиспользуемым ID
+                    {removeViewBox: false}, // не удалят viewbox
+                    {removeDimensions: true} // заменяет width/height на viewBox
+                  ]
+                },
+                // the webp option will enable WEBP
+                webp: {
+                  quality: 75
+                }
+              }
+            },
+          ],
 */

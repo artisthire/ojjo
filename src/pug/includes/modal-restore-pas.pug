@@ -8,7 +8,7 @@ block content
   form(action="./", method="post", name="form-remember-password")
     p.modal__input-wrap
       label.modal__label(for="restore-login") Логин
-        sup *
+        abbr.modal__info(title="Обязательное поле") *
       input.modal__input#restore-login(type="text", name="restore-login", required)
 
     button.button.modal__submit(type="submit") Отправить

@@ -8,7 +8,7 @@ block title
 block content
   main
     section.promo
-      img.promo__img(src="../../assets/img/header-background.jpg", alt="Промо изображение", width="1920", height="950")
+      +retinWebpImg('header-background.jpg', alt="Промо изображение", width="1920", height="950").promo__img
       .promo__head
         .container
           h1.promo__slogan Дорого, дорого, богато!
@@ -18,7 +18,7 @@ block content
           ul.brands__list
             - for (var x = 0; x < 6; x++)
               li.brands__item
-                img(src="../../assets/img/brand-logo.png", alt="OJJO", width="160", height="60")
+                +retinWebpImg('brand-logo.png', alt="Coco Fine Jewelry", width="160", height="60")
     section.page-section
       .container
         .product-category
@@ -27,32 +27,30 @@ block content
             h2.page-section__title Настоящая красота здесь!
 
           form.category-filter.js-category-filter-container(action="./", method="GET", name="form-category-filter")
-            -
-              var categoryData = [
-                {id: "prod-wedding", text: "Свадьба"},
-                {id: "prod-husband", text: "Мужу"},
-                {id: "prod-wife", text: "Жене"},
-                {id: "prod-partner", text: "Партнеру"},
-                {id: "prod-collection", text: "Коллекции"},
-                {id: "prod-rarity", text: "Редкость"},
-              ]
-              var active = "prod-wedding"
-            for data in categoryData
-              p.category-filter__item
-                if (data.id === active)
-                  // для активной кнопки категории добавить класс "active", опционально добавить tabindex = -1
-                  button.category-filter__btn.active.js-category-filter-btn(type="button", data-product-id=`${data.id}`, tabindex="-1")= `${data.text}`
-                else
-                  button.category-filter__btn.js-category-filter-btn(type="button", data-product-id=`${data.id}`)= `${data.text}`
-            input.js-category-filter-input(type="hidden", name="product-category", value=`${active}`)
-            button.visually-hidden(type="submit", tabindex="-1") Фильтровать
+            fieldset.category-filter__field-wrap
+              -
+                var categoryData = [
+                  {id: "prod-wedding", text: "Свадьба"},
+                  {id: "prod-husband", text: "Мужу"},
+                  {id: "prod-wife", text: "Жене"},
+                  {id: "prod-partner", text: "Партнеру"},
+                  {id: "prod-collection", text: "Коллекции"},
+                  {id: "prod-rarity", text: "Редкость"},
+                ]
+                var active = "prod-wedding"
+              for data in categoryData
+                p.category-filter__item
+                  input.visually-hidden(type="radio", id=`${data.id}`, name="product-category", value=`${data.id}`, checked=(data.id === active))
+                  label.category-filter__btn.js-category-filter-btn(for=`${data.id}`)= `${data.text}`
+
+            button.button.button--dark-shadown.category-filter__submit-btn(type="submit") Фильтровать
 
           ul.category-result
             - var productNames = ["кольца", "серьги", "подвески", "запонки", "браслеты", "часы"]
             for name, index in productNames
               li
-                a.present-cart(href=`#product-${index + 1}`)
-                  img.present-cart__img(src=`../../assets/img/product-category-${index + 1}.jpg`, alt=`${name}`, width="350", height="280")
+                a.present-cart(href=`catalog.html?category=product-${index + 1}`)
+                  +retinWebpImg(`product-category-${index + 1}.jpg`, alt=`${name}`, width="350", height="280").present-cart__img
                   p.present-cart__text= `${name}`
 
     section.page-section.page-section--light.page-section--bgn-twirl.salon
@@ -81,7 +79,7 @@ block content
           for text, index in blogText
             li
               a.present-cart(href=`#blog-${index + 1}`, target="_blank", rel="noopener noreferrer")
-                img.present-cart__img(src=`../../assets/img/blog-img-${index + 1}.jpg`, alt="Изображение блога", width="350", height="370")
+                +retinWebpImg(`blog-img-${index + 1}.jpg`, alt="Изображение блога", width="350", height="370").present-cart__img
                 p.present-cart__text.blog__text !{text}
         a.button.button--dark-shadow(href="#our-blog", target="_blank") читать наш блог
 
@@ -93,7 +91,7 @@ block content
           for _, i in Array(6)
             li.gallery__item(class={'gallery__item--video': (i === 0 || i === 5)})
               a.gallery__link(href=`#blog-link-${i + 1}`, target="_blank", rel="noopener noreferrer")
-                img.gallery__preview(src=`../../assets/img/gallery-video-${i + 1}.jpg`, alt="Превью ссылки", width="555", height="300")
+                +retinWebpImg(`gallery-video-${i + 1}.jpg`, alt="Превью ссылки", width="555", height="300").gallery__preview
 
     include ../includes/subscribe.pug
 

@@ -105,11 +105,6 @@ if (catalogFilterForm) {
           currentPageInput.value = 0;
         }
 
-        // временно отключаем возможность переключения следующей страницы отображаемого фильтра товаров
-        if (nextPageBtn) {
-          nextPageBtn.setAttribute('disabled', 'disabled');
-        }
-
         const formData = new FormData(catalogFilterForm);
         // временно отключаем возможность изменения полей формы до того как она будет оправлена на сервер
         container.setAttribute('disabled', 'disabled');
@@ -127,11 +122,6 @@ if (catalogFilterForm) {
             // включаем возможность изменения полей формы после отправки данных на сервер
             container.removeAttribute('disabled');
 
-            // включаем возможность переключения следующей страницы после отправки текущих данных
-            if (nextPageBtn) {
-              nextPageBtn.removeAttribute('disabled');
-            }
-
             // сбрасываем статус отправки данных формы
             isSendingData = false;
           });
@@ -144,6 +134,12 @@ if (catalogFilterForm && nextPageBtn && currentPageInput) {
   // обработка клика по кнопке переключения на "следующую страницу"
   nextPageBtn.addEventListener('click', (evt) => {
     evt.preventDefault();
+
+    // пока отправляются предыдущие данные, отменяем повторную отправку
+    if (isSendingData) {
+      return;
+    }
+
     // увеличиваем номер текущий страницы выбора товаров
     // сохраняем это значение в скрытом поле формы выбора товаров
     currentPageInput.value = parseInt(currentPageInput.value, 10) + 1;

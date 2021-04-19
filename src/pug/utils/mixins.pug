@@ -1,8 +1,26 @@
 //- For put image in WEBP and JPG formats
 mixin webpImg(name, alt= "", width, height, sourcePatch= "../../assets/img/")
+  -
+    var fName = name.split('.')[0]
+    var fExt = name.split('.')[1]
   picture
-    source(srcset= `${sourcePatch}${name}.webp`, type= "image/webp")
-    img(class!= attributes.class, src= `${sourcePatch}${name}.jpg`, alt= alt, width = width, height = height)
+    source(srcset= `${sourcePatch}${fName}.webp`, type= "image/webp")
+    img(class!= attributes.class, src= `${sourcePatch}${fName}.${fExt}`, alt= alt, width = width, height = height)
+
+//- For put image in WEBP and Retin
+mixin retinWebpImg(name, alt= "", width, height, sourcePatch= "../../assets/img/")
+  -
+    var fName = name.split('.')[0]
+    var fExt = name.split('.')[1]
+  picture
+    source(srcset= `${sourcePatch}${fName}.webp 1x, ${sourcePatch}${fName}@2x.webp 2x`,
+      type= "image/webp")
+    img(class!= attributes.class,
+      src= `${sourcePatch}${fName}.${fExt}`,
+      srcset= `${sourcePatch}${fName}.${fExt} 1x, ${sourcePatch}${fName}@2x.${fExt} 2x`,
+      alt= alt,
+      width = width,
+      height = height)
 
 //- Put external SVG-sprite
 mixin extSvgSprite(symbolId, width, height, fileName= "svg-sprite", sourcePatch= "../../assets/img/")

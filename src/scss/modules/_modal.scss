@@ -51,6 +51,7 @@
   font-weight: $font-weight-bold;
   line-height: 1.38;
   text-align: center;
+  color: inherit;
 }
 
 .modal__input-wrap {
@@ -62,15 +63,17 @@
 .modal__label {
   display: inline-block;
   margin-bottom: 10px;
+}
 
-  & > sup {
-    position: relative;
-    top: 0.1em;
-    left: 0.1em;
-    font-size: 1.4em;
-  }
+.modal__info[title] {
+  position: relative;
+  top: 0.1em;
+  left: 0.1em;
+  border: none;
+  font-size: 1.4em;
+  text-decoration: none;
 
-  .modal--inner-page & > sup {
+  .modal--inner-page & {
     color: #790505;
   }
 }

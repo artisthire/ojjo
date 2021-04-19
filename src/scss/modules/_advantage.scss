@@ -44,6 +44,14 @@
     transition: opacity 0.1s linear;
   }
 
+  .no-js & {
+    height: auto;
+
+    &::after {
+      display: none;
+    }
+  }
+
   &.show {
     height: auto;
 
@@ -55,8 +63,8 @@
 
   @media (min-width: $screen-md) {
     max-width: 540px;
-    margin-right: 15px;
     margin-bottom: 0;
+    margin-right: 15px;
   }
 }
 
@@ -76,25 +84,19 @@
   font-weight: $font-weight-normal;
   line-height: (22/18);
   text-transform: uppercase;
-  text-decoration: none;
+  text-decoration: underline dashed;
+  text-underline-offset: 0.2em;
   color: inherit;
   background-color: transparent;
   cursor: pointer;
 
-  &::after {
-    content: "";
-    position: absolute;
-    top: 2.2rem;
-    left: 0;
-    width: 100%;
-    border-bottom: 1px dashed $grey;
-  }
-
   &:hover,
   &:focus {
-    &::after {
-      display: none;
-    }
+    text-decoration: none;
+  }
+
+  .no-js & {
+    display: none;
   }
 }
 

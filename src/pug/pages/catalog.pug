@@ -3,7 +3,6 @@ extends ../layout/default.pug
 block vars
   - var isInnerPage = true
   - var productInCatalogCount = 6
-  - var isShowMoreProductBtn = true
 
 block title
   title Каталог
@@ -13,7 +12,7 @@ block content
   main
     .container
       section.catalog-filter
-        form.catalog-filter__form.js-catalog-filter-form(action="./", method="POST", name="catalog-filter")
+        form.catalog-filter__form.js-catalog-filter-form#catalog-filter-form(action="./", method="get", name="catalog-filter")
           -
             var catalogFilterData = [
               {name: "brand", title: "Бренд", options: ["Versacci", "Trebbo", "Jewelry for you family", "VIP ghoret", "Dolce & Gabanna"]},
@@ -45,11 +44,17 @@ block content
                 .select-field__btn-group
                   button.select-field__btn-reset.js-field-btn-reset(type="reset") Очистить
                   button.select-field__btn-submit.js-field-btn-submit(type="submit") Показать
-
           input.js-catalog-current-page(type="hidden", name="catalog-page", value="0")
 
-      section
+          .catalog-filter__btn-group
+            button.select-field__btn-reset(type="reset") Очистить
+            button.select-field__btn-submit(type="submit") Показать
+
+      section.product-catalog
         include ../includes/product-list.pug
+
+      .catalog-filter__more-btn-wrap
+        a.button.js-catalog-more-btn(href="catalog.html?page=0") Покажите еще
 
       include ../includes/advantage.pug
 

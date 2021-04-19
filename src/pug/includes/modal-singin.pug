@@ -8,11 +8,11 @@ block content
   form(action="./", method="post", name="form-singin")
     p.modal__input-wrap
       label.modal__label(for="user-login") Логин
-        sup *
+        abbr.modal__info(title="Обязательное поле") *
       input.modal__input#user-login(type="text", name="user-login", required)
     p.modal__input-wrap
       label.modal__label(for="user-password") Пароль
-        sup *
+        abbr.modal__info(title="Обязательное поле") *
       input.modal__input#user-password(type="password", name="user-password", required)
     p.modal__input-wrap
       input.visually-hidden.modal__checkbox#user-remember(type="checkbox", name="user-remember")

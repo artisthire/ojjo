@@ -1,28 +1,51 @@
 .category-filter {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: 0;
   margin-bottom: 20px;
-  margin-left: -20px;
-  padding: 0;
-  list-style: none;
-
-  @media (min-width: $screen-md) {
-    justify-content: flex-start;
-  }
+  text-align: center;
 
   @media (min-width: $screen-lg) {
     margin-bottom: 37px;
   }
 }
 
+.category-filter__field-wrap {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  padding-top: 10px;
+  border: none;
+
+  @media (min-width: $screen-md) {
+    justify-content: flex-start;
+    margin-left: -10px;
+  }
+}
+
 .category-filter__item {
   position: relative;
-  margin: 0;
-  margin-bottom: 20px;
-  margin-left: 20px;
+  margin: 0 5px 20px;
+
+  & > input:checked + .category-filter__btn {
+    color: $white;
+    background-color: $grey;
+    cursor: default;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  & > input:focus + .category-filter__btn {
+    border: none;
+    box-shadow: 0 2px 7px 0 $grey;
+  }
+
+  @media (min-width: $screen-md) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
 
 .category-filter__btn {
@@ -59,14 +82,8 @@
     border: 1px solid #D6D6D6;
     background-color: inherit;
   }
+}
 
-  &.active {
-    color: $white;
-    background-color: $grey;
-    cursor: default;
-
-    &::before {
-      display: none;
-    }
-  }
+.category-filter__submit-btn {
+  margin-top: 30px;
 }

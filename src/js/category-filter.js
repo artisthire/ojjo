@@ -4,66 +4,58 @@ import {swapPendingStatusBtn} from './utils';
 
 const categoryFilterForm = document.querySelector('.js-category-filter-container');
 const filterInputClass = 'js-category-filter-btn';
-const filterInputActiveClass = 'active';
-// поскольку для интуитивной возможности переключения кнопок категорий товаров
-// в форме используются обычные button[type='button']
-// чтобы форма отправлялась обычным образом, значение активной кнопки фильтра категории
-// отражается на скрытое поле внутри формы input[type='hidden']
-const hiddenInputClass = 'js-category-filter-input';
+let isSendingData = false;
 
 if (categoryFilterForm) {
+  // скрываем кнопку отправки формы, поскольку форма отправляется автоматически при смете категории товара
+  // используется сокрытие скриптом, для того чтобы при отключении JS кнопка submit была доступна
+  const submitBtn = categoryFilterForm.querySelector('button[type="submit"]');
+  submitBtn.className = 'visually-hidden';
+  submitBtn.setAttribute('tabindex', '-1');
+
+  // предотвращает переключение кнопки мышью пока не завершится предыдущая отправка данных
+  categoryFilterForm.addEventListener('click', (evt) => {
+    if (evt.target.closest(`.${filterInputClass}`) && isSendingData) {
+      evt.preventDefault();
+    }
+  });
+
+  // предотвращает переключение кнопки клавиатурой пока не завершится предыдущая отправка данных
+  categoryFilterForm.addEventListener('keydown', (evt) => {
+    // для радиокнопок смена состояния проводится стрелками
+    if (evt.code.includes('Arrow') && isSendingData) {
+      evt.preventDefault();
+    }
+  });
 
   categoryFilterForm.addEventListener('submit', (evt) => {
     evt.preventDefault();
-    // находим активную кнопку категории товаров
-    const activeFilterInput = categoryFilterForm.querySelector(`.${filterInputClass}.${filterInputActiveClass}`);
-    // и устанавливаем ей индикацию ожидания получения данных
-    swapPendingStatusBtn(activeFilterInput, {isPending: true});
-
-    getData(evt.target)
-      .finally(() => swapPendingStatusBtn(activeFilterInput, {isPending: false}));
+    sendData(categoryFilterForm);
   });
 
-  // кнопки переключения фильтра выбора категории товара
-  const categoryFilterBtns = categoryFilterForm.querySelectorAll(`.${filterInputClass}`);
-  // скрытого поля input[hidden], на который отражается значение выбраной категории в активной кнопке
-  // и через который информация передается внуть формы
-  const hiddenInput = document.querySelector(`.${hiddenInputClass}`);
-
-  categoryFilterForm.addEventListener('click', (evt) => {
-    // обрабатываем только если клик по одной из кнопок смены категории товара
-    // и эта кнопка еще не активна
-    if (evt.target.closest(`.${filterInputClass}`) && !evt.target.closest(`.${filterInputActiveClass}`)) {
-      evt.preventDefault();
-
-      // изменяем стили для кнопок
-      // убираем стиль активности со всех кнопок
-      categoryFilterBtns.forEach((btn) => {
-        btn.classList.remove(filterInputActiveClass);
-        btn.removeAttribute('tabindex');
-      });
-      // устанавливаем стиль активности только для кнопки, по которой был клик
-      evt.target.classList.add(filterInputActiveClass);
-      // дополнительно устанавливается tabindex = -1 для актвной кнопки
-      evt.target.setAttribute('tabindex', '-1');
-      // показ визуального эффекта ожидания получения данных на активной кнопке фильтра
-      swapPendingStatusBtn(evt.target, {isPending: true});
-      // передача значения активной кнопки фильтра в скрытое поле формы
-      hiddenInput.value = evt.target.dataset.productId;
-
-      // отправляем данные при клике на кнопку выбора категории товаров
-      getData(categoryFilterForm)
-      .finally(() => {
-        swapPendingStatusBtn(evt.target, {isPending: false});
-      });
-    }
+  categoryFilterForm.addEventListener('change', () => {
+    sendData(categoryFilterForm);
   });
 }
 
-// временная заглушка для отправки данных формы
-function getData(form) {
+// отправка данных формы
+function sendData(form) {
+  // находим выбранную кнопку фильтра
+  const activeFilterBtn = categoryFilterForm.querySelector('input[type="radio"]:checked + label');
+  // и устанавливаем ей индикацию ожидания получения данных
+  swapPendingStatusBtn(activeFilterBtn, {isPending: true});
+  // также устанавливае флаг отправки данных
+  // для предотвращения повторной отправки до завершения предыдущей
+  isSendingData = true;
+
+  // для отправки данных формы
   return fetch('https://httpbin.org/delay/3', {method: 'POST', body: new FormData(form)})
     .then((response) => response.json())
     .then((result) => console.log(result.form))
-    .catch((error) => console.log(error.message));
+    .catch((error) => console.log(error.message))
+    // в финале убираем статус ожидания отправки данных
+    .finally(() => {
+      swapPendingStatusBtn(activeFilterBtn, {isPending: false});
+      isSendingData = false;
+    });
 }

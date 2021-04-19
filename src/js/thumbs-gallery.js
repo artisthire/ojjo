@@ -1,5 +1,4 @@
 // обработка переключения изображений в галерее карточки товара
-
 const fullImgContainerClass = 'js-thumbs-img-container';
 const thumbLinkClass = 'js-thumbs-img-link';
 const activeClass = 'show';
@@ -13,13 +12,25 @@ let prevSrc = null;
 if (thumbsGallery) {
   // контейнер для больших картинок
   const imgContainer = document.querySelector(`.${fullImgContainerClass}`);
-  const fullImg = imgContainer.querySelector('img');
+  const originalImg = imgContainer.querySelector('img').cloneNode();
+  imgContainer.querySelector('picture').remove();
+
+  originalImg.removeAttribute('srcset');
+  originalImg.setAttribute('src', getSrc(originalImg.getAttribute('src')));
+  imgContainer.append(originalImg);
+
+  // для всех ссылок слайдера меняем ссылку на картинку в зависимости от поддержки WebP и ретинизации
+  document.querySelectorAll(`.${thumbLinkClass}`).forEach((link) => {
+    link.setAttribute('href', getSrc(link.getAttribute('href')));
+  });
+
   // для анимации смены картинок создается клон исходной большой картинки
-  const cloneFullImg = fullImg.cloneNode();
+  const cloneImg = originalImg.cloneNode();
   // у клона убирается класс показа
-  cloneFullImg.classList.remove(`${activeClass}`);
+  cloneImg.classList.remove(`${activeClass}`);
+  // cloneFullImg.classList.remove(`${activeClass}`);
   // и он добавляется в общий контейнер
-  imgContainer.append(cloneFullImg);
+  imgContainer.append(cloneImg);
 
   // для всех ссылок предотвращается переход
   thumbsGallery.addEventListener('click', (evt) => {
@@ -28,12 +39,11 @@ if (thumbsGallery) {
     }
   });
 
-  // при наведении на ссылку с миниатюрой меняется "большое изображение"
   thumbsGallery.addEventListener('mouseover', (evt) => {
     const imgLink = evt.target.closest(`.${thumbLinkClass}`);
 
     if (imgLink) {
-      setImgSrc(imgLink, fullImg, cloneFullImg);
+      setImgSrc(imgLink, originalImg, cloneImg);
     }
   });
 
@@ -42,7 +52,7 @@ if (thumbsGallery) {
     const imgLink = evt.target.closest(`.${thumbLinkClass}`);
 
     if (imgLink) {
-      setImgSrc(imgLink, fullImg, cloneFullImg);
+      setImgSrc(imgLink, originalImg, cloneImg);
     }
   });
 }
@@ -76,5 +86,26 @@ function setImgSrc(imgLink, firstImg, secondImg) {
     firstImg.setAttribute('src', currentSrc);
     firstImg.classList.add(`${activeClass}`);
   }
+}
+
+// возврящает адрес URL-ссылки на изображение в зависимости от поддержки WebP и ретина-экрана
+function getSrc(originalSrc) {
+  const isRetina = window.devicePixelRatio > 1 || false;
+  // признак поддержки формата WebP устанавливается отдельным скриптом
+  const isWebPSupported = document.documentElement.classList.contains('webp');
+  let modifSrc = '';
+
+  if (isRetina && isWebPSupported) {
+    // меняет URL, добавив в конец названия файла '@2x.webp'
+    // где признак @2x - означает, что должен быть загружен файл для ретина-экранов
+    // расширение меняется на .webp, если браузер поддерживает расширение WebP
+    modifSrc = originalSrc.replace(/.(\w+)$/, '@2x.webp');
+  } else if (isRetina) {
+    modifSrc = originalSrc.replace(/.(\w+)$/, '@2x.$1');
+  } else if (isWebPSupported) {
+    modifSrc = originalSrc.replace(/.(\w+)$/, '.webp');
+  }
+
+  return modifSrc;
 }
 

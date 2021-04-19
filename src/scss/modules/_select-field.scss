@@ -14,8 +14,8 @@
   position: relative;
   display: block;
   width: 16rem;
-  padding-right: 15px;
   padding-bottom: 0.9rem;
+  padding-right: 15px;
   border: none;
   border-bottom: 1px solid #D6D6D6;
   font-size: 1.6rem;
@@ -25,6 +25,10 @@
   color: inherit;
   background-color: transparent;
   cursor: pointer;
+
+  .no-js &::after {
+    display: none;
+  }
 
   &:hover,
   &:focus {
@@ -73,6 +77,19 @@
 
   &.collapsed {
     display: none;
+  }
+
+  .no-js & {
+    position: static;
+    padding-top: 15px;
+
+    &.collapsed {
+      display: block;
+    }
+
+    &::before {
+      display: none;
+    }
   }
 
   &::before {
@@ -177,11 +194,14 @@
   border-top: 1px solid #D6D6D6;
   font-size: 1.2rem;
   line-height: (12/14);
+
+  .no-js & {
+    display: none;
+  }
 }
 
 .select-field__btn-reset,
 .select-field__btn-submit {
-  position: relative;
   display: inline-block;
   margin: 0;
   padding: 0.8rem 1.2rem;
@@ -194,24 +214,14 @@
 
 .select-field__btn-reset {
   padding-left: 0;
+  text-decoration: underline dashed;
+  text-underline-offset: 0.3em;
   color: $grey;
   background-color: transparent;
 
-  &::after {
-    content: "";
-    position: absolute;
-    top: 2.2rem;
-    left: 0;
-    width: calc(100% - 1.2rem);
-    height: 1px;
-    border-bottom: 1px dashed $grey;
-  }
-
   &:hover,
   &:focus {
-    &::after {
-      display: none;
-    }
+    text-decoration: none;
   }
 }
 

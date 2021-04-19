@@ -21,7 +21,7 @@ footer.footer
         ul.pay-card
           for name, i in ["Visa", "MasterCard"]
             li
-              img.pay-card__logo(src=`../../assets/img/card-logo-${i + 1}.png`, alt=`${name}`, width="45", height="30")
+              +retinWebpImg(`card-logo-${i + 1}.png`, alt=`${name}`, width="45", height="30").pay-card__logo
 
       .footer__item
         h3.footer__title контакты

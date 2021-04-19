@@ -141,6 +141,7 @@
     "line-height",
     "text-transform",
     "text-decoration",
+    "text-underline-offset",
     "text-align",
     "text-align-last",
     "letter-spacing",

@@ -24,13 +24,13 @@ block content
       .thumbs-gallery.js-thumbs-gallery
         .thumbs-gallery__img-wrap.js-thumbs-img-container
           // клас "show" используется для анимированной смены картинок
-          img.thumbs-gallery__img.show(src="../../assets/img/product-1.jpg", alt="Изображение продукта", width="540", height="430")
+          +retinWebpImg(`product-1.jpg`, alt="Изображение продукта", width="540", height="430").thumbs-gallery__img.show
         // значение аттрибута src для большого изображения берется из атрибута href ссылки
         ul.thumbs-gallery__list
           for _, index in Array(3)
             li
               a.thumbs-gallery__link.js-thumbs-img-link(href=`./assets/img/product-${index + 1}.jpg`, target="_blank")
-                img(src=`../../assets/img/product-${index + 1}.jpg`, alt="Миниатюра продукта", width="160", height="120")
+                +retinWebpImg(`product-${index + 1}.jpg`, alt="Миниатюра продукта", width="160", height="120")
 
       .product-description
         h2.product-description__title Подвеска Dolce & Gabbara
@@ -54,15 +54,14 @@ block content
         .product-description__price 200 000 ₽
 
         .product-description__control-btns
-          button.button.button--small.button--dark-shadow.product-description__btn(type="button") Купить
-          button.button.button--invert.button--small.button--dark-shadow.product-description__btn(type="button") добавить в корзину
+          a.button.button--small.button--dark-shadow.product-description__btn(href="#buy?product_id") Купить
+          a.button.button--invert.button--small.button--dark-shadow.product-description__btn(href="#basket?product-id") добавить в корзину
 
     include ../includes/advantage.pug
 
-    section.product-additional
-      .product-additional__slogan Мы подготовили для вас кое-что еще
-      h2.product-additional__title Товары, которые могут Вам понравиться
-
+    section.product-catalog
+      .product-catalog__slogan Мы подготовили для вас кое-что еще
+      h2.product-catalog__title Товары, которые могут Вам понравиться
       include ../includes/product-list.pug
 
     include ../includes/subscribe.pug
