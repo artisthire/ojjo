@@ -92,23 +92,24 @@
 .contacts__map-wrapper {
   position: relative;
   padding-bottom: 70%;
-
-  & > img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
 }
 
+.contacts__fallback-img,
 .contacts__map {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
   width: 100%;
   height: 100%;
+}
+
+// резервная картинка с картой показывается только при отключенном JS
+.no-js .contacts__fallback-img {
+  background-image: url("../../assets/img/contact__map.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include retina {
+    background-image: url("../../assets/img/contact__map@2x.jpg");
+  }
 }

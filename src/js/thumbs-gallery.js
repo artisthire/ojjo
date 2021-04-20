@@ -4,12 +4,12 @@ const thumbLinkClass = 'js-thumbs-img-link';
 const activeClass = 'show';
 
 // общий контейнер галереи
-const thumbsGallery = document.querySelector('.js-thumbs-gallery');
+// const thumbsGallery = document.querySelector('.js-thumbs-gallery');
 // значение используется для предотвращения смены большой картинки
 // если не был изменен фокус на другую картинку в миниатюрах
 let prevSrc = null;
 
-if (thumbsGallery) {
+export default function initThumbsCallery(thumbsGallery) {
   // контейнер для больших картинок
   const imgContainer = document.querySelector(`.${fullImgContainerClass}`);
   const originalImg = imgContainer.querySelector('img').cloneNode();

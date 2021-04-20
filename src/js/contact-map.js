@@ -5,12 +5,9 @@
 import '../assets/img/map-icon.png';
 
 // контейнер, внутри которого размещается интерактивная карта
-// и запасная картинка с картой, которая показывается, если JS не запустится
-const mapWrapper = document.querySelector('.js-contact-map-container');
+// const mapWrapper = document.querySelector('.js-contact-map-container');
 
-if (mapWrapper) {
-  // резервная картинка, которая отображается, если не запустится скрипт
-  const fallbackImg = mapWrapper.querySelector('.js-contact-map-fallback-img');
+export default function initContactMap(mapWrapper) {
   // контейнер для размещения интерактивной карты
   const mapContainer = mapWrapper.querySelector('.js-contact-map');
   // ссылки в блоке Контактов, при клике на которые выполняется анимационный переход к нужной локации на карте
@@ -18,7 +15,7 @@ if (mapWrapper) {
 
   // координаты
   const coords = {
-    center: [59.93073285638871, 30.357258332419047], // центр отображения карты
+    center: [59.92896522507686, 30.357093736017127], // центр отображения карты
     marker1: [59.93011361514586, 30.369165267993417], // Главный офис
     marker2: [59.9281604552266, 30.347044810797435], // пр. Загородный, 145
     marker3: [59.92957406100327, 30.369268561806813] // пр. Невский, 142
@@ -65,9 +62,5 @@ if (mapWrapper) {
         });
       });
     }
-  })
-  .then(() => {
-    // если скрипт сработает, нужно скрыть запасную картинку со статичной картой
-    fallbackImg.style.display = 'none';
   });
 }

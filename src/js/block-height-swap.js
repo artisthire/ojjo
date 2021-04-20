@@ -1,11 +1,11 @@
 // обработка раскрытия на полную текстового описания в блоке преимуществ магазина
 
 // кнопка управления раскрытием/сокрытием блока текстового описания
-const showMoreBtn = document.querySelector('[data-swap-block]');
+// const showMoreBtn = document.querySelector('[data-swap-block]');
 // класс, который добавляется к текстовому блоку для его раскрытия на полную
 const activeClass = 'show';
 
-if (showMoreBtn) {
+export default function initBlockHeighSwap(showMoreBtn) {
   // текстовый блок которым управляет кнопка ищется по data-атрибуту этой кнопки
   const swapContainer = document.querySelector(`.${showMoreBtn.dataset.swapBlock}`);
 

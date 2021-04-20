@@ -11,16 +11,17 @@ const hideSwapFieldClass = 'collapsed';
 // Нужна для изменения позиции декоративного треугольника если поле фильтрации выходит за границы окна
 const arrowFieldCssProp = '--left-shift';
 
-const catalogFilterForm = document.querySelector('.js-catalog-filter-form');
-const fieldContainers = document.querySelectorAll(`.${containerClass}`);
-const currentPageInput = document.querySelector('.js-catalog-current-page');
-const nextPageBtn = document.querySelector('.js-catalog-more-btn');
+// const catalogFilterForm = document.querySelector('.js-catalog-filter-form');
 
 // переменная, хранящая статус отправки данных на сервер
 // используется для отмены повторной отправки пока отправляются предыдущие данные
 let isSendingData = false;
 
-if (catalogFilterForm) {
+export default function initCatalogFilterForm(catalogFilterForm) {
+  const fieldContainers = document.querySelectorAll(`.${containerClass}`);
+  const currentPageInput = document.querySelector('.js-catalog-current-page');
+  const nextPageBtn = document.querySelector('.js-catalog-more-btn');
+
   // получение данных при подтверждении формы
   catalogFilterForm.addEventListener('submit', (evt) => {
     evt.preventDefault();
@@ -128,30 +129,30 @@ if (catalogFilterForm) {
       }
     });
   });
-}
 
-if (catalogFilterForm && nextPageBtn && currentPageInput) {
-  // обработка клика по кнопке переключения на "следующую страницу"
-  nextPageBtn.addEventListener('click', (evt) => {
-    evt.preventDefault();
+  if (nextPageBtn && currentPageInput) {
+    // обработка клика по кнопке переключения на "следующую страницу"
+    nextPageBtn.addEventListener('click', (evt) => {
+      evt.preventDefault();
 
-    // пока отправляются предыдущие данные, отменяем повторную отправку
-    if (isSendingData) {
-      return;
-    }
+      // пока отправляются предыдущие данные, отменяем повторную отправку
+      if (isSendingData) {
+        return;
+      }
 
-    // увеличиваем номер текущий страницы выбора товаров
-    // сохраняем это значение в скрытом поле формы выбора товаров
-    currentPageInput.value = parseInt(currentPageInput.value, 10) + 1;
-    swapPendingStatusBtn(nextPageBtn, {isPending: true});
-    isSendingData = true;
-    // отправляем запрос на сервер с новым значением номера страницы выбора товаров
-    getData(new FormData(catalogFilterForm))
-      .finally(() => {
-        swapPendingStatusBtn(nextPageBtn, {isPending: false});
-        isSendingData = false;
-      });
-  });
+      // увеличиваем номер текущий страницы выбора товаров
+      // сохраняем это значение в скрытом поле формы выбора товаров
+      currentPageInput.value = parseInt(currentPageInput.value, 10) + 1;
+      swapPendingStatusBtn(nextPageBtn, {isPending: true});
+      isSendingData = true;
+      // отправляем запрос на сервер с новым значением номера страницы выбора товаров
+      getData(new FormData(catalogFilterForm))
+        .finally(() => {
+          swapPendingStatusBtn(nextPageBtn, {isPending: false});
+          isSendingData = false;
+        });
+    });
+  }
 }
 
 // функция сброса значений input-ов внутри поля фильтрации товаров
