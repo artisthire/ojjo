@@ -45,6 +45,8 @@ function showModal() {
   document.body.classList.add(hideScrollClass);
   document.body.classList.add(showModalClass);
   currentActiveModal.style.display = 'block';
+  // фокусировака на первом элементе ввода
+  currentActiveModal.querySelector('input:not(:disabled)').focus();
   // добавляем обработчики закрытия модального окна
   // при клике на кнопке закрытия
   currentCloseBtn.addEventListener('click', hideModal);

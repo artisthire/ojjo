@@ -25,9 +25,11 @@ burgerBtn.addEventListener('click', (evt) => {
   body.classList.contains(showMenuClass) ? hideMenu() : showMenu();
 });
 
-const mediaQueryList = window.matchMedia(`(min-width: ${mobileMediaResolution}px)`);
+// Safari требует в matchMedia указать 'screen and ...'
+// а также addListener вместо addEventListener для matchMedia
+const mediaQueryList = window.matchMedia(`screen and (min-width: ${mobileMediaResolution}px)`);
 // убираем класс показа меню с BODY на экранах где показывается полная (не мобильная) версия меню
-mediaQueryList.addEventListener('change', (evt) => {
+mediaQueryList.addListener((evt) => {
   if (evt.matches && body.classList.contains(showMenuClass)) {
     body.classList.remove(showMenuClass);
 

@@ -24,7 +24,8 @@ block content
             ]
 
           for data in catalogFilterData
-            fieldset.select-field.js-field-container
+            //- flex и grid не поддерживаются на fieldset в Edge, поэтому замена на div
+            .select-field.js-field-container
               button.select-field__title.js-field-show-btn(type="button", aria-expanded="false", aria-controls=`filter-${data.name}`)= `${data.title}`
               .select-field__inner.collapsed.js-field-swap-block(id=`filter-${data.name}`)
                 if (data.name === 'price')

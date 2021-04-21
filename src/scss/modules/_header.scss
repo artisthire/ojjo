@@ -1,26 +1,26 @@
 .header {
   position: absolute;
-  z-index: 2;
+  z-index: $z-index-header;
   width: 100%;
-  overflow: hidden;
   font-size: 1.4rem;
   font-weight: $font-weight-normal;
   line-height: (21/14);
   color: $white;
 
   &--inner-page {
-    position: static;
+    position: relative;
     background-color: $grey;
   }
 
+  // подложка
   &::after {
     content: "";
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    z-index: $z-index-menu--mobile - 1;
+    z-index: 1;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     transform: translateX(-100%);
     background-color: $grey;
     transition: transform 0.4s linear;
@@ -45,7 +45,7 @@
 
 .header__head {
   position: relative;
-  z-index: $z-index-menu--mobile;
+  z-index: 2;
   display: block;
 
   &--mobile {
@@ -60,7 +60,7 @@
   }
 
   &--desctop {
-    position: fixed;
+    position: absolute;
     left: 0;
     width: 100%;
     padding: 0 25px;

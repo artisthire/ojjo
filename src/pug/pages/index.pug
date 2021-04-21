@@ -27,7 +27,8 @@ block content
             h2.page-section__title Настоящая красота здесь!
 
           form.category-filter.js-category-filter-container(action="./", method="GET", name="form-category-filter")
-            fieldset.category-filter__field-wrap
+            //- flex и grid не поддерживаются на fieldset в Edge, поэтому замена на div
+            .category-filter__field-wrap
               -
                 var categoryData = [
                   {id: "prod-wedding", text: "Свадьба"},

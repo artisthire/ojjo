@@ -16,12 +16,12 @@ export default function initThumbsCallery(thumbsGallery) {
   imgContainer.querySelector('picture').remove();
 
   originalImg.removeAttribute('srcset');
-  originalImg.setAttribute('src', getSrc(originalImg.getAttribute('src')));
+  originalImg.setAttribute('src', getSupportedImgSrc(originalImg.getAttribute('src')));
   imgContainer.append(originalImg);
 
   // для всех ссылок слайдера меняем ссылку на картинку в зависимости от поддержки WebP и ретинизации
   document.querySelectorAll(`.${thumbLinkClass}`).forEach((link) => {
-    link.setAttribute('href', getSrc(link.getAttribute('href')));
+    link.setAttribute('href', getSupportedImgSrc(link.getAttribute('href')));
   });
 
   // для анимации смены картинок создается клон исходной большой картинки
@@ -89,7 +89,7 @@ function setImgSrc(imgLink, firstImg, secondImg) {
 }
 
 // возврящает адрес URL-ссылки на изображение в зависимости от поддержки WebP и ретина-экрана
-function getSrc(originalSrc) {
+function getSupportedImgSrc(originalSrc) {
   const isRetina = window.devicePixelRatio > 1 || false;
   // признак поддержки формата WebP устанавливается отдельным скриптом
   const isWebPSupported = document.documentElement.classList.contains('webp');
@@ -104,6 +104,8 @@ function getSrc(originalSrc) {
     modifSrc = originalSrc.replace(/.(\w+)$/, '@2x.$1');
   } else if (isWebPSupported) {
     modifSrc = originalSrc.replace(/.(\w+)$/, '.webp');
+  } else {
+    modifSrc = originalSrc;
   }
 
   return modifSrc;
