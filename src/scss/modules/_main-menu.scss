@@ -23,6 +23,14 @@
   display: inline-block;
   margin-bottom: 5px;
   padding: 1rem;
+  cursor: pointer;
+
+  &.active {
+    text-decoration: 2px underline dashed;
+    text-underline-offset: 0.2em;
+    user-select: none;
+    cursor: default;
+  }
 
   @media (min-width: $screen-sm) {
     margin: 0 0.5rem;

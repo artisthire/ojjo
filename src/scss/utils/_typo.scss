@@ -1,0 +1,176 @@
+// Типографика
+// Не пишите тут какую-либо стороннюю стилизацию.
+
+$font-size--h1:               1.6em !default;
+$font-size--h2:               1.4em !default;
+$font-size--h3:               1.2em !default;
+$font-size--h4:               1.1em !default;
+$font-size--h5:               1em !default;
+$font-size--h6:               1em !default;
+$font-size--small:            0.75em !default;
+
+$line-height:                 1.4 !default;
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $font-weight-bold;
+  line-height: 1.4;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: (2 * $line-height);
+  margin-bottom: $line-height;
+}
+
+h4,
+h5,
+h6 {
+  margin-top: $line-height;
+  margin-bottom: $line-height;
+}
+
+h1 {
+  font-size: $font-size--h1;
+}
+
+h2 {
+  font-size: $font-size--h2;
+}
+
+h3 {
+  font-size: $font-size--h3;
+}
+
+h4 {
+  font-size: $font-size--h4;
+}
+
+h5 {
+  font-size: $font-size--h5;
+}
+
+h6 {
+  font-size: $font-size--h6;
+}
+
+p,
+ul,
+ol,
+dl,
+blockquote,
+pre,
+address,
+figure {
+  margin-top: $line-height;
+  margin-bottom: $line-height;
+}
+
+address {
+  font-style: normal;
+}
+
+ul,
+ol {
+  padding-left: 1.2em;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+li {
+  line-height: inherit;
+}
+
+dt {
+  font-weight: $font-weight-bold;
+}
+
+dd {
+  margin-left: 0;
+
+  & + dt {
+    margin-top: $line-height;
+  }
+}
+
+hr {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border: 0;
+  border-top: 1px solid $grey;
+}
+
+// .small,
+small {
+  font-size: $font-size--small;
+}
+
+sub,
+sup {
+  font-size: 70%;
+}
+
+// .mark,
+mark {
+  background: $light-grey;
+  padding: 0.1em 0.3em;
+}
+
+b,
+strong {
+  font-weight: $font-weight-bold;
+}
+
+blockquote {
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+
+button,
+a {
+  font-family: inherit;
+  color: inherit;
+}
+
+a {
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: 2px solid $black;
+}
+
+th,
+td {
+  padding: 0.5em;
+}
+
+th {
+  text-align: center;
+}

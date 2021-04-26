@@ -12,9 +12,12 @@ header.header.js-header-container(class={'header--inner-page': isInnerPage === t
     .header__head.header__head--desctop.js-header-content
       nav.header__menu.main-menu
         ul.main-menu__list
-          for text, link in {agent: "Контрагентам", design: "Дизайнерам", job: "Вакансии"}
+          for text, link in {partner: "Контрагентам", designer: "Дизайнерам", vacancy: "Вакансии"}
             li
-              a.header__link.main-menu__link(href= `#${link}`)= text
+              if (currentUrl === `${link}`)
+                span.header__link.main-menu__link.active= text
+              else
+                a.header__link.main-menu__link(href= `./${link}.html`)= text
 
       .header__logo
         a.header__link.logotype(href="./")

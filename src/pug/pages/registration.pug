@@ -7,37 +7,38 @@ block title
   title Регистрация
 
 block content
-  .container
-    .modal.modal--inner-page
-      .modal__content
-        .modal__title Регистрация
+  main
+    .container
+      .modal.modal--inner-page
+        .modal__content
+          .modal__title Регистрация
 
-        form(action="./", method="post", name="form-registration")
-          p.modal__input-wrap
-            label.modal__label(for="reg-login") Логин
-              abbr.modal__info(title="Обязательное поле") *
-            input.modal__input#reg-login(type="text", name="reg-login", required)
-          p.modal__input-wrap
-            label.modal__label(for="reg-password") Пароль
-              abbr.modal__info(title="Обязательное поле") *
-            input.modal__input#reg-password(type="password", name="reg-password", required)
-          p.modal__input-wrap
-            label.modal__label(for="reg-confirm-pas") Подтверждение пароля
-              abbr.modal__info(title="Обязательное поле") *
-            input.modal__input#reg-confirm-pas(type="password", name="reg-confirm-pas", required)
-          p.modal__input-wrap
-            label.modal__label(for="reg-email") Email
-              abbr.modal__info(title="Обязательное поле") *
-            input.modal__input#reg-email(type="email", name="reg-email", required)
-          p.modal__input-wrap
-            label.modal__label(for="reg-name") Имя
-              abbr.modal__info(title="Обязательное поле") *
-            input.modal__input#reg-name(type="text", name="reg-name", required)
-          p.modal__input-wrap
-            label.modal__label(for="reg-surname") Фамилия
-            input.modal__input#reg-surname(type="text", name="reg-surname")
-          p.modal__input-wrap
-            label.modal__label(for="reg-tel") Телефон
-            input.modal__input#reg-tel(type="tel", name="reg-tel")
+          form(action="./", method="post", name="form-registration")
+            p.modal__input-wrap
+              label.modal__label(for="reg-login") Логин
+                abbr.modal__info(title="Обязательное поле") *
+              input.modal__input#reg-login(type="text", name="reg-login", required)
+            p.modal__input-wrap
+              label.modal__label(for="reg-password") Пароль
+                abbr.modal__info(title="Обязательное поле") *
+              input.modal__input#reg-password(type="password", name="reg-password", required)
+            p.modal__input-wrap
+              label.modal__label(for="reg-confirm-pas") Подтверждение пароля
+                abbr.modal__info(title="Обязательное поле") *
+              input.modal__input#reg-confirm-pas(type="password", name="reg-confirm-pas", required)
+            p.modal__input-wrap
+              label.modal__label(for="reg-email") Email
+                abbr.modal__info(title="Обязательное поле") *
+              input.modal__input#reg-email(type="email", name="reg-email", required)
+            p.modal__input-wrap
+              label.modal__label(for="reg-name") Имя
+                abbr.modal__info(title="Обязательное поле") *
+              input.modal__input#reg-name(type="text", name="reg-name", required)
+            p.modal__input-wrap
+              label.modal__label(for="reg-surname") Фамилия
+              input.modal__input#reg-surname(type="text", name="reg-surname")
+            p.modal__input-wrap
+              label.modal__label(for="reg-tel") Телефон
+              input.modal__input#reg-tel(type="tel", name="reg-tel")
 
-          button.button.modal__submit(type="submit") Регистрация
+            button.button.modal__submit(type="submit") Регистрация

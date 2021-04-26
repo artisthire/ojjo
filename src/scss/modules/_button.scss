@@ -13,6 +13,7 @@
   background-color: $grey;
   cursor: pointer;
   transition: box-shadow 0.2s linear, opacity 0.2s linear;
+  user-select: none;
 
   &:hover,
   &:focus {

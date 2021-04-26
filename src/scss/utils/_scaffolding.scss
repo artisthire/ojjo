@@ -17,6 +17,10 @@ html {
 
 body {
   position: relative;
+  // для позиционирования футера внизу страницы даже при нехватке контента
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-family: $main-font;
   font-size: 1.4rem;
   line-height: 1.4;
@@ -38,12 +42,19 @@ svg {
   pointer-events: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: $font-weight-bold;
-  color: $grey;
+// Avoid 300ms click delay on touch devices that support the `touch-action` CSS property.
+a,
+// area,
+button,
+[role="button"],
+input,
+label,
+select,
+// summary,
+textarea {
+  touch-action: manipulation;
+}
+
+[tabindex="-1"]:focus {
+  outline: none;
 }
