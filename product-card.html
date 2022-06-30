@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html class="no-webp no-js" lang="ru">
+  <head>
+    <title>Карточка товара</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png">
+    <link rel="icon" sizes="32x32" href="./assets/favicons/favicon-32x32.png" type="image/png">
+    <link rel="icon" sizes="16x16" href="./assets/favicons/favicon-16x16.png" type="image/png">
+    <link rel="manifest" href="./assets/favicons/site.webmanifest">
+    <link rel="mask-icon" href="./assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="./assets/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="./assets/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link type="font/woff2" href="./assets/fonts/Gilroy-Regular.woff2" rel="preload" as="font" crossorigin="anonymous">
+    <link type="font/woff2" href="./assets/fonts/Gilroy-Medium.woff2" rel="preload" as="font" crossorigin="anonymous">
+    <link type="font/woff2" href="./assets/fonts/Gilroy-SemiBold.woff2" rel="preload" as="font" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full&amp;lazy=true"></script>
+    <script src="./assets/js/checkSupport.js"></script>
+  <script defer src="./assets/js/app.js"></script><script defer src="./assets/js/style.js"></script><link href="./assets/css/style.min.css" rel="stylesheet"></head>
+  <body>
+    <header class="header js-header-container header--inner-page">
+      <div class="container">
+        <div class="header__head header__head--mobile js-header-content">
+          <!-- клон логотипа для мобильной версии сайта-->
+          <div class="header__logo"><a class="header__link logotype" href="./"><img src="./assets/img/logo.svg" alt="Логотип" width="216" height="52"></a></div>
+          <button class="header__link burger" id="burger-btn" type="button" aria-label="Открыть меню" title="Открыть меню"><span></span></button>
+        </div>
+        <div class="header__head header__head--desctop js-header-content">
+          <nav class="header__menu main-menu">
+            <ul class="main-menu__list">
+              <li><a class="header__link main-menu__link" href="./partner.html">Контрагентам</a>
+              </li>
+              <li><a class="header__link main-menu__link" href="./designer.html">Дизайнерам</a>
+              </li>
+              <li><a class="header__link main-menu__link" href="./vacancy.html">Вакансии</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="header__logo"><a class="header__link logotype" href="./"><img src="./assets/img/logo.svg" alt="Логотип" width="216" height="52"></a></div>
+          <div class="header__profile profile">
+            <ul class="profile__list">
+              <li><a class="header__link profile__btn profile__btn--search" href="search.html" data-modal-id="modal-search">
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#search"></use>
+                  </svg><span>Поиск</span></a></li>
+              <li><a class="header__link profile__btn" href="singin.html" data-modal-id="modal-singin"><span>Вход/Регистрация</span></a></li>
+            </ul>
+            <ul class="profile__list profile__list--account">
+              <li><a class="header__link profile__btn" href="#account" title="Профиль">
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#account"></use>
+                  </svg><span class="visually-hidden">Профиль</span></a></li>
+              <li><a class="header__link profile__btn" href="#basket" title="Корзина">
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#basket"></use>
+                  </svg><span class="visually-hidden">Корзина</span></a></li>
+            </ul>
+          </div>
+          <div class="header__social">
+            <ul class="social social--header">
+              <li><a class="header__link social__link" href="#youtube" target="_blank" title="youtube" rel="noopener noreferrer">
+                  <svg width="26" height="26" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#youtube"></use>
+                  </svg><span class="visually-hidden">youtube</span></a></li>
+              <li><a class="header__link social__link" href="#vkontakte" target="_blank" title="vkontakte" rel="noopener noreferrer">
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#vkontakte"></use>
+                  </svg><span class="visually-hidden">vkontakte</span></a></li>
+              <li><a class="header__link social__link" href="#facebook" target="_blank" title="facebook" rel="noopener noreferrer">
+                  <svg width="26" height="26" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#facebook"></use>
+                  </svg><span class="visually-hidden">facebook</span></a></li>
+              <li><a class="header__link social__link" href="#telegram" target="_blank" title="telegram" rel="noopener noreferrer">
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#telegram"></use>
+                  </svg><span class="visually-hidden">telegram</span></a></li>
+              <li><a class="header__link social__link" href="#etsy" target="_blank" title="etsy" rel="noopener noreferrer">
+                  <svg width="16" height="16" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#etsy"></use>
+                  </svg><span class="visually-hidden">etsy</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="page-section__breadcrumbs">
+          <ul class="breadcrumbs">
+            <li class="breadcrumbs__item"><a href="./">Главная</a></li>
+            <li class="breadcrumbs__item"><a href="catalog.html">Каталог</a></li>
+            <li class="breadcrumbs__item"><a href="#">Категория</a></li>
+            <li class="breadcrumbs__item">Подвеска Dolce & Gabarra</li>
+          </ul>
+        </div>
+        <section class="product-detail">
+          <div class="thumbs-gallery js-thumbs-gallery">
+            <div class="thumbs-gallery__img-wrap js-thumbs-img-container">
+              <!-- клас "show" используется для анимированной смены картинок--><img class="thumbs-gallery__img show" src="./assets/img/product-1.jpg" alt="Изображение продукта" width="540" height="430" loading="lazy" decoding="async">
+            </div>
+            <!-- значение аттрибута src для большого изображения берется из атрибута href ссылки-->
+            <ul class="thumbs-gallery__list">
+              <li><a class="thumbs-gallery__link js-thumbs-img-link" href="./assets/img/product-1.jpg" target="_blank"><img src="./assets/img/product-1.jpg" alt="Миниатюра продукта" width="160" height="120" loading="lazy" decoding="async"></a></li>
+              <li><a class="thumbs-gallery__link js-thumbs-img-link" href="./assets/img/product-2.jpg" target="_blank"><img src="./assets/img/product-2.jpg" alt="Миниатюра продукта" width="160" height="120" loading="lazy" decoding="async"></a></li>
+              <li><a class="thumbs-gallery__link js-thumbs-img-link" href="./assets/img/product-3.jpg" target="_blank"><img src="./assets/img/product-3.jpg" alt="Миниатюра продукта" width="160" height="120" loading="lazy" decoding="async"></a></li>
+            </ul>
+          </div>
+          <div class="product-description">
+            <h2 class="product-description__title">Подвеска Dolce & Gabbara</h2>
+            <table class="product-description__detail">
+              <tbody class="product-description__table">
+                <tr class="product-description__row">
+                  <th class="product-description__cell" scope="row">Категория:</th>
+                  <td class="product-description__cell">Подвески</td>
+                </tr>
+                <tr class="product-description__row">
+                  <th class="product-description__cell" scope="row">Бренд:</th>
+                  <td class="product-description__cell">Dolce & Gabbara</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="product-description__text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit mattis scelerisque odio nunc. Ipsum quis facilisis turpis vulputate.
+              Viverra dignissim in nec phasellus. Tincidunt est ipsum diam, vestibulum dignissim dui diam. Et nulla sit convallis orci est, fames sit luctus lacus.
+              Nunc donec malesuada amet eget eget pharetra. Ultricies et, ac varius at amet viverra feugiat non massa. Vel vel in urna, sodales urna ac sed felis.
+              Tellus augue et senectus malesuada faucibus sollicitudin ornare. Sit non et sit enim in ornare velit. Ac imperdiet vitae, orci, nec scelerisque enim sit enim risus.
+              Et nulla sit convallis orci est, fames sit luctus lacus.
+              
+            </p>
+            <div class="product-description__price">200 000 ₽</div>
+            <div class="product-description__control-btns"><a class="button button--small button--dark-shadow product-description__btn" href="#buy?product_id">Купить</a><a class="button button--invert button--small button--dark-shadow product-description__btn" href="#basket?product-id">добавить в корзину</a></div>
+          </div>
+        </section>
+      </div>
+      <section class="container advantage">
+        <div>
+          <h2 class="advantage__title">Полное описание товара</h2>
+          <div class="advantage__text js-advantage-text">
+            <p class="advantage__descr">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum libero hic eius vitae eveniet placeat nam cum aliquam, ab in rem ea officia quam?
+              Delectus dignissimos eligendi placeat dicta quae! Iure magnam itaque quo accusamus? Ex, animi. Odit et tempora accusamus, dolor dolores ea nisi!
+              Reprehenderit, amet placeat quisquam dolores dolore recusandae eum ipsam quo porro, expedita tempora eius harum provident commodi, maiores impedit ex.
+              Velit quisquam dolores ipsam repudiandae asperiores animi dicta deleniti sit, delectus laboriosam cupiditate libero assumenda doloribus voluptate alias deserunt et, vero corporis.
+              Non deserunt rerum repudiandae eos possimus corporis perspiciatis totam quibusdam repellat quaerat quia, iste, reprehenderit adipisci aliquam illo dolorem perferendis expedita autem accusamus reiciendis eum in eveniet optio error?
+              Qui voluptas reprehenderit nam! Cupiditate, suscipit doloribus. Sit dolore, necessitatibus temporibus porro quos unde facere, doloremque qui, et perferendis alias corrupti doloribus.
+            </p>
+            <button class="advantage__btn-more" type="button" data-swap-block="js-advantage-text">читать полностью</button>
+          </div>
+        </div>
+        <ul class="advantage__list">
+          <li class="advantage__item">
+            <svg width="70" height="70" aria-hidden="true">
+              <use xlink:href="./assets/img/svg-sprite.svg#advantage-delivery"></use>
+            </svg><span class="advantage__item-text">Бесплатная доставка</span>
+          </li>
+          <li class="advantage__item">
+            <svg width="70" height="70" aria-hidden="true">
+              <use xlink:href="./assets/img/svg-sprite.svg#advantage-list"></use>
+            </svg><span class="advantage__item-text">Индивидуальный дизайн</span>
+          </li>
+          <li class="advantage__item">
+            <svg width="70" height="70" aria-hidden="true">
+              <use xlink:href="./assets/img/svg-sprite.svg#advantage-ribbon"></use>
+            </svg><span class="advantage__item-text">Бесплатная примерка</span>
+          </li>
+          <li class="advantage__item">
+            <svg width="70" height="70" aria-hidden="true">
+              <use xlink:href="./assets/img/svg-sprite.svg#advantage-jewelry"></use>
+            </svg><span class="advantage__item-text">Личный подход</span>
+          </li>
+        </ul>
+      </section>
+      <section class="product-catalog">
+        <div class="container">
+          <div class="product-catalog__slogan">Мы подготовили для вас кое-что еще</div>
+          <h2 class="product-catalog__title">Товары, которые могут Вам понравиться</h2>
+          <ul class="product-catalog__list">
+            <li class="product-catalog__item"><a class="product-catalog__card" href="product-card.html" title="Подробнее">
+                <picture>
+                  <source srcset="./assets/img/product.webp 1x, ./assets/img/product@2x.webp 2x" type="image/webp"/><img class="product-catalog__picture" src="./assets/img/product.jpg" srcset="./assets/img/product.jpg 1x, ./assets/img/product@2x.jpg 2x" alt="Изображение продукта" width="280" height="220" loading="lazy" decoding="async"/>
+                </picture>
+                <div class="product-catalog__card-title">Подвеска</div>
+                <div class="product-catalog__brand">Dolce & Gabanna</div>
+                <div class="product-catalog__price">175 000 ₽</div></a></li>
+            <li class="product-catalog__item"><a class="product-catalog__card" href="product-card.html" title="Подробнее">
+                <picture>
+                  <source srcset="./assets/img/product.webp 1x, ./assets/img/product@2x.webp 2x" type="image/webp"/><img class="product-catalog__picture" src="./assets/img/product.jpg" srcset="./assets/img/product.jpg 1x, ./assets/img/product@2x.jpg 2x" alt="Изображение продукта" width="280" height="220" loading="lazy" decoding="async"/>
+                </picture>
+                <div class="product-catalog__card-title">Подвеска</div>
+                <div class="product-catalog__brand">Dolce & Gabanna</div>
+                <div class="product-catalog__price">175 000 ₽</div></a></li>
+            <li class="product-catalog__item"><a class="product-catalog__card" href="product-card.html" title="Подробнее">
+                <picture>
+                  <source srcset="./assets/img/product.webp 1x, ./assets/img/product@2x.webp 2x" type="image/webp"/><img class="product-catalog__picture" src="./assets/img/product.jpg" srcset="./assets/img/product.jpg 1x, ./assets/img/product@2x.jpg 2x" alt="Изображение продукта" width="280" height="220" loading="lazy" decoding="async"/>
+                </picture>
+                <div class="product-catalog__card-title">Подвеска</div>
+                <div class="product-catalog__brand">Dolce & Gabanna</div>
+                <div class="product-catalog__price">175 000 ₽</div></a></li>
+          </ul>
+        </div>
+      </section>
+      <section class="page-section page-section--light page-section--bgn-twirl subscribe">
+        <div class="container">
+          <div class="page-section__container">
+            <div class="page-section__subtitle">Полезные советы и персональный предложения</div>
+            <h2 class="page-section__title">Эксклюзивная рассылка</h2>
+            <div class="subscribe__content">
+              <ul class="subscribe__advantage">
+                <li>Личный менеджер</li>
+                <li>Доставка и оформление</li>
+                <li>Индивидуальный дизайн</li>
+              </ul>
+              <form class="subscribe__form js-subscribe-form" action="./" method="POST" name="form-subscribe">
+                <input class="subscribe__form-input" type="email" name="subscribe-email" placeholder="Ваш e-mail" required>
+                <button class="button button--dark-shadow subscribe__form-btn" type="submit">Отправить</button>
+                <div class="subscribe__send-message js-subscribe-form-message">Вы не подписаны!</div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__item">
+            <h3 class="footer__title">Полезные ссылки</h3>
+            <ul class="footer-menu">
+              <li><a class="footer-menu__link" href="#delivery">Доставка</a></li>
+              <li><a class="footer-menu__link" href="#payment">Оплата</a></li>
+              <li><a class="footer-menu__link" href="#stock">Контрагентам</a></li>
+              <li><a class="footer-menu__link" href="#confidentiality">Политика конфиденциальности</a></li>
+            </ul>
+          </div>
+          <div class="footer__item">
+            <h3 class="footer__title">оплата</h3>
+            <p class="footer__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ullamcorper justo, nec, pellentesque.</p>
+            <ul class="pay-card">
+              <li>
+                <picture>
+                  <source srcset="./assets/img/card-logo-1.webp 1x, ./assets/img/card-logo-1@2x.webp 2x" type="image/webp"/><img class="pay-card__logo" src="./assets/img/card-logo-1.png" srcset="./assets/img/card-logo-1.png 1x, ./assets/img/card-logo-1@2x.png 2x" alt="Visa" width="45" height="30" loading="lazy" decoding="async"/>
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source srcset="./assets/img/card-logo-2.webp 1x, ./assets/img/card-logo-2@2x.webp 2x" type="image/webp"/><img class="pay-card__logo" src="./assets/img/card-logo-2.png" srcset="./assets/img/card-logo-2.png 1x, ./assets/img/card-logo-2@2x.png 2x" alt="MasterCard" width="45" height="30" loading="lazy" decoding="async"/>
+                </picture>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__item">
+            <h3 class="footer__title">контакты</h3>
+            <ul class="footer-contact">
+              <li><a class="footer-contact__link" href="tel:+388122345655">
+                  <svg width="20" height="20" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#phone"></use>
+                  </svg>8 (812) 234-56-55</a></li>
+              <li><a class="footer-contact__link" href="tel:+3881223456-55">
+                  <svg width="20" height="20" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#phone"></use>
+                  </svg>8 (812) 234-56-55</a></li>
+              <li><a class="footer-contact__link" href="mailto:ojjo@ojjo.ru">
+                  <svg width="20" height="20" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#mail"></use>
+                  </svg>ojjo@ojjo.ru</a></li>
+            </ul>
+          </div>
+          <div class="footer__item">
+            <h3 class="footer__title">социальные сети</h3>
+            <p class="footer__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ullamcorper justo, nec, pellentesque.</p>
+            <ul class="social">
+              <li><a class="social__link" href="#youtube" target="_blank" title="youtube" rel="noopener noreferrer">
+                  <svg width="26" height="26" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#youtube"></use>
+                  </svg><span class="visually-hidden">youtube</span></a></li>
+              <li><a class="social__link" href="#vkontakte" target="_blank" title="vkontakte" rel="noopener noreferrer">
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#vkontakte"></use>
+                  </svg><span class="visually-hidden">vkontakte</span></a></li>
+              <li><a class="social__link" href="#facebook" target="_blank" title="facebook" rel="noopener noreferrer">
+                  <svg width="26" height="26" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#facebook"></use>
+                  </svg><span class="visually-hidden">facebook</span></a></li>
+              <li><a class="social__link" href="#telegram" target="_blank" title="telegram" rel="noopener noreferrer">
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#telegram"></use>
+                  </svg><span class="visually-hidden">telegram</span></a></li>
+              <li><a class="social__link" href="#etsy" target="_blank" title="etsy" rel="noopener noreferrer">
+                  <svg width="16" height="16" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#etsy"></use>
+                  </svg><span class="visually-hidden">etsy</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <ul class="copyright">
+          <li><a class="copyright__link" href="#jewelry">(c) 2020 OJJO jewelry</a></li>
+          <li><a class="copyright__link" href="#public">Договор публичной оферты</a></li>
+          <li><a class="copyright__link" href="#agent">Контрагентам</a></li>
+          <li><a class="copyright__link copyright__link--underline" href="#figma">Сделано Figma.info</a></li>
+        </ul>
+      </div>
+    </footer>
+    <div class="modal" id="modal-search">
+      <div class="modal__content js-modal-content">
+        <h1 class="modal__title">Поиск по сайту</h1>
+        <form action="./" method="get" name="form-search">
+          <p class="modal__input-wrap">
+            <label class="modal__label" for="search-phrase">Текст запроса<abbr class="modal__info" title="Обязательное поле">*</abbr></label>
+            <input class="modal__input" id="search-phrase" type="search" name="search-phrase" required>
+          </p>
+          <button class="button modal__submit" type="submit">Найти</button>
+        </form>
+        <button class="modal__close-btn js-modal-close-btn" type="button"><span class="visually-hidden">Закрыть окно</span></button>
+      </div>
+    </div>
+    <div class="modal" id="modal-singin">
+      <div class="modal__content js-modal-content">
+        <h1 class="modal__title">Вход на сайт</h1>
+        <form action="./" method="post" name="form-singin">
+          <p class="modal__input-wrap">
+            <label class="modal__label" for="user-login">Логин<abbr class="modal__info" title="Обязательное поле">*</abbr></label>
+            <input class="modal__input" id="user-login" type="text" name="user-login" required>
+          </p>
+          <p class="modal__input-wrap">
+            <label class="modal__label" for="user-password">Пароль<abbr class="modal__info" title="Обязательное поле">*</abbr></label>
+            <input class="modal__input" id="user-password" type="password" name="user-password" required>
+          </p>
+          <p class="modal__input-wrap">
+            <input class="visually-hidden modal__checkbox" id="user-remember" type="checkbox" name="user-remember">
+            <label class="modal__checkbox-label" for="user-remember">Запомнить меня</label>
+          </p>
+          <p class="modal__input-wrap"><a class="modal__link" href="restore-password.html" data-modal-id="modal-restore-pas">Напомнить пароль</a></p>
+          <p class="modal__input-wrap"><a class="modal__link" href="registration.html" target="_blank">Я новый пользователь</a></p>
+          <button class="button modal__submit" type="submit">Вход</button>
+        </form>
+        <button class="modal__close-btn js-modal-close-btn" type="button"><span class="visually-hidden">Закрыть окно</span></button>
+      </div>
+    </div>
+    <div class="modal" id="modal-restore-pas">
+      <div class="modal__content js-modal-content">
+        <h1 class="modal__title">Получить временный пароль</h1>
+        <form action="./" method="post" name="form-remember-password">
+          <p class="modal__input-wrap">
+            <label class="modal__label" for="restore-login">Логин<abbr class="modal__info" title="Обязательное поле">*</abbr></label>
+            <input class="modal__input" id="restore-login" type="text" name="restore-login" required>
+          </p>
+          <button class="button modal__submit" type="submit">Отправить</button>
+        </form>
+        <button class="modal__close-btn js-modal-close-btn" type="button"><span class="visually-hidden">Закрыть окно</span></button>
+      </div>
+    </div>
+  </body>
+</html>

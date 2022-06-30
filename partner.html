@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html class="no-webp no-js" lang="ru">
+  <head>
+    <title>Контрагентам</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png">
+    <link rel="icon" sizes="32x32" href="./assets/favicons/favicon-32x32.png" type="image/png">
+    <link rel="icon" sizes="16x16" href="./assets/favicons/favicon-16x16.png" type="image/png">
+    <link rel="manifest" href="./assets/favicons/site.webmanifest">
+    <link rel="mask-icon" href="./assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="./assets/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="./assets/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link type="font/woff2" href="./assets/fonts/Gilroy-Regular.woff2" rel="preload" as="font" crossorigin="anonymous">
+    <link type="font/woff2" href="./assets/fonts/Gilroy-Medium.woff2" rel="preload" as="font" crossorigin="anonymous">
+    <link type="font/woff2" href="./assets/fonts/Gilroy-SemiBold.woff2" rel="preload" as="font" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full&amp;lazy=true"></script>
+    <script src="./assets/js/checkSupport.js"></script>
+  <script defer src="./assets/js/app.js"></script><script defer src="./assets/js/style.js"></script><link href="./assets/css/style.min.css" rel="stylesheet"></head>
+  <body>
+    <header class="header js-header-container header--inner-page">
+      <div class="container">
+        <div class="header__head header__head--mobile js-header-content">
+          <!-- клон логотипа для мобильной версии сайта-->
+          <div class="header__logo"><a class="header__link logotype" href="./"><img src="./assets/img/logo.svg" alt="Логотип" width="216" height="52"></a></div>
+          <button class="header__link burger" id="burger-btn" type="button" aria-label="Открыть меню" title="Открыть меню"><span></span></button>
+        </div>
+        <div class="header__head header__head--desctop js-header-content">
+          <nav class="header__menu main-menu">
+            <ul class="main-menu__list">
+              <li><span class="header__link main-menu__link active">Контрагентам</span>
+              </li>
+              <li><a class="header__link main-menu__link" href="./designer.html">Дизайнерам</a>
+              </li>
+              <li><a class="header__link main-menu__link" href="./vacancy.html">Вакансии</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="header__logo"><a class="header__link logotype" href="./"><img src="./assets/img/logo.svg" alt="Логотип" width="216" height="52"></a></div>
+          <div class="header__profile profile">
+            <ul class="profile__list">
+              <li><a class="header__link profile__btn profile__btn--search" href="search.html" data-modal-id="modal-search">
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#search"></use>
+                  </svg><span>Поиск</span></a></li>
+              <li><a class="header__link profile__btn" href="singin.html" data-modal-id="modal-singin"><span>Вход/Регистрация</span></a></li>
+            </ul>
+            <ul class="profile__list profile__list--account">
+              <li><a class="header__link profile__btn" href="#account" title="Профиль">
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#account"></use>
+                  </svg><span class="visually-hidden">Профиль</span></a></li>
+              <li><a class="header__link profile__btn" href="#basket" title="Корзина">
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#basket"></use>
+                  </svg><span class="visually-hidden">Корзина</span></a></li>
+            </ul>
+          </div>
+          <div class="header__social">
+            <ul class="social social--header">
+              <li><a class="header__link social__link" href="#youtube" target="_blank" title="youtube" rel="noopener noreferrer">
+                  <svg width="26" height="26" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#youtube"></use>
+                  </svg><span class="visually-hidden">youtube</span></a></li>
+              <li><a class="header__link social__link" href="#vkontakte" target="_blank" title="vkontakte" rel="noopener noreferrer">
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#vkontakte"></use>
+                  </svg><span class="visually-hidden">vkontakte</span></a></li>
+              <li><a class="header__link social__link" href="#facebook" target="_blank" title="facebook" rel="noopener noreferrer">
+                  <svg width="26" height="26" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#facebook"></use>
+                  </svg><span class="visually-hidden">facebook</span></a></li>
+              <li><a class="header__link social__link" href="#telegram" target="_blank" title="telegram" rel="noopener noreferrer">
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#telegram"></use>
+                  </svg><span class="visually-hidden">telegram</span></a></li>
+              <li><a class="header__link social__link" href="#etsy" target="_blank" title="etsy" rel="noopener noreferrer">
+                  <svg width="16" height="16" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#etsy"></use>
+                  </svg><span class="visually-hidden">etsy</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <h1>Контрагентам</h1>
+        <h2>Общая информация</h2>
+        <p>Став официальным дилером нашей компании, вы получаете такие преимущества сотрудничества:</p>
+        <ul>
+          <li>наши схемы взаимодействия с партнерами отработаны годами, а их продуктивность доказана тысячами заказов;</li>
+          <li>выгодные цены и гибкая система скидок;</li>
+          <li>оперативный обмен бухгалтерской и управленческой информацией и документами по дилерским предложениям;</li>
+          <li>маркетинговая поддержка в виде предоставления бесплатных технических каталогов, буклетов, брошюр, пакетов информационно-технических и рекламно-информационных материалов;</li>
+          <li>всегда актуальные прайс-листы;</li>
+          <li>логистическая поддержка и доставка продукции в любую точку Украины;</li>
+          <li>консультации о сотрудничестве и предоставляемой продукции.</li>
+        </ul>
+        <p>
+          Чтобы стать официальным дилером , просто позвоните нам или отправьте свое предложение по электронной почте.
+          При отправке письма обязательно указывайте контактную информацию и уточняйте регион, в котором готовы представлять нашу компанию.
+          Менеджеры оперативно ответят на все ваши вопросы и создадут максимально выгодные условия для партнерства.
+          
+        </p>
+        <p>
+          Быть нашим официальным представителем — значит начать новый успешный бизнес или существенно расширить свое дело.
+          Мы открыты для предложений от потенциальных дилеров, поэтому готовы вместе с вами принимать конструктивные решения, увеличивать объемы продаж и укреплять позиции на рынке.
+        </p>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__item">
+            <h3 class="footer__title">Полезные ссылки</h3>
+            <ul class="footer-menu">
+              <li><a class="footer-menu__link" href="#delivery">Доставка</a></li>
+              <li><a class="footer-menu__link" href="#payment">Оплата</a></li>
+              <li><a class="footer-menu__link" href="#stock">Контрагентам</a></li>
+              <li><a class="footer-menu__link" href="#confidentiality">Политика конфиденциальности</a></li>
+            </ul>
+          </div>
+          <div class="footer__item">
+            <h3 class="footer__title">оплата</h3>
+            <p class="footer__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ullamcorper justo, nec, pellentesque.</p>
+            <ul class="pay-card">
+              <li>
+                <picture>
+                  <source srcset="./assets/img/card-logo-1.webp 1x, ./assets/img/card-logo-1@2x.webp 2x" type="image/webp"/><img class="pay-card__logo" src="./assets/img/card-logo-1.png" srcset="./assets/img/card-logo-1.png 1x, ./assets/img/card-logo-1@2x.png 2x" alt="Visa" width="45" height="30" loading="lazy" decoding="async"/>
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source srcset="./assets/img/card-logo-2.webp 1x, ./assets/img/card-logo-2@2x.webp 2x" type="image/webp"/><img class="pay-card__logo" src="./assets/img/card-logo-2.png" srcset="./assets/img/card-logo-2.png 1x, ./assets/img/card-logo-2@2x.png 2x" alt="MasterCard" width="45" height="30" loading="lazy" decoding="async"/>
+                </picture>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__item">
+            <h3 class="footer__title">контакты</h3>
+            <ul class="footer-contact">
+              <li><a class="footer-contact__link" href="tel:+388122345655">
+                  <svg width="20" height="20" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#phone"></use>
+                  </svg>8 (812) 234-56-55</a></li>
+              <li><a class="footer-contact__link" href="tel:+3881223456-55">
+                  <svg width="20" height="20" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#phone"></use>
+                  </svg>8 (812) 234-56-55</a></li>
+              <li><a class="footer-contact__link" href="mailto:ojjo@ojjo.ru">
+                  <svg width="20" height="20" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#mail"></use>
+                  </svg>ojjo@ojjo.ru</a></li>
+            </ul>
+          </div>
+          <div class="footer__item">
+            <h3 class="footer__title">социальные сети</h3>
+            <p class="footer__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ullamcorper justo, nec, pellentesque.</p>
+            <ul class="social">
+              <li><a class="social__link" href="#youtube" target="_blank" title="youtube" rel="noopener noreferrer">
+                  <svg width="26" height="26" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#youtube"></use>
+                  </svg><span class="visually-hidden">youtube</span></a></li>
+              <li><a class="social__link" href="#vkontakte" target="_blank" title="vkontakte" rel="noopener noreferrer">
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#vkontakte"></use>
+                  </svg><span class="visually-hidden">vkontakte</span></a></li>
+              <li><a class="social__link" href="#facebook" target="_blank" title="facebook" rel="noopener noreferrer">
+                  <svg width="26" height="26" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#facebook"></use>
+                  </svg><span class="visually-hidden">facebook</span></a></li>
+              <li><a class="social__link" href="#telegram" target="_blank" title="telegram" rel="noopener noreferrer">
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#telegram"></use>
+                  </svg><span class="visually-hidden">telegram</span></a></li>
+              <li><a class="social__link" href="#etsy" target="_blank" title="etsy" rel="noopener noreferrer">
+                  <svg width="16" height="16" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#etsy"></use>
+                  </svg><span class="visually-hidden">etsy</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <ul class="copyright">
+          <li><a class="copyright__link" href="#jewelry">(c) 2020 OJJO jewelry</a></li>
+          <li><a class="copyright__link" href="#public">Договор публичной оферты</a></li>
+          <li><a class="copyright__link" href="#agent">Контрагентам</a></li>
+          <li><a class="copyright__link copyright__link--underline" href="#figma">Сделано Figma.info</a></li>
+        </ul>
+      </div>
+    </footer>
+    <div class="modal" id="modal-search">
+      <div class="modal__content js-modal-content">
+        <h1 class="modal__title">Поиск по сайту</h1>
+        <form action="./" method="get" name="form-search">
+          <p class="modal__input-wrap">
+            <label class="modal__label" for="search-phrase">Текст запроса<abbr class="modal__info" title="Обязательное поле">*</abbr></label>
+            <input class="modal__input" id="search-phrase" type="search" name="search-phrase" required>
+          </p>
+          <button class="button modal__submit" type="submit">Найти</button>
+        </form>
+        <button class="modal__close-btn js-modal-close-btn" type="button"><span class="visually-hidden">Закрыть окно</span></button>
+      </div>
+    </div>
+    <div class="modal" id="modal-singin">
+      <div class="modal__content js-modal-content">
+        <h1 class="modal__title">Вход на сайт</h1>
+        <form action="./" method="post" name="form-singin">
+          <p class="modal__input-wrap">
+            <label class="modal__label" for="user-login">Логин<abbr class="modal__info" title="Обязательное поле">*</abbr></label>
+            <input class="modal__input" id="user-login" type="text" name="user-login" required>
+          </p>
+          <p class="modal__input-wrap">
+            <label class="modal__label" for="user-password">Пароль<abbr class="modal__info" title="Обязательное поле">*</abbr></label>
+            <input class="modal__input" id="user-password" type="password" name="user-password" required>
+          </p>
+          <p class="modal__input-wrap">
+            <input class="visually-hidden modal__checkbox" id="user-remember" type="checkbox" name="user-remember">
+            <label class="modal__checkbox-label" for="user-remember">Запомнить меня</label>
+          </p>
+          <p class="modal__input-wrap"><a class="modal__link" href="restore-password.html" data-modal-id="modal-restore-pas">Напомнить пароль</a></p>
+          <p class="modal__input-wrap"><a class="modal__link" href="registration.html" target="_blank">Я новый пользователь</a></p>
+          <button class="button modal__submit" type="submit">Вход</button>
+        </form>
+        <button class="modal__close-btn js-modal-close-btn" type="button"><span class="visually-hidden">Закрыть окно</span></button>
+      </div>
+    </div>
+    <div class="modal" id="modal-restore-pas">
+      <div class="modal__content js-modal-content">
+        <h1 class="modal__title">Получить временный пароль</h1>
+        <form action="./" method="post" name="form-remember-password">
+          <p class="modal__input-wrap">
+            <label class="modal__label" for="restore-login">Логин<abbr class="modal__info" title="Обязательное поле">*</abbr></label>
+            <input class="modal__input" id="restore-login" type="text" name="restore-login" required>
+          </p>
+          <button class="button modal__submit" type="submit">Отправить</button>
+        </form>
+        <button class="modal__close-btn js-modal-close-btn" type="button"><span class="visually-hidden">Закрыть окно</span></button>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html class="no-webp no-js" lang="ru">
+  <head>
+    <title>Главная</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png">
+    <link rel="icon" sizes="32x32" href="./assets/favicons/favicon-32x32.png" type="image/png">
+    <link rel="icon" sizes="16x16" href="./assets/favicons/favicon-16x16.png" type="image/png">
+    <link rel="manifest" href="./assets/favicons/site.webmanifest">
+    <link rel="mask-icon" href="./assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="./assets/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="./assets/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link type="font/woff2" href="./assets/fonts/Gilroy-Regular.woff2" rel="preload" as="font" crossorigin="anonymous">
+    <link type="font/woff2" href="./assets/fonts/Gilroy-Medium.woff2" rel="preload" as="font" crossorigin="anonymous">
+    <link type="font/woff2" href="./assets/fonts/Gilroy-SemiBold.woff2" rel="preload" as="font" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full&amp;lazy=true"></script>
+    <script src="./assets/js/checkSupport.js"></script>
+    <link rel="preload" as="image" href="../../assets/img/header-background.jpg">
+    <link rel="preload" as="image" href="../../assets/img/header-background.webp">
+  <script defer src="./assets/js/app.js"></script><script defer src="./assets/js/style.js"></script><link href="./assets/css/style.min.css" rel="stylesheet"></head>
+  <body>
+    <header class="header js-header-container">
+      <div class="container">
+        <div class="header__head header__head--mobile js-header-content">
+          <!-- клон логотипа для мобильной версии сайта-->
+          <div class="header__logo"><a class="header__link logotype" href="./"><img src="./assets/img/logo.svg" alt="Логотип" width="216" height="52"></a></div>
+          <button class="header__link burger" id="burger-btn" type="button" aria-label="Открыть меню" title="Открыть меню"><span></span></button>
+        </div>
+        <div class="header__head header__head--desctop js-header-content">
+          <nav class="header__menu main-menu">
+            <ul class="main-menu__list">
+              <li><a class="header__link main-menu__link" href="./partner.html">Контрагентам</a>
+              </li>
+              <li><a class="header__link main-menu__link" href="./designer.html">Дизайнерам</a>
+              </li>
+              <li><a class="header__link main-menu__link" href="./vacancy.html">Вакансии</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="header__logo"><a class="header__link logotype" href="./"><img src="./assets/img/logo.svg" alt="Логотип" width="216" height="52"></a></div>
+          <div class="header__profile profile">
+            <ul class="profile__list">
+              <li><a class="header__link profile__btn profile__btn--search" href="search.html" data-modal-id="modal-search">
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#search"></use>
+                  </svg><span>Поиск</span></a></li>
+              <li><a class="header__link profile__btn" href="singin.html" data-modal-id="modal-singin"><span>Вход/Регистрация</span></a></li>
+            </ul>
+            <ul class="profile__list profile__list--account">
+              <li><a class="header__link profile__btn" href="#account" title="Профиль">
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#account"></use>
+                  </svg><span class="visually-hidden">Профиль</span></a></li>
+              <li><a class="header__link profile__btn" href="#basket" title="Корзина">
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#basket"></use>
+                  </svg><span class="visually-hidden">Корзина</span></a></li>
+            </ul>
+          </div>
+          <div class="header__social">
+            <ul class="social social--header">
+              <li><a class="header__link social__link" href="#youtube" target="_blank" title="youtube" rel="noopener noreferrer">
+                  <svg width="26" height="26" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#youtube"></use>
+                  </svg><span class="visually-hidden">youtube</span></a></li>
+              <li><a class="header__link social__link" href="#vkontakte" target="_blank" title="vkontakte" rel="noopener noreferrer">
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#vkontakte"></use>
+                  </svg><span class="visually-hidden">vkontakte</span></a></li>
+              <li><a class="header__link social__link" href="#facebook" target="_blank" title="facebook" rel="noopener noreferrer">
+                  <svg width="26" height="26" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#facebook"></use>
+                  </svg><span class="visually-hidden">facebook</span></a></li>
+              <li><a class="header__link social__link" href="#telegram" target="_blank" title="telegram" rel="noopener noreferrer">
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#telegram"></use>
+                  </svg><span class="visually-hidden">telegram</span></a></li>
+              <li><a class="header__link social__link" href="#etsy" target="_blank" title="etsy" rel="noopener noreferrer">
+                  <svg width="16" height="16" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#etsy"></use>
+                  </svg><span class="visually-hidden">etsy</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="promo">
+        <div class="promo__head">
+          <div class="container">
+            <h1 class="promo__slogan">Дорого, дорого, богато!</h1><a class="button" href="catalog.html">Каталог изделий</a>
+          </div>
+        </div>
+        <div class="brands">
+          <div class="container">
+            <ul class="brands__list">
+              <li class="brands__item">
+                <picture>
+                  <source srcset="./assets/img/brand-logo.webp 1x, ./assets/img/brand-logo@2x.webp 2x" type="image/webp"/><img src="./assets/img/brand-logo.png" srcset="./assets/img/brand-logo.png 1x, ./assets/img/brand-logo@2x.png 2x" alt="Coco Fine Jewelry" width="160" height="60" loading="lazy" decoding="async"/>
+                </picture>
+              </li>
+              <li class="brands__item">
+                <picture>
+                  <source srcset="./assets/img/brand-logo.webp 1x, ./assets/img/brand-logo@2x.webp 2x" type="image/webp"/><img src="./assets/img/brand-logo.png" srcset="./assets/img/brand-logo.png 1x, ./assets/img/brand-logo@2x.png 2x" alt="Coco Fine Jewelry" width="160" height="60" loading="lazy" decoding="async"/>
+                </picture>
+              </li>
+              <li class="brands__item">
+                <picture>
+                  <source srcset="./assets/img/brand-logo.webp 1x, ./assets/img/brand-logo@2x.webp 2x" type="image/webp"/><img src="./assets/img/brand-logo.png" srcset="./assets/img/brand-logo.png 1x, ./assets/img/brand-logo@2x.png 2x" alt="Coco Fine Jewelry" width="160" height="60" loading="lazy" decoding="async"/>
+                </picture>
+              </li>
+              <li class="brands__item">
+                <picture>
+                  <source srcset="./assets/img/brand-logo.webp 1x, ./assets/img/brand-logo@2x.webp 2x" type="image/webp"/><img src="./assets/img/brand-logo.png" srcset="./assets/img/brand-logo.png 1x, ./assets/img/brand-logo@2x.png 2x" alt="Coco Fine Jewelry" width="160" height="60" loading="lazy" decoding="async"/>
+                </picture>
+              </li>
+              <li class="brands__item">
+                <picture>
+                  <source srcset="./assets/img/brand-logo.webp 1x, ./assets/img/brand-logo@2x.webp 2x" type="image/webp"/><img src="./assets/img/brand-logo.png" srcset="./assets/img/brand-logo.png 1x, ./assets/img/brand-logo@2x.png 2x" alt="Coco Fine Jewelry" width="160" height="60" loading="lazy" decoding="async"/>
+                </picture>
+              </li>
+              <li class="brands__item">
+                <picture>
+                  <source srcset="./assets/img/brand-logo.webp 1x, ./assets/img/brand-logo@2x.webp 2x" type="image/webp"/><img src="./assets/img/brand-logo.png" srcset="./assets/img/brand-logo.png 1x, ./assets/img/brand-logo@2x.png 2x" alt="Coco Fine Jewelry" width="160" height="60" loading="lazy" decoding="async"/>
+                </picture>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="page-section">
+        <div class="container">
+          <div class="product-category">
+            <div class="product-category__head">
+              <div class="page-section__subtitle">К мероприятиям</div>
+              <h2 class="page-section__title">Настоящая красота здесь!</h2>
+            </div>
+            <form class="category-filter js-category-filter-container" action="./" method="GET" name="form-category-filter">
+              <div class="category-filter__field-wrap">
+                <p class="category-filter__item">
+                  <input class="visually-hidden" type="radio" id="prod-wedding" name="product-category" value="prod-wedding" checked>
+                  <label class="category-filter__btn js-category-filter-btn" for="prod-wedding">Свадьба</label>
+                </p>
+                <p class="category-filter__item">
+                  <input class="visually-hidden" type="radio" id="prod-husband" name="product-category" value="prod-husband">
+                  <label class="category-filter__btn js-category-filter-btn" for="prod-husband">Мужу</label>
+                </p>
+                <p class="category-filter__item">
+                  <input class="visually-hidden" type="radio" id="prod-wife" name="product-category" value="prod-wife">
+                  <label class="category-filter__btn js-category-filter-btn" for="prod-wife">Жене</label>
+                </p>
+                <p class="category-filter__item">
+                  <input class="visually-hidden" type="radio" id="prod-partner" name="product-category" value="prod-partner">
+                  <label class="category-filter__btn js-category-filter-btn" for="prod-partner">Партнеру</label>
+                </p>
+                <p class="category-filter__item">
+                  <input class="visually-hidden" type="radio" id="prod-collection" name="product-category" value="prod-collection">
+                  <label class="category-filter__btn js-category-filter-btn" for="prod-collection">Коллекции</label>
+                </p>
+                <p class="category-filter__item">
+                  <input class="visually-hidden" type="radio" id="prod-rarity" name="product-category" value="prod-rarity">
+                  <label class="category-filter__btn js-category-filter-btn" for="prod-rarity">Редкость</label>
+                </p>
+              </div>
+              <button class="button button--dark-shadown category-filter__submit-btn" type="submit">Фильтровать</button>
+            </form>
+            <ul class="category-result">
+              <li><a class="present-cart" href="catalog.html?category=product-1">
+                  <picture>
+                    <source srcset="./assets/img/product-category-1.webp 1x, ./assets/img/product-category-1@2x.webp 2x" type="image/webp"/><img class="present-cart__img" src="./assets/img/product-category-1.jpg" srcset="./assets/img/product-category-1.jpg 1x, ./assets/img/product-category-1@2x.jpg 2x" alt="кольца" width="350" height="280" loading="lazy" decoding="async"/>
+                  </picture>
+                  <p class="present-cart__text">кольца</p></a></li>
+              <li><a class="present-cart" href="catalog.html?category=product-2">
+                  <picture>
+                    <source srcset="./assets/img/product-category-2.webp 1x, ./assets/img/product-category-2@2x.webp 2x" type="image/webp"/><img class="present-cart__img" src="./assets/img/product-category-2.jpg" srcset="./assets/img/product-category-2.jpg 1x, ./assets/img/product-category-2@2x.jpg 2x" alt="серьги" width="350" height="280" loading="lazy" decoding="async"/>
+                  </picture>
+                  <p class="present-cart__text">серьги</p></a></li>
+              <li><a class="present-cart" href="catalog.html?category=product-3">
+                  <picture>
+                    <source srcset="./assets/img/product-category-3.webp 1x, ./assets/img/product-category-3@2x.webp 2x" type="image/webp"/><img class="present-cart__img" src="./assets/img/product-category-3.jpg" srcset="./assets/img/product-category-3.jpg 1x, ./assets/img/product-category-3@2x.jpg 2x" alt="подвески" width="350" height="280" loading="lazy" decoding="async"/>
+                  </picture>
+                  <p class="present-cart__text">подвески</p></a></li>
+              <li><a class="present-cart" href="catalog.html?category=product-4">
+                  <picture>
+                    <source srcset="./assets/img/product-category-4.webp 1x, ./assets/img/product-category-4@2x.webp 2x" type="image/webp"/><img class="present-cart__img" src="./assets/img/product-category-4.jpg" srcset="./assets/img/product-category-4.jpg 1x, ./assets/img/product-category-4@2x.jpg 2x" alt="запонки" width="350" height="280" loading="lazy" decoding="async"/>
+                  </picture>
+                  <p class="present-cart__text">запонки</p></a></li>
+              <li><a class="present-cart" href="catalog.html?category=product-5">
+                  <picture>
+                    <source srcset="./assets/img/product-category-5.webp 1x, ./assets/img/product-category-5@2x.webp 2x" type="image/webp"/><img class="present-cart__img" src="./assets/img/product-category-5.jpg" srcset="./assets/img/product-category-5.jpg 1x, ./assets/img/product-category-5@2x.jpg 2x" alt="браслеты" width="350" height="280" loading="lazy" decoding="async"/>
+                  </picture>
+                  <p class="present-cart__text">браслеты</p></a></li>
+              <li><a class="present-cart" href="catalog.html?category=product-6">
+                  <picture>
+                    <source srcset="./assets/img/product-category-6.webp 1x, ./assets/img/product-category-6@2x.webp 2x" type="image/webp"/><img class="present-cart__img" src="./assets/img/product-category-6.jpg" srcset="./assets/img/product-category-6.jpg 1x, ./assets/img/product-category-6@2x.jpg 2x" alt="часы" width="350" height="280" loading="lazy" decoding="async"/>
+                  </picture>
+                  <p class="present-cart__text">часы</p></a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="page-section page-section--light page-section--bgn-twirl salon">
+        <div class="container">
+          <div class="page-section__container">
+            <div class="page-section__subtitle">Не знаете, что выбрать?</div>
+            <h2 class="page-section__title">Посетите наши салоны в Москве</h2>
+            <p class="salon__description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut duis tortor vitae pellentesque egestas quam pulvinar.
+              Pellentesque porttitor velit sit pellentesque. Suspendisse donec pretium id dignissim.
+              Dignissim ultrices eget orci viverra. Egestas quis et ut ultrices imperdiet lectus nulla tempus.
+              Pharetra lorem sem purus nisi libero viverra ipsum.
+            </p><a class="button button--invert" href="contacts.html">наши салоны</a>
+          </div>
+        </div>
+      </section>
+      <section class="page-section blog">
+        <div class="container">
+          <div class="page-section__subtitle">Полезные статьи</div>
+          <h2 class="page-section__title">Лучшие советы по подбору дорогих подарков</h2>
+          <ul class="blog__list">
+            <li><a class="present-cart" href="#blog-1" target="_blank" rel="noopener noreferrer">
+                <picture>
+                  <source srcset="./assets/img/blog-img-1.webp 1x, ./assets/img/blog-img-1@2x.webp 2x" type="image/webp"/><img class="present-cart__img" src="./assets/img/blog-img-1.jpg" srcset="./assets/img/blog-img-1.jpg 1x, ./assets/img/blog-img-1@2x.jpg 2x" alt="Изображение блога" width="350" height="370" loading="lazy" decoding="async"/>
+                </picture>
+                <p class="present-cart__text blog__text">Как выбрать <br/>часы для своей будущей жены</p></a></li>
+            <li><a class="present-cart" href="#blog-2" target="_blank" rel="noopener noreferrer">
+                <picture>
+                  <source srcset="./assets/img/blog-img-2.webp 1x, ./assets/img/blog-img-2@2x.webp 2x" type="image/webp"/><img class="present-cart__img" src="./assets/img/blog-img-2.jpg" srcset="./assets/img/blog-img-2.jpg 1x, ./assets/img/blog-img-2@2x.jpg 2x" alt="Изображение блога" width="350" height="370" loading="lazy" decoding="async"/>
+                </picture>
+                <p class="present-cart__text blog__text">Запонки для мужа: <br/>7&nbsp;ключевых правил покупки аксессуара</p></a></li>
+            <li><a class="present-cart" href="#blog-3" target="_blank" rel="noopener noreferrer">
+                <picture>
+                  <source srcset="./assets/img/blog-img-3.webp 1x, ./assets/img/blog-img-3@2x.webp 2x" type="image/webp"/><img class="present-cart__img" src="./assets/img/blog-img-3.jpg" srcset="./assets/img/blog-img-3.jpg 1x, ./assets/img/blog-img-3@2x.jpg 2x" alt="Изображение блога" width="350" height="370" loading="lazy" decoding="async"/>
+                </picture>
+                <p class="present-cart__text blog__text">Как выбрать обручальные кольца молодоженам</p></a></li>
+          </ul><a class="button button--dark-shadow" href="#our-blog" target="_blank">читать наш блог</a>
+        </div>
+      </section>
+      <section class="page-section gallery">
+        <div class="container">
+          <div class="page-section__subtitle">#ojjo_jewerly</div>
+          <h2 class="page-section__title">Мы в социальных сетях</h2>
+          <ul class="gallery__list">
+            <li class="gallery__item gallery__item--video"><a class="gallery__link" href="#blog-link-1" target="_blank" rel="noopener noreferrer">
+                <picture>
+                  <source srcset="./assets/img/gallery-video-1.webp 1x, ./assets/img/gallery-video-1@2x.webp 2x" type="image/webp"/><img class="gallery__preview" src="./assets/img/gallery-video-1.jpg" srcset="./assets/img/gallery-video-1.jpg 1x, ./assets/img/gallery-video-1@2x.jpg 2x" alt="Превью ссылки" width="555" height="300" loading="lazy" decoding="async"/>
+                </picture></a></li>
+            <li class="gallery__item"><a class="gallery__link" href="#blog-link-2" target="_blank" rel="noopener noreferrer">
+                <picture>
+                  <source srcset="./assets/img/gallery-video-2.webp 1x, ./assets/img/gallery-video-2@2x.webp 2x" type="image/webp"/><img class="gallery__preview" src="./assets/img/gallery-video-2.jpg" srcset="./assets/img/gallery-video-2.jpg 1x, ./assets/img/gallery-video-2@2x.jpg 2x" alt="Превью ссылки" width="555" height="300" loading="lazy" decoding="async"/>
+                </picture></a></li>
+            <li class="gallery__item"><a class="gallery__link" href="#blog-link-3" target="_blank" rel="noopener noreferrer">
+                <picture>
+                  <source srcset="./assets/img/gallery-video-3.webp 1x, ./assets/img/gallery-video-3@2x.webp 2x" type="image/webp"/><img class="gallery__preview" src="./assets/img/gallery-video-3.jpg" srcset="./assets/img/gallery-video-3.jpg 1x, ./assets/img/gallery-video-3@2x.jpg 2x" alt="Превью ссылки" width="555" height="300" loading="lazy" decoding="async"/>
+                </picture></a></li>
+            <li class="gallery__item"><a class="gallery__link" href="#blog-link-4" target="_blank" rel="noopener noreferrer">
+                <picture>
+                  <source srcset="./assets/img/gallery-video-4.webp 1x, ./assets/img/gallery-video-4@2x.webp 2x" type="image/webp"/><img class="gallery__preview" src="./assets/img/gallery-video-4.jpg" srcset="./assets/img/gallery-video-4.jpg 1x, ./assets/img/gallery-video-4@2x.jpg 2x" alt="Превью ссылки" width="555" height="300" loading="lazy" decoding="async"/>
+                </picture></a></li>
+            <li class="gallery__item"><a class="gallery__link" href="#blog-link-5" target="_blank" rel="noopener noreferrer">
+                <picture>
+                  <source srcset="./assets/img/gallery-video-5.webp 1x, ./assets/img/gallery-video-5@2x.webp 2x" type="image/webp"/><img class="gallery__preview" src="./assets/img/gallery-video-5.jpg" srcset="./assets/img/gallery-video-5.jpg 1x, ./assets/img/gallery-video-5@2x.jpg 2x" alt="Превью ссылки" width="555" height="300" loading="lazy" decoding="async"/>
+                </picture></a></li>
+            <li class="gallery__item gallery__item--video"><a class="gallery__link" href="#blog-link-6" target="_blank" rel="noopener noreferrer">
+                <picture>
+                  <source srcset="./assets/img/gallery-video-6.webp 1x, ./assets/img/gallery-video-6@2x.webp 2x" type="image/webp"/><img class="gallery__preview" src="./assets/img/gallery-video-6.jpg" srcset="./assets/img/gallery-video-6.jpg 1x, ./assets/img/gallery-video-6@2x.jpg 2x" alt="Превью ссылки" width="555" height="300" loading="lazy" decoding="async"/>
+                </picture></a></li>
+          </ul>
+        </div>
+      </section>
+      <section class="page-section page-section--light page-section--bgn-twirl subscribe">
+        <div class="container">
+          <div class="page-section__container">
+            <div class="page-section__subtitle">Полезные советы и персональный предложения</div>
+            <h2 class="page-section__title">Эксклюзивная рассылка</h2>
+            <div class="subscribe__content">
+              <ul class="subscribe__advantage">
+                <li>Личный менеджер</li>
+                <li>Доставка и оформление</li>
+                <li>Индивидуальный дизайн</li>
+              </ul>
+              <form class="subscribe__form js-subscribe-form" action="./" method="POST" name="form-subscribe">
+                <input class="subscribe__form-input" type="email" name="subscribe-email" placeholder="Ваш e-mail" required>
+                <button class="button button--dark-shadow subscribe__form-btn" type="submit">Отправить</button>
+                <div class="subscribe__send-message js-subscribe-form-message">Вы не подписаны!</div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__item">
+            <h3 class="footer__title">Полезные ссылки</h3>
+            <ul class="footer-menu">
+              <li><a class="footer-menu__link" href="#delivery">Доставка</a></li>
+              <li><a class="footer-menu__link" href="#payment">Оплата</a></li>
+              <li><a class="footer-menu__link" href="#stock">Контрагентам</a></li>
+              <li><a class="footer-menu__link" href="#confidentiality">Политика конфиденциальности</a></li>
+            </ul>
+          </div>
+          <div class="footer__item">
+            <h3 class="footer__title">оплата</h3>
+            <p class="footer__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ullamcorper justo, nec, pellentesque.</p>
+            <ul class="pay-card">
+              <li>
+                <picture>
+                  <source srcset="./assets/img/card-logo-1.webp 1x, ./assets/img/card-logo-1@2x.webp 2x" type="image/webp"/><img class="pay-card__logo" src="./assets/img/card-logo-1.png" srcset="./assets/img/card-logo-1.png 1x, ./assets/img/card-logo-1@2x.png 2x" alt="Visa" width="45" height="30" loading="lazy" decoding="async"/>
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <source srcset="./assets/img/card-logo-2.webp 1x, ./assets/img/card-logo-2@2x.webp 2x" type="image/webp"/><img class="pay-card__logo" src="./assets/img/card-logo-2.png" srcset="./assets/img/card-logo-2.png 1x, ./assets/img/card-logo-2@2x.png 2x" alt="MasterCard" width="45" height="30" loading="lazy" decoding="async"/>
+                </picture>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__item">
+            <h3 class="footer__title">контакты</h3>
+            <ul class="footer-contact">
+              <li><a class="footer-contact__link" href="tel:+388122345655">
+                  <svg width="20" height="20" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#phone"></use>
+                  </svg>8 (812) 234-56-55</a></li>
+              <li><a class="footer-contact__link" href="tel:+3881223456-55">
+                  <svg width="20" height="20" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#phone"></use>
+                  </svg>8 (812) 234-56-55</a></li>
+              <li><a class="footer-contact__link" href="mailto:ojjo@ojjo.ru">
+                  <svg width="20" height="20" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#mail"></use>
+                  </svg>ojjo@ojjo.ru</a></li>
+            </ul>
+          </div>
+          <div class="footer__item">
+            <h3 class="footer__title">социальные сети</h3>
+            <p class="footer__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ullamcorper justo, nec, pellentesque.</p>
+            <ul class="social">
+              <li><a class="social__link" href="#youtube" target="_blank" title="youtube" rel="noopener noreferrer">
+                  <svg width="26" height="26" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#youtube"></use>
+                  </svg><span class="visually-hidden">youtube</span></a></li>
+              <li><a class="social__link" href="#vkontakte" target="_blank" title="vkontakte" rel="noopener noreferrer">
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#vkontakte"></use>
+                  </svg><span class="visually-hidden">vkontakte</span></a></li>
+              <li><a class="social__link" href="#facebook" target="_blank" title="facebook" rel="noopener noreferrer">
+                  <svg width="26" height="26" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#facebook"></use>
+                  </svg><span class="visually-hidden">facebook</span></a></li>
+              <li><a class="social__link" href="#telegram" target="_blank" title="telegram" rel="noopener noreferrer">
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#telegram"></use>
+                  </svg><span class="visually-hidden">telegram</span></a></li>
+              <li><a class="social__link" href="#etsy" target="_blank" title="etsy" rel="noopener noreferrer">
+                  <svg width="16" height="16" aria-hidden="true">
+                    <use xlink:href="./assets/img/svg-sprite.svg#etsy"></use>
+                  </svg><span class="visually-hidden">etsy</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <ul class="copyright">
+          <li><a class="copyright__link" href="#jewelry">(c) 2020 OJJO jewelry</a></li>
+          <li><a class="copyright__link" href="#public">Договор публичной оферты</a></li>
+          <li><a class="copyright__link" href="#agent">Контрагентам</a></li>
+          <li><a class="copyright__link copyright__link--underline" href="#figma">Сделано Figma.info</a></li>
+        </ul>
+      </div>
+    </footer>
+    <div class="modal" id="modal-search">
+      <div class="modal__content js-modal-content">
+        <h1 class="modal__title">Поиск по сайту</h1>
+        <form action="./" method="get" name="form-search">
+          <p class="modal__input-wrap">
+            <label class="modal__label" for="search-phrase">Текст запроса<abbr class="modal__info" title="Обязательное поле">*</abbr></label>
+            <input class="modal__input" id="search-phrase" type="search" name="search-phrase" required>
+          </p>
+          <button class="button modal__submit" type="submit">Найти</button>
+        </form>
+        <button class="modal__close-btn js-modal-close-btn" type="button"><span class="visually-hidden">Закрыть окно</span></button>
+      </div>
+    </div>
+    <div class="modal" id="modal-singin">
+      <div class="modal__content js-modal-content">
+        <h1 class="modal__title">Вход на сайт</h1>
+        <form action="./" method="post" name="form-singin">
+          <p class="modal__input-wrap">
+            <label class="modal__label" for="user-login">Логин<abbr class="modal__info" title="Обязательное поле">*</abbr></label>
+            <input class="modal__input" id="user-login" type="text" name="user-login" required>
+          </p>
+          <p class="modal__input-wrap">
+            <label class="modal__label" for="user-password">Пароль<abbr class="modal__info" title="Обязательное поле">*</abbr></label>
+            <input class="modal__input" id="user-password" type="password" name="user-password" required>
+          </p>
+          <p class="modal__input-wrap">
+            <input class="visually-hidden modal__checkbox" id="user-remember" type="checkbox" name="user-remember">
+            <label class="modal__checkbox-label" for="user-remember">Запомнить меня</label>
+          </p>
+          <p class="modal__input-wrap"><a class="modal__link" href="restore-password.html" data-modal-id="modal-restore-pas">Напомнить пароль</a></p>
+          <p class="modal__input-wrap"><a class="modal__link" href="registration.html" target="_blank">Я новый пользователь</a></p>
+          <button class="button modal__submit" type="submit">Вход</button>
+        </form>
+        <button class="modal__close-btn js-modal-close-btn" type="button"><span class="visually-hidden">Закрыть окно</span></button>
+      </div>
+    </div>
+    <div class="modal" id="modal-restore-pas">
+      <div class="modal__content js-modal-content">
+        <h1 class="modal__title">Получить временный пароль</h1>
+        <form action="./" method="post" name="form-remember-password">
+          <p class="modal__input-wrap">
+            <label class="modal__label" for="restore-login">Логин<abbr class="modal__info" title="Обязательное поле">*</abbr></label>
+            <input class="modal__input" id="restore-login" type="text" name="restore-login" required>
+          </p>
+          <button class="button modal__submit" type="submit">Отправить</button>
+        </form>
+        <button class="modal__close-btn js-modal-close-btn" type="button"><span class="visually-hidden">Закрыть окно</span></button>
+      </div>
+    </div>
+  </body>
+</html>
