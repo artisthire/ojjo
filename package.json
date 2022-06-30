@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "webpack serve --open --config webpack.dev.js",
     "start": "webpack --config webpack.prod.js",
-    "server": "http-server ./dist -o --no-dotfiles "
+    "server": "http-server ./dist -o --no-dotfiles",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Andrey",
   "license": "MIT",
