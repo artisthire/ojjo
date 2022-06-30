@@ -1,7 +1,7 @@
 .footer {
   // позиционирование футера внизу страницы даже при нехватке контента
   margin-top: auto;
-  padding: 40px 0 20px;
+  padding: 40px 0 10px;
 
   @media (min-width: $screen-lg) {
     padding-top: 80px;

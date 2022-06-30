@@ -9,10 +9,6 @@
 
   & > li {
     margin-bottom: 5px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
   }
 
   @media (min-width: $screen-sm) {
@@ -20,19 +16,12 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-
-    & > li {
-      margin-bottom: 0;
-      margin-right: 5px;
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
   }
 }
 
 .copyright__link {
+  display: inline-block;
+  padding: 5px;
   font-size: 1.4rem;
   line-height: (21/14);
   text-decoration: none;

@@ -1,5 +1,5 @@
 // SCSS
-import './scss/main.scss';
+// import './scss/main.scss';
 // JS
 import './js/app';
 import './js/mobile-menu';

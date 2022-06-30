@@ -34,6 +34,7 @@ module.exports = (_, argv) => (
     // точки входа
     entry: {
       app: `${PATHS.src}/index.js`,
+      style: `${PATHS.src}/scss/main.scss`
       // module: `${PATHS.src}/your-module.js`,
     },
 
@@ -42,6 +43,7 @@ module.exports = (_, argv) => (
     // publickPath - по умолчанию после сборки ресурсы ищутся по следующему пути ${publicPath}/${prefix}/${assetName}
     // добавление publicPath: './' позволяет сформировать в html файла относительный путь к ресурсам после сборки
     output: {
+      clean: true,
       filename: `${PATHS.assets}js/[name].js`,
       path: PATHS.dist,
       publicPath: './'
@@ -61,7 +63,7 @@ module.exports = (_, argv) => (
 
         {
           // JS
-          // файлы, которые нужны отдельно от общего JS файла добавляются в папку /js/statis/
+          // файлы, которые нужны отдельно от общего JS файла добавляются в папку /js/static/
           // их нужно вручную добавлять в тег head файла pug, чтобы они попали в выходную сборку
           test: /(\/|\\)js(\/|\\)static(\/|\\)(\w+)\.js$/i,
           type: 'asset/resource',
@@ -130,7 +132,15 @@ module.exports = (_, argv) => (
             },
             {
               loader: 'postcss-loader',
-              options: {sourceMap: true}
+              options: {
+                sourceMap: true,
+                postcssOptions: {
+                  plugins: [
+                    'autoprefixer',
+                    'cssnano'
+                  ],
+                },
+              }
             }
           ]
         },
@@ -158,7 +168,15 @@ module.exports = (_, argv) => (
             },
             {
               loader: 'postcss-loader',
-              options: {sourceMap: true}
+              options: {
+                sourceMap: true,
+                postcssOptions: {
+                  plugins: [
+                    'autoprefixer',
+                    'cssnano'
+                  ],
+                },
+              }
             },
             {
               loader: 'resolve-url-loader',
@@ -166,7 +184,12 @@ module.exports = (_, argv) => (
             },
             {
               loader: 'sass-loader',
-              options: {sourceMap: true}
+              options: {
+                sourceMap: true,
+                sassOptions: {
+                  outputStyle: 'expanded'
+                }
+              }
             }
           ]
         },
@@ -195,7 +218,7 @@ module.exports = (_, argv) => (
     plugins: [
       // выделяет в отдельные файлы код CSS
       new MiniCssExtractPlugin({
-        filename: `${PATHS.assets}css/[name].css`
+        filename: `${PATHS.assets}css/[name].min.css`
       }),
       // копирование файлов в папках, на которые могут быть ссылки из HTML-файлов,
       // которые не обрабатываются file-loader, а поэтому могут быть автоматически не скопированы
@@ -238,58 +261,3 @@ module.exports = (_, argv) => (
       }
     }
   });
-
-/*
-Части кода, которые не используются, но могут пригодиться
- {
-          // PUG
-          test: /\.(pug)$/i,
-          use: [
-            'pug-loader'
-          ]
-        },
-
-{from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img`}
-
-// горячая загрузка CSS без перезагрузки всей страницы
-    new webpack.HotModuleReplacementPlugin()
-*/
-
-/*
-use: [
-            {
-              loader: 'image-webpack-loader',
-              options: {
-                disable: argv.mode === 'development',
-                mozjpeg: {
-                  progressive: true,
-                },
-                // optipng.enabled: false will disable optipng
-                optipng: {
-                  enabled: false,
-                },
-                pngquant: {
-                  quality: [0.65, 0.90],
-                  speed: 4
-                },
-                gifsicle: {
-                  optimizationLevel: 2,
-                  interlaced: true,
-                },
-                svgo: {
-                  plugins: [
-                    {removeUselessDefs: false}, // не удаляет symbol-теги в svg-спрайтах
-                    {removeHiddenElems: {displayNone: false}}, // не удаляет весь код с display: none в svg-спрайтах
-                    {cleanupIDs: {remove: false}}, // не удаляет symbol-теги в svg-спрайтах с неиспользуемым ID
-                    {removeViewBox: false}, // не удалят viewbox
-                    {removeDimensions: true} // заменяет width/height на viewBox
-                  ]
-                },
-                // the webp option will enable WEBP
-                webp: {
-                  quality: 75
-                }
-              }
-            },
-          ],
-*/

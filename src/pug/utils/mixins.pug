@@ -5,7 +5,7 @@ mixin webpImg(name, alt= "", width, height, sourcePatch= "../../assets/img/")
     var fExt = name.split('.')[1]
   picture
     source(srcset= `${sourcePatch}${fName}.webp`, type= "image/webp")
-    img(class!= attributes.class, src= `${sourcePatch}${fName}.${fExt}`, alt= alt, width = width, height = height)
+    img(class!= attributes.class, src= `${sourcePatch}${fName}.${fExt}`, alt= alt, width = width, height = height, loading="lazy", decoding="async")
 
 //- For put image in WEBP and Retin
 mixin retinWebpImg(name, alt= "", width, height, sourcePatch= "../../assets/img/")
@@ -20,7 +20,9 @@ mixin retinWebpImg(name, alt= "", width, height, sourcePatch= "../../assets/img/
       srcset= `${sourcePatch}${fName}.${fExt} 1x, ${sourcePatch}${fName}@2x.${fExt} 2x`,
       alt= alt,
       width = width,
-      height = height)
+      height = height,
+      loading="lazy",
+      decoding="async")
 
 //- Put external SVG-sprite
 mixin extSvgSprite(symbolId, width, height, fileName= "svg-sprite", sourcePatch= "../../assets/img/")

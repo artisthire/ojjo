@@ -1,8 +1,6 @@
 const webpack = require('webpack');
 const {merge} = require('webpack-merge');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const baseWebpackConfig = require('./webpack.common.js');
-// для минимизации картинок
 /*
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const imageminMozjpeg = require('imagemin-mozjpeg');
@@ -18,7 +16,6 @@ module.exports = (env, argv) => {
     // CleanWebpackPlugin - по умолчанию очищает папку с итогами сборки
     // указанную в опции output:path конфигурационного файла webpack
     plugins: [
-      new CleanWebpackPlugin(),
       // выводит в консоль прогресс сборки проекта
       new webpack.ProgressPlugin({
         activeModules: false,

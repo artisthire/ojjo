@@ -6,27 +6,10 @@
   }
 
   &--bgn-twirl {
+    background-image: url("../../assets/img/bgn-slice.jpg");
     background-size: 28px 28px;
     background-repeat: repeat;
     background-color: $grey;
-  }
-
-  .no-webp &--bgn-twirl {
-    background-image: url("../../assets/img/bgn-slice.jpg");
-  }
-
-  .webp &--bgn-twirl {
-    background-image: url("../../assets/img/bgn-slice.webp");
-  }
-
-  @include retina {
-    .no-webp &--bgn-twirl {
-      background-image: url("../../assets/img/bgn-slice@2x.jpg");
-    }
-
-    .webp &--bgn-twirl {
-      background-image: url("../../assets/img/bgn-slice@2x.webp");
-    }
   }
 }
 

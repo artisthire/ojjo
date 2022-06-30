@@ -108,8 +108,4 @@
   background-image: url("../../assets/img/contact__map.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-
-  @include retina {
-    background-image: url("../../assets/img/contact__map@2x.jpg");
-  }
 }

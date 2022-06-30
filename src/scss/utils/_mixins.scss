@@ -27,7 +27,7 @@
     font-family: $font-family;
     font-weight: $weight;
     font-style: $style;
-    font-display: swap;
+    font-display: optional;
 
     src: local($font-family),
       url("#{$file-path}.woff2") format("woff2");
